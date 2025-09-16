@@ -6,7 +6,7 @@ export function Portfolio() {
     {
       title: 'Volks | Connect Mobile App',
       description: 'A mobileapp that connects the truck, the driver and the fleet manager, integrating a digital enviroment for the trucks and buses of Volkswagen Truck and Bus.',
-      image: '/volksconnect.jpg',
+      image: 'volksconnect.jpg',
       technologies: ['Ux Research', 'Ui Design', 'Figma', 'React'],
       link: 'https://www.behance.net/gallery/234619233/Volks-Connect-Ui-Ux'
     },
