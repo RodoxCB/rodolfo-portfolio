@@ -6,9 +6,9 @@ export function Portfolio() {
     {
       title: 'Volks | Connect Mobile App',
       description: 'A comprehensive dashboard for managing online stores with real-time analytics and inventory management.',
-      image: 'https://images.unsplash.com/photo-1649451844931-57e22fc82de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMHByb2plY3QlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzU3NTA0NjEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
-      link: '#'
+      image: 'public/volksconnect.jpg',
+      technologies: ['Ux Research', 'Ui Design', 'Figma', 'React'],
+      link: 'https://www.behance.net/gallery/234619233/Volks-Connect-Ui-Ux'
     },
     {
       title: 'Volkswagen Turck and Bus Infotainment',
