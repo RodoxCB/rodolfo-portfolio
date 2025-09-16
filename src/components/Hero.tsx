@@ -16,10 +16,10 @@ export function Hero() {
       <div className="backdrop-blur-2xl bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl hover:bg-white/10 transition-all duration-300 max-w-4xl">
         <div className="w-32 h-32 rounded-full overflow-hidden mb-8 border border-white/20 backdrop-blur-lg bg-white/5 shadow-2xl mx-auto">
           <img
-            src="/rodolfo-headshot.png"
+            src="rodolfo-headshot.png"
             alt="Rodolfo Behr"
-            className="w-full h-full object-cover"
           />
+
         </div>
         
         <h1 className="text-4xl md:text-6xl mb-4 text-white drop-shadow-lg">Rodolfo Behr</h1>

@@ -89,7 +89,7 @@ export default function App() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: `url(/abstractfull.png)`,
+          backgroundImage: `url(abstractfull.png)`,
           backgroundSize: isMobile ? '110%' : 'cover',
           backgroundPosition: isMobile 
             ? `center ${-scrollY * 0.1}px` 
