@@ -6,7 +6,7 @@ export function Portfolio() {
     {
       title: 'Volks | Connect Mobile App',
       description: 'A comprehensive dashboard for managing online stores with real-time analytics and inventory management.',
-      image: 'public/volksconnect.jpg',
+      image: '/volksconnect.jpg',
       technologies: ['Ux Research', 'Ui Design', 'Figma', 'React'],
       link: 'https://www.behance.net/gallery/234619233/Volks-Connect-Ui-Ux'
     },
