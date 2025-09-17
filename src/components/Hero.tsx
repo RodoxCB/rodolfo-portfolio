@@ -103,10 +103,10 @@ export function Hero() {
                   <div>
                     <h4 className="text-white font-medium mb-2">Development</h4>
                     <ul className="text-white/70 text-sm space-y-1">
-                      <li>• React Development</li>
-                      <li>• Adobe Stack Full Designer</li>
-                      <li>• End to End design</li>
-                      <li>• Performance Optimization</li>
+                      <li>• Vibe Code React Development</li>
+                      <li>• Adobe Fullstack Designer</li>
+                      <li>• End to End Ux/Ui Design</li>
+                      <li>• Visual and Brand Design</li>
                     </ul>
                   </div>
                 </div>

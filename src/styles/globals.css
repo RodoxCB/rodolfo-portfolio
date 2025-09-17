@@ -189,6 +189,8 @@
 
 html {
   font-size: var(--font-size);
+  height: 100%;
+  overflow: hidden; /* Lenis controla o scroll */
 }
 
 /* Mobile background optimization with subtle parallax */

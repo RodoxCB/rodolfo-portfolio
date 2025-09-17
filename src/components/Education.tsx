@@ -21,11 +21,11 @@ export function Education() {
   ];
 
   const certificates = [
-    'UX Design - Design Thinking Methodology',
-    'UI Design - Prototyping and Testing',
+    'UX Design - Design Thinking',
+    'UI Design - Ready to Code Components',
+    'UX Writing - Adapting Messaging for Different User Perspectives',
     'Adobe Stack - Video and Graphic Design Expert',
-    'Frontend Development - Typescript, Tailwind, Javascript, React',
-    'SEO Optimization - Meta Ads, Google Ads, Google Search'
+    'AI Powered Dev - Development of Interactive Interfaces with Ai tools',
   ];
 
   return (

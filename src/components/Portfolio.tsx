@@ -7,44 +7,59 @@ export function Portfolio() {
       title: 'Volks | Connect Mobile App',
       description: 'A mobileapp that connects the truck, the driver and the fleet manager, integrating a digital enviroment for the trucks and buses of Volkswagen Truck and Bus.',
       image: 'volksconnect.jpg',
-      technologies: ['Ux Research', 'Ui Design', 'Figma', 'React'],
+      technologies: ['Ux Research', 'Ui Design', 'Figma', 'React', 'After Effects', 'Protopie', 'Unreal Engine', 'Cinema 4D',],
       link: 'https://www.behance.net/gallery/234619233/Volks-Connect-Ui-Ux'
     },
     {
-      title: 'Volkswagen Turck and Bus Infotainment',
-      description: 'User-friendly mobile banking application with secure transactions and modern UI design.',
-      image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU3NTExNzQxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      technologies: ['React Native', 'Redux', 'Firebase'],
-      link: '#'
+      title: 'Infotainment - Volkswagen Truk and Bus',
+      description: 'The first infotainment center made by Volkswagen Truck and Bus, a full cycle project that integrates HMI on vehicles with various targe screens',
+      image: 'infotainment-vwtb.jpg',
+      technologies: ['Ux Research', 'Ui Design', 'Figma', 'After Effects', 'Protopie', 'Unreal Engine', 'Cinema 4D',],
+      link: 'https://www.behance.net/gallery/195768137/HMI-VOLKSWAGEN-VWTB'
     },
     {
-      title: 'Volkswagen Truck and Bus Digital Cluster',
-      description: 'Modern corporate website with responsive design and optimized performance for better user experience.',
-      image: 'https://images.unsplash.com/photo-1577333715735-8fcb0359d906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDF8fHx8MTc1NzUyNjk0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-      link: '#'
+      title: 'Full TFT Cluster - Volkswagen Tuck and Bus',
+      description: 'The first digital instrument panel cluster made by Volkswagen Truck and Bus,  a full cycle project that integrates HMI on vehicles with various targe screens',
+      image: 'cluster-vwtb.jpg',
+      technologies: ['Figma', 'Photoshop', 'After Effects', 'Unity', 'Illustrator'],
+      link: 'https://www.behance.net/gallery/195768137/HMI-VOLKSWAGEN-VWTB#'
     },
     {
       title: 'Smart Watch App - SME Consultant',
-      description: 'Modern corporate website with responsive design and optimized performance for better user experience.',
-      image: 'https://images.unsplash.com/photo-1577333715735-8fcb0359d906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDF8fHx8MTc1NzUyNjk0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+      description: 'Smartwatch app for a company specializing in occupational safety. The watch is designed to monitor workers mental well-being and focus, helping to reduce the risk of accidents.',
+      image: 'sme-relogio.jpg',
+      technologies: ['Ux Research', 'Ui Design', 'Figma', 'Protopie'],
       link: '#'
     },
     {
-      title: 'Volkswagen Truck and Bus Digital Cluster',
-      description: 'Modern corporate website with responsive design and optimized performance for better user experience.',
-      image: 'https://images.unsplash.com/photo-1577333715735-8fcb0359d906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDF8fHx8MTc1NzUyNjk0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-      link: '#'
+      title: 'Papet - Pet Marketplace App',
+      description: 'Papet is a UI design case study created to develop and showcase my skills in UI development, demonstrating my ability to build visually appealing components and complex, code-ready design systems.',
+      image: 'papet-marketplace.jpg',
+      technologies: ['Figma', 'Adobe Photoshop', 'Adobe Ilustrator'],
+      link: 'https://www.behance.net/gallery/133368145/PaPet-Marketplace-para-Pets'
     },
     {
-      title: 'Marketing Video',
-      description: 'Comprehensive design system with reusable components and design tokens for consistent branding.',
-      image: 'https://images.unsplash.com/photo-1617783919077-f86206a0f495?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1aSUyMHV4JTIwZGVzaWduJTIwcG9ydGZvbGlvfGVufDF8fHx8MTc1NzU5OTY4N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      technologies: ['Figma', 'Storybook', 'React', 'CSS-in-JS'],
-      link: '#'
-    }
+      title: 'LottieFiles Animations',
+      description: 'Various animations I created using Lottie Files technology, code-ready animations designed for mobile apps and websites.',
+      image: 'lottie.png',
+      technologies: ['Adobe After Effects', 'LottieFiles',],
+      link: 'https://lottiefiles.com/rodoxcb'
+    },
+    {
+      title: 'Brand Design - Viver nas Férias',
+      description: 'Viver nas Férias is new brand Design i made to a company located in Gramado, Rio Grande do Sul, Brasil. The brand is focused in renting apartments and houses to people who want to fell like traveling for tourism but being able to work at the same time.',
+      image: 'vivernasferias.png',
+      technologies: ['Adobe Photoshop', 'Adobe Illustrator',],
+      link: 'https://www.behance.net/gallery/205637917/Criacao-de-Logo'
+    },
+    {
+      title: 'Marketing Videos',
+      description: 'Audiovisual production and video marketing for companies, apps, artists, and diverse projects.',
+      image: 'vimeo-marketing.jpg',
+      technologies: ['Adobe After Effects', 'Adobe Premiere', 'Adobe Photoshop', 'Adobe Illustrator', 'Blender', 'Cinema 4D', 'Adobe Media Encoder'],
+      link: 'https://vimeo.com/rodolfobehr'
+    },
+    
   ];
 
   return (
