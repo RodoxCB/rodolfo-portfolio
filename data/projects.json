@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "volks-connect",
+    "featured": true,
+    "tags": ["UX/UI", "Mobile", "Automotive", "Fleet"],
+    "thumbnail": "/projects/volks-connect.svg",
+    "links": { "behance": "https://www.behance.net/rodolfobehr" },
+    "content": {
+      "en": {
+        "title": "Volks | Connect",
+        "description": "Fleet connectivity app for Volkswagen trucks on iOS and Android — integrating drivers, vehicles, and fleet managers with real-time monitoring and operational insights.",
+        "overview": [
+          "Led UX from discovery to App Store and Google Play launch.",
+          "Designed onboarding, vehicle simulation mode, and core fleet workflows.",
+          "Collaborated with product and engineering in a safety-critical mobility context."
+        ]
+      },
+      "pt": {
+        "title": "Volks | Connect",
+        "description": "App de conectividade de frota para caminhões Volkswagen em iOS e Android — integrando motorista, veículo e gestor de frota com monitoramento e insights operacionais.",
+        "overview": [
+          "Conduzi o UX do discovery ao lançamento na App Store e Google Play.",
+          "Desenhei onboarding, modo simulação de veículo e fluxos centrais de frota.",
+          "Colaborei com produto e engenharia em contexto de mobilidade e segurança."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "vwtb-hmi",
+    "featured": true,
+    "tags": ["HMI", "Infotainment", "Cluster", "Automotive"],
+    "thumbnail": "/projects/vwtb-hmi.svg",
+    "content": {
+      "en": {
+        "title": "VWTB HMI Ecosystem",
+        "description": "In-vehicle UX for infotainment, digital instrument cluster, and companion touchpoints across Volkswagen Trucks & Buses platforms.",
+        "overview": [
+          "Owned interaction patterns, flows, and high-fidelity UI for embedded systems.",
+          "Defined technical requirements and coordinated Tier-1 supplier deliverables.",
+          "Validated concepts through prototyping and usability sessions with drivers."
+        ]
+      },
+      "pt": {
+        "title": "Ecossistema HMI VWTB",
+        "description": "UX embarcado para multimídia, cluster digital e touchpoints companion nos veículos Volkswagen Caminhões e Ônibus.",
+        "overview": [
+          "Defini padrões de interação, fluxos e UI de alta fidelidade para sistemas embarcados.",
+          "Documentei requisitos técnicos e coordenei entregas de fornecedores Tier-1.",
+          "Validei conceitos com prototipação e testes de usabilidade com motoristas."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "delivery-highline",
+    "featured": true,
+    "tags": ["HMI", "Cluster", "Automotive"],
+    "thumbnail": "/projects/delivery-highline.svg",
+    "content": {
+      "en": {
+        "title": "VW Delivery Highline Cluster",
+        "description": "Digital instrument panel experience for a production light-duty truck line — bringing connectivity and driver-centric controls to the road.",
+        "overview": [
+          "Contributed to digital cluster UX for a shipped commercial vehicle platform.",
+          "Balanced information density with glanceability for in-cab driving contexts.",
+          "Aligned design decisions with engineering and supplier constraints."
+        ]
+      },
+      "pt": {
+        "title": "Cluster VW Delivery Highline",
+        "description": "Experiência de painel digital para linha de caminhão leve em produção — conectividade e controles centrados no motorista.",
+        "overview": [
+          "Contribuí para o UX do cluster digital em plataforma comercial já em produção.",
+          "Equilibrei densidade de informação com legibilidade em contexto de condução.",
+          "Alinhei decisões de design com restrições de engenharia e fornecedores."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "prontos",
+    "featured": false,
+    "tags": ["B2B", "Health", "Dashboard", "Web"],
+    "thumbnail": "/projects/prontos.svg",
+    "content": {
+      "en": {
+        "title": "prontos! Platform",
+        "description": "B2B digital health platform for occupational cognitive readiness and worker safety analytics.",
+        "overview": [
+          "Designed UI for data-heavy operational dashboards.",
+          "Improved hierarchy and task clarity for non-technical users.",
+          "Built responsive layouts and interactive prototypes."
+        ]
+      },
+      "pt": {
+        "title": "Plataforma prontos!",
+        "description": "Plataforma B2B de saúde digital para prontidão cognitiva ocupacional e analytics de segurança do trabalhador.",
+        "overview": [
+          "Desenhei UI para dashboards operacionais com alta densidade de dados.",
+          "Melhorei hierarquia e clareza de tarefas para usuários não técnicos.",
+          "Criei layouts responsivos e protótipos interativos."
+        ]
+      }
+    }
+  }
+]
