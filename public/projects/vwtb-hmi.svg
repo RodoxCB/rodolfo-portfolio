@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#050505"/>
+  <circle cx="600" cy="320" r="180" fill="#0f766e" opacity="0.15"/>
+  <rect x="250" y="120" width="700" height="380" rx="28" fill="#171a21" stroke="#14b8a6" stroke-width="2"/>
+  <rect x="310" y="180" width="260" height="180" rx="16" fill="#0f1115" stroke="#334155"/>
+  <rect x="600" y="180" width="290" height="180" rx="16" fill="#0f1115" stroke="#334155"/>
+  <text x="310" y="430" fill="#14b8a6" font-family="Arial, sans-serif" font-size="34" font-weight="700">VWTB HMI</text>
+  <text x="310" y="470" fill="#94a3b8" font-family="Arial, sans-serif" font-size="22">Infotainment � Cluster � Companion App</text>
+</svg>

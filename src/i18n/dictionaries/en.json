@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Rodolfo Behr — Senior UX/UI Designer",
+    "description": "Portfolio of Rodolfo Behr — Automotive HMI, product design, and design-to-code."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "[Hi, I'm]",
+    "const": "const",
+    "name": "Rodolfo Behr",
+    "roleLine": "// Senior_UX/UI Designer | Automotive HMI | Design-to-Code",
+    "statement": "Human behavior\nis the key",
+    "viewProjects": "View Projects",
+    "getInTouch": "Get in Touch"
+  },
+  "projects": {
+    "title": "Projects",
+    "seeAll": "See all projects",
+    "viewProject": "View Project",
+    "featured": "Featured"
+  },
+  "contact": {
+    "title": "Got a challenge in mind?",
+    "subtitle": "Send me an email or reach out on LinkedIn.",
+    "cta": "Send Message",
+    "pageTitle": "Contact",
+    "pageSubtitle": "Open to senior UX/UI, Product Design, and Automotive HMI opportunities.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "behance": "Behance",
+    "github": "GitHub",
+    "location": "Guarapari, ES, Brazil · Full Remote · Available for travel"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "// Who I am",
+    "paragraphs": [
+      "Senior UX/UI Designer with 6+ years building user-centered digital products across in-vehicle HMI, connected mobility, and web/mobile interfaces.",
+      "Currently embedded in Volkswagen Trucks & Buses via EDAG Group, I own end-to-end UX for infotainment, digital instrument clusters, and companion apps — from discovery and technical requirements to supplier coordination and production handoff.",
+      "I combine product thinking, UX research, and high-fidelity UI with hands-on front-end skills (React, Next.js, TypeScript, Tailwind) and an AI-augmented workflow using Cursor and MCP to prototype faster and tighten design–engineering alignment."
+    ],
+    "skillsTitle": "// Core skills",
+    "skills": [
+      "Product Discovery",
+      "UX Research",
+      "HMI / In-Vehicle UX",
+      "Design Systems",
+      "Figma",
+      "React / Next.js",
+      "TypeScript",
+      "Cursor & MCP"
+    ]
+  },
+  "footer": {
+    "tagline": "Senior UX/UI Designer\nAutomotive HMI & Product Design",
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "rights": "© 2026 // All rights reserved."
+  }
+}

@@ -1,2 +1,10 @@
-node_modules/
-dist/
+node_modules
+.next
+out
+dist
+.DS_Store
+*.log
+.env*
+!.env.example
+.vercel
+.tmp-login-test.ps1

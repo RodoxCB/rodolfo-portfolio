@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg-primary text-text-primary antialiased;
+}
+
+.grid-floor {
+  background-image:
+    linear-gradient(rgba(20, 184, 166, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 184, 166, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+}
+
+.glitch-stack {
+  position: relative;
+}
+
+.glitch-stack-layer {
+  position: relative;
+}
+
+.glitch-stack-layer:not(:first-child) {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.group:hover .glitch-stack-hover .glitch-stack-layer:nth-child(2) {
+  opacity: 0.35;
+  transform: translate(1px, -1px);
+  color: #14b8a6;
+}
+
+.group:hover .glitch-stack-hover .glitch-stack-layer:nth-child(3) {
+  opacity: 0.25;
+  transform: translate(-1px, 1px);
+  color: #0f766e;
+}
+
+.code-button {
+  box-shadow:
+    inset #14b8a6 1.5px 1.5px 0px,
+    inset #14b8a6 -1.5px 1.5px 0px,
+    inset #14b8a6 1.5px -1.5px 0px,
+    inset #14b8a6 -1.5px -1.5px 0px;
+}

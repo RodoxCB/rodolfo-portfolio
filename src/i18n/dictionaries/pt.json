@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Rodolfo Behr — Senior UX/UI Designer",
+    "description": "Portfólio de Rodolfo Behr — HMI automotivo, product design e design-to-code."
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "[Olá, sou]",
+    "const": "const",
+    "name": "Rodolfo Behr",
+    "roleLine": "// Senior_UX/UI Designer | HMI Automotivo | Design-to-Code",
+    "statement": "Comportamento\nhumano é a chave",
+    "viewProjects": "Ver Projetos",
+    "getInTouch": "Entrar em Contato"
+  },
+  "projects": {
+    "title": "Projetos",
+    "seeAll": "Ver todos os projetos",
+    "viewProject": "Ver Projeto",
+    "featured": "Destaque"
+  },
+  "contact": {
+    "title": "Tem um desafio em mente?",
+    "subtitle": "Me envie um e-mail ou fale comigo no LinkedIn.",
+    "cta": "Enviar Mensagem",
+    "pageTitle": "Contato",
+    "pageSubtitle": "Aberto a oportunidades sênior em UX/UI, Product Design e HMI automotivo.",
+    "email": "E-mail",
+    "linkedin": "LinkedIn",
+    "behance": "Behance",
+    "github": "GitHub",
+    "location": "Guarapari, ES, Brasil · Remoto · Disponível para viagens"
+  },
+  "about": {
+    "title": "Sobre",
+    "subtitle": "// Quem sou",
+    "paragraphs": [
+      "Senior UX/UI Designer com mais de 6 anos criando produtos digitais centrados no usuário — de HMI embarcado e mobilidade conectada a interfaces web e mobile.",
+      "Atualmente no ecossistema Volkswagen Caminhões e Ônibus via EDAG Group, conduzo UX end-to-end para multimídia, cluster digital e apps companion — do discovery e requisitos técnicos à coordenação com fornecedores e handoff para produção.",
+      "Uno product thinking, pesquisa e UI de alta fidelidade com front-end prático (React, Next.js, TypeScript, Tailwind) e fluxo com Cursor e MCP para prototipar mais rápido e alinhar design e engenharia."
+    ],
+    "skillsTitle": "// Principais skills",
+    "skills": [
+      "Product Discovery",
+      "UX Research",
+      "HMI / UX Embarcado",
+      "Design Systems",
+      "Figma",
+      "React / Next.js",
+      "TypeScript",
+      "Cursor & MCP"
+    ]
+  },
+  "footer": {
+    "tagline": "Senior UX/UI Designer\nHMI Automotivo & Product Design",
+    "navigation": "Navegação",
+    "connect": "Conectar",
+    "rights": "© 2026 // Todos os direitos reservados."
+  }
+}
