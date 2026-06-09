@@ -23,8 +23,8 @@ export function Hero({
         <div className="absolute inset-x-0 bottom-0 h-[30vh] bg-gradient-to-b from-transparent to-bg-primary" />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 z-10 flex h-screen items-center justify-center">
-        <div className="relative">
+      <div className="pointer-events-none absolute inset-0 z-10 flex h-screen justify-center">
+        <div className="relative mt-[20vh] flex flex-col items-center sm:mt-[22vh]">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -37,7 +37,7 @@ export function Hero({
             </div>
           </motion.div>
 
-          <div className="absolute left-1/2 top-full mt-10 -translate-x-1/2 animate-float">
+          <div className="mt-10 animate-float">
             <ArrowDown className="block h-6 w-6 text-accent-primary" strokeWidth={2} />
           </div>
         </div>
