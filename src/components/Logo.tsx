@@ -10,6 +10,7 @@ export function Logo({ className = "h-8 w-8" }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-label="RXCB logo"
+      style={{ display: "block" }}
     >
       <rect
         x="8"
@@ -33,11 +34,12 @@ export function Logo({ className = "h-8 w-8" }: LogoProps) {
         x="40"
         y="33"
         textAnchor="middle"
+        dominantBaseline="middle"
         fill="currentColor"
         fontSize="13"
         fontWeight="700"
         fontFamily="system-ui, -apple-system, sans-serif"
-        letterSpacing="3.5"
+        letterSpacing="2"
       >
         RX
       </text>
@@ -46,11 +48,12 @@ export function Logo({ className = "h-8 w-8" }: LogoProps) {
         x="40"
         y="54"
         textAnchor="middle"
+        dominantBaseline="middle"
         fill="currentColor"
         fontSize="13"
         fontWeight="700"
         fontFamily="system-ui, -apple-system, sans-serif"
-        letterSpacing="3.5"
+        letterSpacing="2"
       >
         CB
       </text>

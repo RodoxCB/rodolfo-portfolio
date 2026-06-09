@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { SiteConfig } from "@/lib/cms/site";
 import type { Project } from "@/lib/cms/projects";
-import { ProjectImagesManager } from "./ProjectImagesManager";
+import { formatTagsInput, ProjectEditor, prepareProjectForSave } from "./ProjectEditor";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 type Tab = "site" | "projects" | "en" | "pt";
@@ -54,6 +54,7 @@ export function AdminDashboard() {
 
   const [site, setSite] = useState<SiteConfig | null>(null);
   const [projects, setProjects] = useState<Project[]>([]);
+  const [tagsDraft, setTagsDraft] = useState<string[]>([]);
   const [contentEn, setContentEn] = useState("");
   const [contentPt, setContentPt] = useState("");
 
@@ -81,6 +82,7 @@ export function AdminDashboard() {
 
         setSite(siteData);
         setProjects(projectsData);
+        setTagsDraft(projectsData.map((project: Project) => formatTagsInput(project.tags)));
         setContentEn(JSON.stringify(enData, null, 2));
         setContentPt(JSON.stringify(ptData, null, 2));
       } finally {
@@ -107,13 +109,23 @@ export function AdminDashboard() {
   async function saveProjects() {
     setSaving(true);
     setMessage("");
+    const payload = projects.map((project, index) =>
+      prepareProjectForSave(project, tagsDraft[index] ?? formatTagsInput(project.tags)),
+    );
     const res = await fetch("/api/admin/projects", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(projects),
+      body: JSON.stringify(payload),
     });
     setSaving(false);
-    setMessage(res.ok ? "Projetos salvos com sucesso." : "Erro ao salvar projetos.");
+    if (res.ok) {
+      setProjects(payload);
+      setTagsDraft(payload.map((project) => formatTagsInput(project.tags)));
+      setMessage("Projetos salvos com sucesso.");
+    } else {
+      const error = (await res.json().catch(() => null)) as { error?: string } | null;
+      setMessage(error?.error || "Erro ao salvar projetos.");
+    }
   }
 
   async function saveContent(locale: "en" | "pt") {
@@ -141,8 +153,8 @@ export function AdminDashboard() {
     router.refresh();
   }
 
-  function updateProject(index: number, patch: Partial<Project>) {
-    setProjects((prev) => prev.map((p, i) => (i === index ? { ...p, ...patch } : p)));
+  function updateProject(index: number, project: Project) {
+    setProjects((prev) => prev.map((p, i) => (i === index ? project : p)));
   }
 
   function addProject() {
@@ -160,10 +172,16 @@ export function AdminDashboard() {
         },
       },
     ]);
+    setTagsDraft((prev) => [...prev, "UX/UI"]);
   }
 
   function removeProject(index: number) {
     setProjects((prev) => prev.filter((_, i) => i !== index));
+    setTagsDraft((prev) => prev.filter((_, i) => i !== index));
+  }
+
+  function updateTagsDraft(index: number, value: string) {
+    setTagsDraft((prev) => prev.map((tags, i) => (i === index ? value : tags)));
   }
 
   if (loading) {
@@ -245,74 +263,14 @@ export function AdminDashboard() {
             </div>
 
             {projects.map((project, index) => (
-              <div key={`${project.slug}-${index}`} className="space-y-4 rounded-2xl border border-border-default bg-bg-secondary p-6">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <h3 className="font-medium">{project.content.en.title || project.slug}</h3>
-                  <div className="flex items-center gap-3">
-                    <label className="flex items-center gap-2 text-sm text-text-secondary">
-                      <input
-                        type="checkbox"
-                        checked={project.featured}
-                        onChange={(e) => updateProject(index, { featured: e.target.checked })}
-                      />
-                      Destaque
-                    </label>
-                    <button type="button" onClick={() => removeProject(index)} className="text-sm text-red-400">
-                      Remover
-                    </button>
-                  </div>
-                </div>
-
-                <div className="grid gap-4 md:grid-cols-2">
-                  <Field label="Slug" value={project.slug} onChange={(v) => updateProject(index, { slug: v })} />
-                  <Field label="Tags (vírgula)" value={project.tags.join(", ")} onChange={(v) => updateProject(index, { tags: v.split(",").map((t) => t.trim()).filter(Boolean) })} />
-                  <Field label="Behance URL" value={project.links?.behance || ""} onChange={(v) => updateProject(index, { links: { ...project.links, behance: v } })} />
-                </div>
-
-                <ProjectImagesManager
-                  slug={project.slug}
-                  images={project.images ?? (project.thumbnail ? [project.thumbnail] : [])}
-                  thumbnail={project.thumbnail}
-                  onChange={(patch) => updateProject(index, patch)}
-                />
-
-                <div className="grid gap-6 lg:grid-cols-2">
-                  {(["en", "pt"] as const).map((lang) => (
-                    <div key={lang} className="space-y-3 rounded-xl border border-border-default p-4">
-                      <p className="font-mono text-xs uppercase text-accent-primary">{lang}</p>
-                      <Field
-                        label="Título"
-                        value={project.content[lang].title}
-                        onChange={(v) => {
-                          const content = { ...project.content, [lang]: { ...project.content[lang], title: v } };
-                          updateProject(index, { content });
-                        }}
-                      />
-                      <Field
-                        label="Descrição"
-                        value={project.content[lang].description}
-                        onChange={(v) => {
-                          const content = { ...project.content, [lang]: { ...project.content[lang], description: v } };
-                          updateProject(index, { content });
-                        }}
-                        textarea
-                      />
-                      <Field
-                        label="Overview (1 item por linha)"
-                        value={project.content[lang].overview.join("\n")}
-                        onChange={(v) => {
-                          const content = {
-                            ...project.content,
-                            [lang]: { ...project.content[lang], overview: v.split("\n").filter(Boolean) },
-                          };
-                          updateProject(index, { content });
-                        }}
-                        textarea
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <ProjectEditor
+                key={index}
+                project={project}
+                tagsText={tagsDraft[index] ?? formatTagsInput(project.tags)}
+                onTagsTextChange={(value) => updateTagsDraft(index, value)}
+                onChange={(updated) => updateProject(index, updated)}
+                onRemove={() => removeProject(index)}
+              />
             ))}
 
             <button type="button" onClick={saveProjects} disabled={saving} className="rounded-lg bg-accent-primary px-5 py-2 text-sm font-semibold text-bg-primary disabled:opacity-50">
