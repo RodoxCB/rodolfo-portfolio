@@ -34,8 +34,12 @@ export function Hero({
     };
 
     const schedule = () => {
-      const coarse = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-      const minDelay = coarse ? 2800 : 1200;
+      const touch =
+        window.matchMedia("(pointer: coarse)").matches ||
+        window.matchMedia("(hover: none)").matches ||
+        navigator.maxTouchPoints > 0 ||
+        window.innerWidth < 1024;
+      const minDelay = touch ? 2800 : 1200;
       delayTimer = setTimeout(() => {
         if (cancelled) return;
         if ("requestIdleCallback" in window) {
@@ -59,11 +63,11 @@ export function Hero({
   }, []);
 
   return (
-    <section className="relative min-h-[120vh] overflow-hidden md:min-h-[140vh]">
-      <div className="absolute inset-0 h-[100dvh]">
+    <section className="relative min-h-[120vh] overflow-x-hidden md:min-h-[140vh]">
+      <div className="pointer-events-none absolute inset-0 h-[100dvh] touch-pan-y">
         <div className="grid-floor absolute inset-0 z-0" aria-hidden />
         {showLiquidGlass && (
-          <LiquidGlassCanvas className="absolute inset-0 z-[1] h-full w-full pointer-events-none [@media(hover:hover)]:pointer-events-auto" />
+          <LiquidGlassCanvas className="absolute inset-0 z-[1] h-full w-full lg:pointer-events-auto" />
         )}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[30vh] bg-gradient-to-b from-transparent to-bg-primary" />
       </div>

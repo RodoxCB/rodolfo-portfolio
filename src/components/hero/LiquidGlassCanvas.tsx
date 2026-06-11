@@ -26,20 +26,18 @@ export function LiquidGlassCanvas({ className }: LiquidGlassCanvasProps) {
       dispose = createLiquidGlass(container);
     };
 
-    if ("requestIdleCallback" in window) {
-      idleId = requestIdleCallback(start, { timeout: 2000 });
+    let timer: ReturnType<typeof setTimeout> | undefined;
+
+    if (typeof window.requestIdleCallback === "function") {
+      idleId = window.requestIdleCallback(start, { timeout: 2000 });
     } else {
-      const timer = window.setTimeout(start, 100);
-      return () => {
-        cancelled = true;
-        clearTimeout(timer);
-        dispose?.();
-      };
+      timer = setTimeout(start, 100);
     }
 
     return () => {
       cancelled = true;
-      if (idleId !== undefined) cancelIdleCallback(idleId);
+      if (idleId !== undefined) window.cancelIdleCallback(idleId);
+      if (timer) clearTimeout(timer);
       dispose?.();
     };
   }, []);

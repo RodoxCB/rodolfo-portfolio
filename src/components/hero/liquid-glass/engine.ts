@@ -23,6 +23,7 @@ import {
 import { drawPortfolioBackground } from "./drawBackground";
 import { getFragmentShader, vertexShader } from "./shaders";
 import type { Droplet, MouseState } from "./types";
+import { isTouchDevice } from "./isTouchDevice";
 
 export function createLiquidGlass(container: HTMLElement): () => void {
   const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false });
@@ -30,19 +31,17 @@ export function createLiquidGlass(container: HTMLElement): () => void {
   renderer.domElement.style.width = "100%";
   renderer.domElement.style.height = "100%";
 
-  const isCoarsePointer = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-  const maxDroplets = isCoarsePointer ? 8 : MAX_DROPLETS;
-  const initialDroplets = isCoarsePointer ? 4 : 7;
-  const autoSpawnCap = isCoarsePointer ? 4 : 6;
+  const touchDevice = isTouchDevice();
+  const maxDroplets = touchDevice ? 8 : MAX_DROPLETS;
+  const initialDroplets = touchDevice ? 4 : 7;
+  const autoSpawnCap = touchDevice ? 4 : 6;
 
-  renderer.domElement.style.touchAction = isCoarsePointer ? "pan-y" : "none";
-  renderer.domElement.style.pointerEvents = isCoarsePointer ? "none" : "auto";
-  if (isCoarsePointer) {
-    container.style.pointerEvents = "none";
-  }
+  renderer.domElement.style.touchAction = touchDevice ? "pan-y" : "none";
+  renderer.domElement.style.pointerEvents = touchDevice ? "none" : "auto";
+  container.style.pointerEvents = touchDevice ? "none" : "auto";
 
   const getPixelRatio = () => {
-    const cap = isCoarsePointer ? 1.25 : 2;
+    const cap = touchDevice ? 1.25 : 2;
     return Math.min(cap, window.devicePixelRatio || 1);
   };
 
@@ -345,7 +344,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
     applyForces();
     integrate();
     mergeDroplets();
-    if (!isCoarsePointer) splitDroplets();
+    if (!touchDevice) splitDroplets();
     updateSoftBodies();
     autoSpawn();
     mouseSpawn();
@@ -390,7 +389,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
     mouse.down = false;
   };
 
-  if (!isCoarsePointer) {
+  if (!touchDevice) {
     renderer.domElement.addEventListener("pointermove", onPointerMove);
     renderer.domElement.addEventListener("pointerdown", onPointerDown);
     renderer.domElement.addEventListener("pointerup", onPointerUp);
@@ -439,7 +438,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
     cancelAnimationFrame(rafId);
     document.removeEventListener("visibilitychange", onVisibilityChange);
     resizeObserver.disconnect();
-    if (!isCoarsePointer) {
+    if (!touchDevice) {
       renderer.domElement.removeEventListener("pointermove", onPointerMove);
       renderer.domElement.removeEventListener("pointerdown", onPointerDown);
       renderer.domElement.removeEventListener("pointerup", onPointerUp);

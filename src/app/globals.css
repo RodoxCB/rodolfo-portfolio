@@ -14,7 +14,7 @@ body {
   @apply bg-bg-primary text-text-primary antialiased;
 }
 
-@media (hover: none), (pointer: coarse) {
+@media (max-width: 1023px), (hover: none), (pointer: coarse) {
   [data-liquid-glass],
   [data-liquid-glass] canvas {
     pointer-events: none !important;
@@ -38,6 +38,7 @@ body {
 }
 
 .grid-floor {
+  pointer-events: none;
   background-image:
     linear-gradient(rgba(20, 184, 166, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(20, 184, 166, 0.08) 1px, transparent 1px);
