@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
@@ -8,6 +9,11 @@ import type { Locale } from "@/i18n/config";
 import { localePath } from "@/lib/utils";
 import { CodeButton } from "./CodeButton";
 import { Logo } from "./Logo";
+
+const LiquidGlassCanvas = dynamic(
+  () => import("./hero/LiquidGlassCanvas").then((m) => m.LiquidGlassCanvas),
+  { ssr: false },
+);
 
 export function Hero({
   locale,
@@ -19,8 +25,9 @@ export function Hero({
   return (
     <section className="relative min-h-[140vh] overflow-hidden">
       <div className="absolute inset-0 h-screen">
-        <div className="grid-floor absolute inset-0" />
-        <div className="absolute inset-x-0 bottom-0 h-[30vh] bg-gradient-to-b from-transparent to-bg-primary" />
+        <div className="grid-floor absolute inset-0 z-0" aria-hidden />
+        <LiquidGlassCanvas className="absolute inset-0 z-[1] h-full w-full" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[30vh] bg-gradient-to-b from-transparent to-bg-primary" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-10 flex h-screen justify-center">

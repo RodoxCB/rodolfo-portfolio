@@ -1,0 +1,20 @@
+export const MAX_DROPLETS = 28;
+export const FIXED_DT_MS = 8;
+export const MAX_FRAME_DT_MS = 100;
+export const MAX_CATCHUP = 6;
+export const MAX_ENTRIES = MAX_DROPLETS * 2;
+
+export const DAMP = 0.993;
+export const MOUSE_R = 0.18;
+export const MOUSE_F = 0.004;
+export const TENSION_RANGE = 0.12;
+export const TENSION_F = 0.0004;
+export const MERGE_RATIO = 0.62;
+export const SPLIT_SPEED = 0.013;
+export const SPLIT_MIN_R = 0.04;
+export const MAX_SPEED = 0.015;
+export const BOUNCE = 0.4;
+export const WANDER_F = 0.00004;
+export const CENTER_PULL = 0.000008;
+export const SOFT_STIFFNESS = 0.22;
+export const SOFT_DAMPING = 0.6;
