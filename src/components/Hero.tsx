@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import type { Dictionary } from "@/i18n/get-dictionary";
@@ -22,27 +23,59 @@ export function Hero({
   locale: Locale;
   dict: Dictionary;
 }) {
+  const [showLiquidGlass, setShowLiquidGlass] = useState(false);
+
+  useEffect(() => {
+    let delayTimer: ReturnType<typeof setTimeout> | undefined;
+    let cancelled = false;
+
+    const enable = () => {
+      if (!cancelled) setShowLiquidGlass(true);
+    };
+
+    const schedule = () => {
+      const coarse = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+      const minDelay = coarse ? 2800 : 1200;
+      delayTimer = setTimeout(() => {
+        if (cancelled) return;
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(enable, { timeout: 5000 });
+        } else {
+          enable();
+        }
+      }, minDelay);
+    };
+
+    if (document.readyState === "complete") {
+      schedule();
+    } else {
+      window.addEventListener("load", schedule, { once: true });
+    }
+
+    return () => {
+      cancelled = true;
+      if (delayTimer) clearTimeout(delayTimer);
+    };
+  }, []);
+
   return (
-    <section className="relative min-h-[140vh] overflow-hidden">
-      <div className="absolute inset-0 h-screen">
+    <section className="relative min-h-[120vh] overflow-hidden md:min-h-[140vh]">
+      <div className="absolute inset-0 h-[100dvh]">
         <div className="grid-floor absolute inset-0 z-0" aria-hidden />
-        <LiquidGlassCanvas className="absolute inset-0 z-[1] h-full w-full" />
+        {showLiquidGlass && (
+          <LiquidGlassCanvas className="absolute inset-0 z-[1] h-full w-full pointer-events-none [@media(hover:hover)]:pointer-events-auto" />
+        )}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[30vh] bg-gradient-to-b from-transparent to-bg-primary" />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 z-10 flex h-screen justify-center">
+      <div className="pointer-events-none absolute inset-0 z-10 flex h-[100dvh] justify-center">
         <div className="relative mt-[20vh] flex flex-col items-center sm:mt-[22vh]">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative flex items-center justify-center"
-          >
+          <div className="animate-hero-logo relative flex items-center justify-center">
             <div className="absolute inset-0 m-auto h-40 w-40 rounded-full bg-accent-primary/20 blur-3xl animate-pulseGlow sm:h-48 sm:w-48" />
             <div className="relative flex h-28 w-28 items-center justify-center sm:h-36 sm:w-36">
               <Logo className="h-full w-full text-text-primary drop-shadow-[0_0_24px_rgba(20,184,166,0.45)]" />
             </div>
-          </motion.div>
+          </div>
 
           <div className="mt-10 animate-float">
             <ArrowDown className="block h-6 w-6 text-accent-primary" strokeWidth={2} />
@@ -50,7 +83,7 @@ export function Hero({
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto mt-[92vh] max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto mt-[72vh] max-w-6xl px-4 pb-16 sm:px-6 md:mt-[92vh] lg:px-8">
         <div className="text-center">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -112,7 +145,7 @@ export function Hero({
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="h-56 w-56 rounded-full border border-accent-primary/20 bg-accent-muted" />
           </div>
-          <h2 className="relative z-10 whitespace-pre-line text-center font-mono text-3xl font-bold uppercase tracking-wide text-text-primary sm:text-4xl md:text-5xl">
+          <h2 className="relative z-10 whitespace-pre-line text-center font-mono text-2xl font-bold uppercase tracking-normal text-text-primary sm:text-3xl sm:tracking-wide md:text-4xl lg:text-5xl">
             {dict.hero.statement}
           </h2>
         </motion.div>

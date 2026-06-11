@@ -14,7 +14,7 @@ export function Footer({
   site: Site;
 }) {
   return (
-    <footer className="border-t border-border-default bg-bg-primary">
+    <footer className="border-t border-border-default bg-bg-primary pb-[env(safe-area-inset-bottom)]">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
         <div className="space-y-4">
           <Link href={localePath(locale)} className="text-xl font-bold text-accent-primary">

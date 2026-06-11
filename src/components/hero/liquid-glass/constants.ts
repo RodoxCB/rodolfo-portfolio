@@ -1,4 +1,4 @@
-export const MAX_DROPLETS = 28;
+export const MAX_DROPLETS = 20;
 export const FIXED_DT_MS = 8;
 export const MAX_FRAME_DT_MS = 100;
 export const MAX_CATCHUP = 6;

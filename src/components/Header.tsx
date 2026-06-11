@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FolderKanban, Home, Mail, Menu, User, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
 import { localePath } from "@/lib/utils";
@@ -27,8 +27,15 @@ export function Header({
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-bg-primary/80 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-bg-primary/80 pt-[env(safe-area-inset-top)] backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 md:h-20">
         <Link href={localePath(locale)} className="group text-text-primary">
           <div className="glitch-stack-hover glitch-stack h-10 w-10">
@@ -73,7 +80,7 @@ export function Header({
           <LanguageSwitcher locale={locale} />
           <button
             type="button"
-            className="rounded-lg p-2 hover:bg-bg-tertiary md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-lg hover:bg-bg-tertiary md:hidden"
             aria-label="Toggle menu"
             onClick={() => setOpen((value) => !value)}
           >
@@ -89,7 +96,7 @@ export function Header({
               <Link
                 key={key}
                 href={localePath(locale, href)}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-bg-tertiary hover:text-text-primary"
+                className="flex min-h-11 items-center gap-2 rounded-lg px-3 py-3 text-sm text-text-secondary hover:bg-bg-tertiary hover:text-text-primary"
                 onClick={() => setOpen(false)}
               >
                 <Icon className="h-4 w-4" />

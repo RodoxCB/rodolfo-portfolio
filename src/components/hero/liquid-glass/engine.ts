@@ -26,11 +26,26 @@ import type { Droplet, MouseState } from "./types";
 
 export function createLiquidGlass(container: HTMLElement): () => void {
   const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false });
-  renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
   renderer.domElement.style.display = "block";
   renderer.domElement.style.width = "100%";
   renderer.domElement.style.height = "100%";
-  renderer.domElement.style.touchAction = "none";
+
+  const isCoarsePointer = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  const maxDroplets = isCoarsePointer ? 8 : MAX_DROPLETS;
+  const initialDroplets = isCoarsePointer ? 4 : 7;
+  const autoSpawnCap = isCoarsePointer ? 4 : 6;
+
+  renderer.domElement.style.touchAction = isCoarsePointer ? "pan-y" : "none";
+  renderer.domElement.style.pointerEvents = isCoarsePointer ? "none" : "auto";
+  if (isCoarsePointer) {
+    container.style.pointerEvents = "none";
+  }
+
+  const getPixelRatio = () => {
+    const cap = isCoarsePointer ? 1.25 : 2;
+    return Math.min(cap, window.devicePixelRatio || 1);
+  };
+
   container.appendChild(renderer.domElement);
 
   const scene = new THREE.Scene();
@@ -93,7 +108,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
   const mouse: MouseState = { x: 999, y: 999, active: false, down: false };
 
   function spawn(x: number, y: number, r: number, vx = 0, vy = 0) {
-    if (drops.length >= MAX_DROPLETS) return null;
+    if (drops.length >= maxDroplets) return null;
     const area = Math.PI * r * r;
     const angle = Math.random() * Math.PI * 2;
     const spd = 0.0003 + Math.random() * 0.0008;
@@ -119,7 +134,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
     return d;
   }
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < initialDroplets; i++) {
     spawn(
       (Math.random() - 0.5) * 0.7,
       (Math.random() - 0.5) * 0.45,
@@ -133,7 +148,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
     height = Math.max(1, Math.floor(rect.height));
     aspect = width / height;
     renderer.setSize(width, height, false);
-    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+    renderer.setPixelRatio(getPixelRatio());
     mat.uniforms.uRes.value.set(renderer.domElement.width, renderer.domElement.height);
     drawBackground();
   }
@@ -281,13 +296,13 @@ export function createLiquidGlass(container: HTMLElement): () => void {
       });
     }
     for (const a of add) {
-      if (drops.length < MAX_DROPLETS) drops.push(a);
+      if (drops.length < maxDroplets) drops.push(a);
     }
   }
 
   function autoSpawn() {
     autoTimer += FIXED_DT_MS;
-    if (autoTimer > 2000 && drops.length < 8) {
+    if (autoTimer > 2000 && drops.length < autoSpawnCap) {
       autoTimer = 0;
       spawn(
         (Math.random() - 0.5) * aspect * 0.6,
@@ -300,7 +315,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
   function mouseSpawn() {
     if (!mouse.down || !mouse.active) return;
     spawnCD -= FIXED_DT_MS;
-    if (spawnCD <= 0 && drops.length < MAX_DROPLETS) {
+    if (spawnCD <= 0 && drops.length < maxDroplets) {
       spawnCD = 120;
       spawn(
         mouse.x + (Math.random() - 0.5) * 0.02,
@@ -330,7 +345,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
     applyForces();
     integrate();
     mergeDroplets();
-    splitDroplets();
+    if (!isCoarsePointer) splitDroplets();
     updateSoftBodies();
     autoSpawn();
     mouseSpawn();
@@ -338,7 +353,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
 
   function sync() {
     dropletBuf.fill(0);
-    const n = Math.min(drops.length, MAX_DROPLETS);
+    const n = Math.min(drops.length, maxDroplets);
     for (let i = 0; i < n; i++) {
       const d = drops[i];
       dropletBuf[i * 4] = d.x;
@@ -375,10 +390,12 @@ export function createLiquidGlass(container: HTMLElement): () => void {
     mouse.down = false;
   };
 
-  renderer.domElement.addEventListener("pointermove", onPointerMove);
-  renderer.domElement.addEventListener("pointerdown", onPointerDown);
-  renderer.domElement.addEventListener("pointerup", onPointerUp);
-  renderer.domElement.addEventListener("pointerleave", onPointerLeave);
+  if (!isCoarsePointer) {
+    renderer.domElement.addEventListener("pointermove", onPointerMove);
+    renderer.domElement.addEventListener("pointerdown", onPointerDown);
+    renderer.domElement.addEventListener("pointerup", onPointerUp);
+    renderer.domElement.addEventListener("pointerleave", onPointerLeave);
+  }
 
   const resizeObserver = new ResizeObserver(() => resize());
   resizeObserver.observe(container);
@@ -422,10 +439,12 @@ export function createLiquidGlass(container: HTMLElement): () => void {
     cancelAnimationFrame(rafId);
     document.removeEventListener("visibilitychange", onVisibilityChange);
     resizeObserver.disconnect();
-    renderer.domElement.removeEventListener("pointermove", onPointerMove);
-    renderer.domElement.removeEventListener("pointerdown", onPointerDown);
-    renderer.domElement.removeEventListener("pointerup", onPointerUp);
-    renderer.domElement.removeEventListener("pointerleave", onPointerLeave);
+    if (!isCoarsePointer) {
+      renderer.domElement.removeEventListener("pointermove", onPointerMove);
+      renderer.domElement.removeEventListener("pointerdown", onPointerDown);
+      renderer.domElement.removeEventListener("pointerup", onPointerUp);
+      renderer.domElement.removeEventListener("pointerleave", onPointerLeave);
+    }
     mat.dispose();
     dropletTex.dispose();
     bgTexture.dispose();
