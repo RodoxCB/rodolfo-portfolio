@@ -11,7 +11,7 @@ const SCATTER_WORDS = [
   "interface",
   "motion",
   "glass",
-  "metaball",
+  "front-end",
 ];
 
 export function drawPortfolioBackground(
