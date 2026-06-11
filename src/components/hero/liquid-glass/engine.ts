@@ -9,9 +9,12 @@ import {
   MAX_ENTRIES,
   MAX_FRAME_DT_MS,
   MAX_SPEED,
+  MAX_DROPLET_RADIUS,
+  MAX_DROPLET_RADIUS_TOUCH,
   MERGE_RATIO,
   MOUSE_F,
   MOUSE_R,
+  SPAWN_RADIUS_MAX,
   SOFT_DAMPING,
   SOFT_STIFFNESS,
   SPLIT_MIN_R,
@@ -106,8 +109,23 @@ export function createLiquidGlass(container: HTMLElement): () => void {
   let simTime = 0;
   const mouse: MouseState = { x: 999, y: 999, active: false, down: false };
 
+  const getMaxRadius = () =>
+    touchDevice ? MAX_DROPLET_RADIUS_TOUCH : MAX_DROPLET_RADIUS;
+
+  function clampDroplet(d: Droplet) {
+    const maxR = getMaxRadius();
+    if (d.r <= maxR) return;
+    d.r = maxR;
+    d.area = Math.PI * maxR * maxR;
+  }
+
+  function enforceSizeLimits() {
+    for (const d of drops) clampDroplet(d);
+  }
+
   function spawn(x: number, y: number, r: number, vx = 0, vy = 0) {
     if (drops.length >= maxDroplets) return null;
+    r = Math.min(r, getMaxRadius() * 0.85, SPAWN_RADIUS_MAX);
     const area = Math.PI * r * r;
     const angle = Math.random() * Math.PI * 2;
     const spd = 0.0003 + Math.random() * 0.0008;
@@ -244,11 +262,14 @@ export function createLiquidGlass(container: HTMLElement): () => void {
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < (a.r + b.r) * MERGE_RATIO) {
           const na = a.area + b.area;
+          const mergedR = Math.sqrt(na / Math.PI);
+          if (mergedR > getMaxRadius()) continue;
+
           a.x = (a.x * a.area + b.x * b.area) / na;
           a.y = (a.y * a.area + b.y * b.area) / na;
           a.vx = (a.vx * a.area + b.vx * b.area) / na;
           a.vy = (a.vy * a.area + b.vy * b.area) / na;
-          a.r = Math.sqrt(na / Math.PI);
+          a.r = mergedR;
           a.area = na;
           b.alive = false;
         }
@@ -345,6 +366,7 @@ export function createLiquidGlass(container: HTMLElement): () => void {
     integrate();
     mergeDroplets();
     if (!touchDevice) splitDroplets();
+    enforceSizeLimits();
     updateSoftBodies();
     autoSpawn();
     mouseSpawn();
@@ -360,8 +382,8 @@ export function createLiquidGlass(container: HTMLElement): () => void {
       dropletBuf[i * 4 + 2] = d.r;
       dropletBuf[i * 4 + 3] = 1;
 
-      const ghostScale = 0.7;
-      const trailStr = 3.5;
+      const ghostScale = touchDevice ? 0.5 : 0.6;
+      const trailStr = touchDevice ? 2.2 : 2.8;
       const gi = (n + i) * 4;
       dropletBuf[gi] = d.x - d.softOffX * trailStr;
       dropletBuf[gi + 1] = d.y - d.softOffY * trailStr;
