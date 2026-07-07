@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import { head, put } from "@vercel/blob";
+import { put } from "@vercel/blob";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -16,14 +16,7 @@ const JSON_FILES = [
 
 const ASSET_ROOTS = ["projects", "media"];
 
-const BLOB_HOST = ".blob.vercel-storage.com";
-const LOCAL_UPLOAD_PREFIX = "/uploads/projects/";
 const LOCAL_ASSET_PREFIXES = ["/projects/", "/media/"];
-
-function isManagedUpload(url) {
-  if (!url) return false;
-  return url.startsWith(LOCAL_UPLOAD_PREFIX) || url.includes(BLOB_HOST);
-}
 
 function contentTypeFor(filePath) {
   const ext = path.extname(filePath).toLowerCase();
@@ -37,39 +30,6 @@ function contentTypeFor(filePath) {
 async function readRepoJson(relativePath) {
   const raw = await fs.readFile(path.join(dataDir, relativePath), "utf-8");
   return JSON.parse(raw);
-}
-
-async function fetchBlobJson(blobKey) {
-  try {
-    const meta = await head(blobKey);
-    const response = await fetch(meta.url, { cache: "no-store" });
-    if (!response.ok) return null;
-    return await response.json();
-  } catch {
-    return null;
-  }
-}
-
-function mergeProjects(repoProjects, existingProjects) {
-  if (!existingProjects?.length) return repoProjects;
-
-  const existingBySlug = new Map(existingProjects.map((project) => [project.slug, project]));
-
-  return repoProjects.map((project) => {
-    const existing = existingBySlug.get(project.slug);
-    if (!existing) return project;
-
-    // Thumbnail vem sempre do repositório no deploy; preserva só galeria extra do admin.
-    const existingImages = existing.images?.filter(isManagedUpload) ?? [];
-    const repoImages = project.images?.filter(Boolean) ?? [];
-    const images = existingImages.length && !repoImages.length ? existingImages : project.images;
-
-    return {
-      ...project,
-      thumbnail: project.thumbnail,
-      ...(images?.length ? { images } : {}),
-    };
-  });
 }
 
 async function collectPublicAssets(dir, base = "") {
@@ -109,11 +69,13 @@ function resolveLocalAsset(pathOrUrl, assetUrlByPath) {
     return pathOrUrl;
   }
 
+  // SVGs ficam como caminho local — URLs do Blob para SVG quebram no next/image.
+  if (pathOrUrl.endsWith(".svg")) return pathOrUrl;
+
   return assetUrlByPath.get(pathOrUrl) ?? pathOrUrl;
 }
 
-async function prepareProjectsForBlob(repoProjects, existingProjects) {
-  const merged = mergeProjects(repoProjects, existingProjects);
+async function prepareProjectsForBlob(repoProjects) {
   const assetPaths = [];
 
   for (const rootDir of ASSET_ROOTS) {
@@ -130,12 +92,14 @@ async function prepareProjectsForBlob(repoProjects, existingProjects) {
 
   for (const relativePath of assetPaths) {
     const publicPath = `/${relativePath}`;
+    if (publicPath.endsWith(".svg")) continue;
+
     const url = await uploadPublicAsset(relativePath);
     assetUrlByPath.set(publicPath, url);
     console.log(`✓ media/${relativePath} → ${url}`);
   }
 
-  return merged.map((project) => {
+  return repoProjects.map((project) => {
     const thumbnail = resolveLocalAsset(project.thumbnail, assetUrlByPath);
     const images = project.images?.map((image) => resolveLocalAsset(image, assetUrlByPath));
 
@@ -163,9 +127,8 @@ if (!process.env.BLOB_READ_WRITE_TOKEN) {
   process.exit(0);
 }
 
-const existingProjects = await fetchBlobJson("cms/projects.json");
 const repoProjects = await readRepoJson("projects.json");
-const projectsForBlob = await prepareProjectsForBlob(repoProjects, existingProjects);
+const projectsForBlob = await prepareProjectsForBlob(repoProjects);
 
 for (const relativePath of JSON_FILES) {
   if (relativePath === "projects.json") {
