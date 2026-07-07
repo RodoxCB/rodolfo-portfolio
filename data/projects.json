@@ -8,7 +8,7 @@
     "content": {
       "en": {
         "title": "Volks | Connect",
-        "description": "Fleet connectivity app for Volkswagen trucks on iOS and Android — integrating drivers, vehicles, and fleet managers with real-time monitoring and operational insights.",
+        "description": "Fleet connectivity app for Volkswagen trucks on iOS and Android, integrating drivers, vehicles, and fleet managers with real-time monitoring and operational insights.",
         "overview": [
           "Led UX from discovery to App Store and Google Play launch.",
           "Designed onboarding, vehicle simulation mode, and core fleet workflows.",
@@ -17,7 +17,7 @@
       },
       "pt": {
         "title": "Volks | Connect",
-        "description": "App de conectividade de frota para caminhões Volkswagen em iOS e Android — integrando motorista, veículo e gestor de frota com monitoramento e insights operacionais.",
+        "description": "App de conectividade de frota para caminhões Volkswagen em iOS e Android, integrando motorista, veículo e gestor de frota com monitoramento e insights operacionais.",
         "overview": [
           "Conduzi o UX do discovery ao lançamento na App Store e Google Play.",
           "Desenhei onboarding, modo simulação de veículo e fluxos centrais de frota.",
@@ -60,7 +60,7 @@
     "content": {
       "en": {
         "title": "VW Delivery Highline Cluster",
-        "description": "Digital instrument panel experience for a production light-duty truck line — bringing connectivity and driver-centric controls to the road.",
+        "description": "Digital instrument panel experience for a production light-duty truck line, bringing connectivity and driver-centric controls to the road.",
         "overview": [
           "Contributed to digital cluster UX for a shipped commercial vehicle platform.",
           "Balanced information density with glanceability for in-cab driving contexts.",
@@ -69,7 +69,7 @@
       },
       "pt": {
         "title": "Cluster VW Delivery Highline",
-        "description": "Experiência de painel digital para linha de caminhão leve em produção — conectividade e controles centrados no motorista.",
+        "description": "Experiência de painel digital para linha de caminhão leve em produção, com conectividade e controles centrados no motorista.",
         "overview": [
           "Contribuí para o UX do cluster digital em plataforma comercial já em produção.",
           "Equilibrei densidade de informação com legibilidade em contexto de condução.",
@@ -100,6 +100,222 @@
           "Desenhei UI para dashboards operacionais com alta densidade de dados.",
           "Melhorei hierarquia e clareza de tarefas para usuários não técnicos.",
           "Criei layouts responsivos e protótipos interativos."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "garage-910",
+    "featured": false,
+    "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
+    "thumbnail": "/projects/garage-910.svg",
+    "links": { "live": "https://garage-910.vercel.app/" },
+    "content": {
+      "en": {
+        "title": "Garage 910",
+        "description": "Institutional website for an automotive repair shop in Guarapari. I designed a clear service flow, a work portfolio, and a direct WhatsApp contact path so local customers find what they need fast.",
+        "overview": [
+          "Mapped the customer journey from search to quote request and structured the page around that flow.",
+          "Built the responsive layout in Next.js and shipped it on Vercel with a fast, mobile-first experience.",
+          "Used Cursor and AI to speed up component iteration while keeping visual consistency across sections."
+        ]
+      },
+      "pt": {
+        "title": "Garage 910",
+        "description": "Site institucional para oficina automotiva em Guarapari. Desenhei um fluxo claro de serviços, portfólio de trabalhos e contato direto no WhatsApp para o cliente local achar o que precisa sem rodeio.",
+        "overview": [
+          "Mapeei a jornada do cliente da busca ao orçamento e organizei a página em torno desse fluxo.",
+          "Construí o layout responsivo em Next.js e publiquei na Vercel com experiência rápida e mobile first.",
+          "Usei Cursor e IA para acelerar iteração de componentes mantendo consistência visual entre as seções."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "ct-michel-mendes",
+    "featured": false,
+    "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
+    "thumbnail": "/projects/ct-michel-mendes.svg",
+    "links": { "live": "https://ct-michel-mendes.vercel.app/" },
+    "content": {
+      "en": {
+        "title": "CT Michel Mendes",
+        "description": "Website for a Muay Thai, MMA, and Jiu-Jitsu training center in Guarapari. The UX highlights modalities, schedules, and achievements so prospects understand the gym before reaching out.",
+        "overview": [
+          "Designed information hierarchy that separates modalities, class times, and social proof without overwhelming the visitor.",
+          "Developed the interface with Next.js and deployed on Vercel for reliable performance on mobile.",
+          "Accelerated layout and copy refinements with Cursor, keeping the tone energetic and approachable for the local audience."
+        ]
+      },
+      "pt": {
+        "title": "CT Michel Mendes",
+        "description": "Site para centro de treinamento de Muay Thai, MMA e Jiu-Jitsu em Guarapari. A experiência destaca modalidades, horários e conquistas para o visitante entender a academia antes de entrar em contato.",
+        "overview": [
+          "Desenhei hierarquia de informação que separa modalidades, horários e prova social sem sobrecarregar o visitante.",
+          "Desenvolvi a interface em Next.js e publiquei na Vercel com desempenho confiável no celular.",
+          "Acelerei refinamentos de layout e copy com Cursor, mantendo tom energético e acessível para o público local."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "source-design",
+    "featured": false,
+    "tags": ["Web", "UX/UI", "Branding", "Institutional"],
+    "thumbnail": "/projects/source-design.svg",
+    "links": { "live": "https://sourcedesign.com.br/" },
+    "content": {
+      "en": {
+        "title": "Source Design",
+        "description": "Website for a graphic design and visual communication studio. Services, pricing, and contact channels are organized so potential clients quickly grasp what the studio offers and how to hire.",
+        "overview": [
+          "Structured the service catalog and pricing with scannable cards and clear CTAs for WhatsApp and email.",
+          "Translated brand identity into a cohesive web UI with consistent typography, spacing, and color rhythm.",
+          "Built and iterated the front end with Cursor and AI assistance, then shipped on Vercel for production."
+        ]
+      },
+      "pt": {
+        "title": "Source Design",
+        "description": "Site para estúdio de design gráfico e comunicação visual. Serviços, preços e canais de contato organizados para o cliente potencial entender rapidamente o que o estúdio oferece e como contratar.",
+        "overview": [
+          "Estruturei catálogo de serviços e tabela de preços com cards escaneáveis e CTAs claros para WhatsApp e e-mail.",
+          "Traduzi a identidade visual em UI web coesa, com tipografia, espaçamento e ritmo de cor consistentes.",
+          "Construí e iterei o front end com Cursor e apoio de IA, publicando na Vercel em produção."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "idea-validator",
+    "featured": true,
+    "tags": ["SaaS", "AI", "UX/UI", "Supabase", "Vercel"],
+    "thumbnail": "/projects/idea-validator.svg",
+    "links": { "live": "https://www.ideavalidator.com.br/" },
+    "content": {
+      "en": {
+        "title": "Idea Validator",
+        "description": "SaaS platform that helps founders validate startup ideas with AI. Market analysis, risk assessment, and MVP planning in minutes, with subscription plans and a client area.",
+        "overview": [
+          "Designed the end-to-end flow from idea input to structured report, balancing AI output density with readable sections.",
+          "Built authentication, plans, and client dashboard on Supabase, with the app deployed on Vercel.",
+          "Used Cursor and AI throughout the workflow to prototype UI, refine microcopy, and ship features faster without losing UX quality."
+        ]
+      },
+      "pt": {
+        "title": "Idea Validator",
+        "description": "Plataforma SaaS que ajuda fundadores a validar ideias de startup com IA. Análise de mercado, riscos e plano de MVP em minutos, com planos de assinatura e área do cliente.",
+        "overview": [
+          "Desenhei o fluxo ponta a ponta da ideia ao relatório estruturado, equilibrando densidade da IA com seções legíveis.",
+          "Implementei autenticação, planos e dashboard do cliente no Supabase, com o app publicado na Vercel.",
+          "Usei Cursor e IA em todo o fluxo de trabalho para prototipar UI, refinar microcopy e entregar features mais rápido sem perder qualidade de UX."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "henrique-lachesis",
+    "featured": false,
+    "tags": ["Web", "UX/UI", "Portfolio", "Vercel"],
+    "thumbnail": "/projects/henrique-lachesis.svg",
+    "links": { "live": "https://henrique-lachesis.vercel.app/" },
+    "content": {
+      "en": {
+        "title": "Henrique Lachésis",
+        "description": "Portfolio website for a multimedia designer from Espírito Santo. Services and project showcase are laid out so visitors explore the work naturally and reach out via WhatsApp.",
+        "overview": [
+          "Designed a portfolio grid and service sections that put visual work first while keeping navigation simple.",
+          "Developed the site in Next.js with responsive layouts tuned for showcasing images and motion work.",
+          "Deployed on Vercel and used Cursor to iterate quickly on layout variants based on client feedback."
+        ]
+      },
+      "pt": {
+        "title": "Henrique Lachésis",
+        "description": "Site portfólio para designer multimídia capixaba. Serviços e vitrine de projetos organizados para o visitante explorar o trabalho com naturalidade e entrar em contato pelo WhatsApp.",
+        "overview": [
+          "Desenhei grade de portfólio e seções de serviços que priorizam o trabalho visual com navegação simples.",
+          "Desenvolvi o site em Next.js com layouts responsivos pensados para exibir imagens e trabalhos em motion.",
+          "Publiquei na Vercel e usei Cursor para iterar rápido em variações de layout com base no feedback do cliente."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "freelas-vagas-design",
+    "featured": true,
+    "tags": ["Web", "UX/UI", "Platform", "Supabase", "Vercel"],
+    "thumbnail": "/projects/freelas-vagas-design.svg",
+    "links": { "live": "https://freelas-vagas-design.vercel.app/" },
+    "content": {
+      "en": {
+        "title": "Freelas & Design Jobs",
+        "description": "Platform connecting designers with freelance gigs and job openings. Profiles, listings, and direct contact without intermediaries, designed for a community that values transparency.",
+        "overview": [
+          "Mapped flows for posting, browsing, and contacting opportunities with minimal friction between discovery and conversation.",
+          "Built profiles, listings, and search on Supabase, with the front end on Next.js and deployment on Vercel.",
+          "Used Cursor and AI to prototype listing cards, filters, and empty states, then refined UX through real usage patterns."
+        ]
+      },
+      "pt": {
+        "title": "Freelas e Vagas de Design",
+        "description": "Plataforma para conectar designers a freelas e vagas. Perfis, listagens e contato direto sem intermediários, pensada para uma comunidade que valoriza transparência.",
+        "overview": [
+          "Mapeei fluxos de publicação, navegação e contato com o mínimo de atrito entre descoberta e conversa.",
+          "Implementei perfis, listagens e busca no Supabase, com front end em Next.js e deploy na Vercel.",
+          "Usei Cursor e IA para prototipar cards de vaga, filtros e estados vazios, refinando a UX com base em padrões de uso real."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "esclima-refrigeracao",
+    "featured": false,
+    "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
+    "thumbnail": "/projects/esclima-refrigeracao.svg",
+    "links": { "live": "https://esclima-site.vercel.app/" },
+    "content": {
+      "en": {
+        "title": "Esclima Refrigeração",
+        "description": "Website for an HVAC and refrigeration company. Services, completed projects, testimonials, and a WhatsApp quote flow give prospects confidence before they request a visit.",
+        "overview": [
+          "Organized service pages and a project gallery to build trust through real work and customer stories.",
+          "Designed clear CTAs for budget requests that work equally well on desktop and mobile.",
+          "Built with Next.js, shipped on Vercel, and iterated UI details with Cursor to match the client's professional tone."
+        ]
+      },
+      "pt": {
+        "title": "Esclima Refrigeração",
+        "description": "Site para empresa de climatização e refrigeração. Serviços, projetos realizados, depoimentos e fluxo de orçamento no WhatsApp para o cliente ganhar confiança antes de solicitar visita.",
+        "overview": [
+          "Organizei páginas de serviços e galeria de projetos para transmitir confiança com trabalhos reais e histórias de clientes.",
+          "Desenhei CTAs claros de orçamento que funcionam bem no desktop e no celular.",
+          "Construí em Next.js, publiquei na Vercel e refinei detalhes de UI com Cursor para combinar com o tom profissional do cliente."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "jp-assistencia-tecnica",
+    "featured": false,
+    "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
+    "thumbnail": "/projects/jp-assistencia-tecnica.svg",
+    "links": { "live": "https://jp-tecnic.vercel.app/" },
+    "content": {
+      "en": {
+        "title": "JP Assistência Técnica",
+        "description": "Website for a phone repair shop in Domingos Martins and region. Services, completed repairs, and WhatsApp contact are structured so locals quickly understand coverage and how to get help.",
+        "overview": [
+          "Designed a service list and repair showcase that answers the most common questions before the first message.",
+          "Prioritized mobile UX since most local customers arrive from search and social on their phones.",
+          "Developed in Next.js, deployed on Vercel, and used Cursor to tighten spacing, typography, and CTA placement."
+        ]
+      },
+      "pt": {
+        "title": "JP Assistência Técnica",
+        "description": "Site para assistência técnica de celulares em Domingos Martins e região. Serviços, trabalhos realizados e contato no WhatsApp estruturados para o cliente local entender cobertura e como pedir ajuda.",
+        "overview": [
+          "Desenhei lista de serviços e vitrine de consertos que respondem às dúvidas mais comuns antes da primeira mensagem.",
+          "Priorizei UX mobile, já que a maior parte dos clientes locais chega pela busca e redes sociais no celular.",
+          "Desenvolvi em Next.js, publiquei na Vercel e usei Cursor para ajustar espaçamento, tipografia e posição dos CTAs."
         ]
       }
     }

@@ -104,6 +104,17 @@ export default async function ProjectDetailPage({
       )}
 
       <div className="mt-10 flex flex-wrap gap-4">
+        {project.links?.live && (
+          <a
+            href={project.links.live}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-accent-primary/40 bg-accent-muted px-4 py-2 text-sm text-accent-primary hover:border-accent-primary hover:bg-accent-muted"
+          >
+            {dict.projects.viewLive}
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        )}
         {project.links?.behance && (
           <a
             href={project.links.behance}

@@ -22,6 +22,7 @@ export interface Dictionary {
     title: string;
     seeAll: string;
     viewProject: string;
+    viewLive: string;
     featured: string;
   };
   contact: {
