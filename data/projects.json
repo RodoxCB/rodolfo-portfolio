@@ -108,7 +108,7 @@
     "slug": "garage-910",
     "featured": false,
     "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
-    "thumbnail": "/projects/garage-910.svg",
+    "thumbnail": "/media/covers/garage-910.png",
     "links": { "live": "https://garage-910.vercel.app/" },
     "content": {
       "en": {
@@ -135,7 +135,7 @@
     "slug": "ct-michel-mendes",
     "featured": false,
     "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
-    "thumbnail": "/projects/ct-michel-mendes.svg",
+    "thumbnail": "/media/covers/ct-michel-mendes.png",
     "links": { "live": "https://ct-michel-mendes.vercel.app/" },
     "content": {
       "en": {
@@ -162,7 +162,7 @@
     "slug": "source-design",
     "featured": false,
     "tags": ["Web", "UX/UI", "Branding", "Institutional"],
-    "thumbnail": "/projects/source-design.svg",
+    "thumbnail": "/media/covers/source-design.png",
     "links": { "live": "https://sourcedesign.com.br/" },
     "content": {
       "en": {
@@ -189,7 +189,7 @@
     "slug": "idea-validator",
     "featured": true,
     "tags": ["SaaS", "AI", "UX/UI", "Supabase", "Vercel"],
-    "thumbnail": "/projects/idea-validator.svg",
+    "thumbnail": "/media/covers/idea-validator.png",
     "links": { "live": "https://www.ideavalidator.com.br/" },
     "content": {
       "en": {
@@ -216,7 +216,7 @@
     "slug": "henrique-lachesis",
     "featured": false,
     "tags": ["Web", "UX/UI", "Portfolio", "Vercel"],
-    "thumbnail": "/projects/henrique-lachesis.svg",
+    "thumbnail": "/media/covers/henrique-lachesis.png",
     "links": { "live": "https://henrique-lachesis.vercel.app/" },
     "content": {
       "en": {
@@ -243,7 +243,7 @@
     "slug": "freelas-vagas-design",
     "featured": true,
     "tags": ["Web", "UX/UI", "Platform", "Supabase", "Vercel"],
-    "thumbnail": "/projects/freelas-vagas-design.svg",
+    "thumbnail": "/media/covers/freelas-vagas-design.png",
     "links": { "live": "https://freelas-vagas-design.vercel.app/" },
     "content": {
       "en": {
@@ -270,7 +270,7 @@
     "slug": "esclima-refrigeracao",
     "featured": false,
     "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
-    "thumbnail": "/projects/esclima-refrigeracao.svg",
+    "thumbnail": "/media/covers/esclima-refrigeracao.png",
     "links": { "live": "https://esclima-site.vercel.app/" },
     "content": {
       "en": {
@@ -297,7 +297,7 @@
     "slug": "jp-assistencia-tecnica",
     "featured": false,
     "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
-    "thumbnail": "/projects/jp-assistencia-tecnica.svg",
+    "thumbnail": "/media/covers/jp-assistencia-tecnica.png",
     "links": { "live": "https://jp-tecnic.vercel.app/" },
     "content": {
       "en": {
