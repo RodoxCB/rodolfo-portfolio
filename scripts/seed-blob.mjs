@@ -15,8 +15,8 @@ const files = [
 ];
 
 if (!process.env.BLOB_READ_WRITE_TOKEN) {
-  console.error("Defina BLOB_READ_WRITE_TOKEN antes de rodar este script.");
-  process.exit(1);
+  console.log("BLOB_READ_WRITE_TOKEN não definido — pulando sync do CMS para o Blob.");
+  process.exit(0);
 }
 
 for (const relativePath of files) {
