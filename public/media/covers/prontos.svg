@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#050505"/>
+  <rect x="100" y="90" width="1000" height="495" rx="24" fill="#171a21" stroke="#334155"/>
+  <rect x="140" y="140" width="220" height="395" rx="16" fill="#0f1115"/>
+  <rect x="390" y="140" width="670" height="120" rx="16" fill="#0f766e" opacity="0.2"/>
+  <rect x="390" y="290" width="320" height="120" rx="16" fill="#14b8a6" opacity="0.15"/>
+  <rect x="740" y="290" width="320" height="120" rx="16" fill="#14b8a6" opacity="0.15"/>
+  <rect x="390" y="440" width="670" height="95" rx="16" fill="#0f1115" stroke="#334155"/>
+  <text x="140" y="585" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30" font-weight="700">prontos!</text>
+</svg>

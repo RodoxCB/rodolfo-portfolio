@@ -3,7 +3,7 @@
     "slug": "volks-connect",
     "featured": true,
     "tags": ["UX/UI", "Mobile", "Automotive", "Fleet"],
-    "thumbnail": "/projects/volks-connect.svg",
+    "thumbnail": "/media/covers/volks-connect.svg",
     "links": { "behance": "https://www.behance.net/rodolfobehr" },
     "content": {
       "en": {
@@ -30,7 +30,7 @@
     "slug": "vwtb-hmi",
     "featured": true,
     "tags": ["HMI", "Infotainment", "Cluster", "Automotive"],
-    "thumbnail": "/projects/vwtb-hmi.svg",
+    "thumbnail": "/media/covers/vwtb-hmi.svg",
     "content": {
       "en": {
         "title": "VWTB HMI Ecosystem",
@@ -56,7 +56,7 @@
     "slug": "delivery-highline",
     "featured": true,
     "tags": ["HMI", "Cluster", "Automotive"],
-    "thumbnail": "/projects/delivery-highline.svg",
+    "thumbnail": "/media/covers/delivery-highline.svg",
     "content": {
       "en": {
         "title": "VW Delivery Highline Cluster",
@@ -82,7 +82,7 @@
     "slug": "prontos",
     "featured": false,
     "tags": ["B2B", "Health", "Dashboard", "Web"],
-    "thumbnail": "/projects/prontos.svg",
+    "thumbnail": "/media/covers/prontos.svg",
     "content": {
       "en": {
         "title": "prontos! Platform",

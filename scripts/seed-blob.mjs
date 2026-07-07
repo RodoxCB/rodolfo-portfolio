@@ -59,13 +59,14 @@ function mergeProjects(repoProjects, existingProjects) {
     const existing = existingBySlug.get(project.slug);
     if (!existing) return project;
 
-    const thumbnail = isManagedUpload(existing.thumbnail) ? existing.thumbnail : project.thumbnail;
+    // Thumbnail vem sempre do repositório no deploy; preserva só galeria extra do admin.
     const existingImages = existing.images?.filter(isManagedUpload) ?? [];
-    const images = existingImages.length ? existingImages : project.images;
+    const repoImages = project.images?.filter(Boolean) ?? [];
+    const images = existingImages.length && !repoImages.length ? existingImages : project.images;
 
     return {
       ...project,
-      thumbnail,
+      thumbnail: project.thumbnail,
       ...(images?.length ? { images } : {}),
     };
   });
