@@ -21,7 +21,8 @@ export function ProjectCard({
   const content = project.content[locale];
   const cover = getProjectCover(project);
   const href = localePath(locale, `/projects/${project.slug}`);
-  const title = project.tags.slice(0, 2).join(" · ");
+  // One tag keeps the subtitle readable inside the portrait card.
+  const title = project.tags[0] ?? "";
 
   return (
     <article className="w-full">
