@@ -3,7 +3,8 @@
     "slug": "volks-connect",
     "featured": true,
     "tags": ["UX/UI", "Mobile", "Automotive", "Fleet"],
-    "thumbnail": "/media/covers/volks-connect.svg",
+    "thumbnail": "/media/covers/volks-connect.jpg",
+    "images": ["/media/covers/volks-connect.jpg"],
     "links": { "behance": "https://www.behance.net/rodolfobehr" },
     "content": {
       "en": {
@@ -30,7 +31,8 @@
     "slug": "vwtb-hmi",
     "featured": true,
     "tags": ["HMI", "Infotainment", "Cluster", "Automotive"],
-    "thumbnail": "/media/covers/vwtb-hmi.svg",
+    "thumbnail": "/media/covers/vwtb-hmi.jpg",
+    "images": ["/media/covers/vwtb-hmi.jpg"],
     "content": {
       "en": {
         "title": "VWTB HMI Ecosystem",
@@ -56,7 +58,8 @@
     "slug": "delivery-highline",
     "featured": true,
     "tags": ["HMI", "Cluster", "Automotive"],
-    "thumbnail": "/media/covers/delivery-highline.svg",
+    "thumbnail": "/media/covers/delivery-highline.jpg",
+    "images": ["/media/covers/delivery-highline.jpg"],
     "content": {
       "en": {
         "title": "VW Delivery Highline Cluster",
