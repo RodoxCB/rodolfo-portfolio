@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 import { cmsSaveErrorResponse, requireAdmin } from "@/lib/admin-api";
 
 export const dynamic = "force-dynamic";
-import { getProjects, saveProjects, MAX_PROJECT_IMAGES, type Project } from "@/lib/cms/projects";
+import { getProjectsDraft, saveProjects, MAX_PROJECT_IMAGES, type Project } from "@/lib/cms/projects";
 
 export async function GET() {
   const unauthorized = await requireAdmin();
   if (unauthorized) return unauthorized;
 
-  const projects = await getProjects();
+  const projects = await getProjectsDraft();
   return NextResponse.json(projects);
 }
 

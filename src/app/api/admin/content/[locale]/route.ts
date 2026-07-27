@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { cmsSaveErrorResponse, requireAdmin } from "@/lib/admin-api";
 
 export const dynamic = "force-dynamic";
-import { getDictionaryFromCms, saveDictionary } from "@/lib/cms/dictionaries";
+import { getDictionaryDraft, saveDictionary } from "@/lib/cms/dictionaries";
 import { isLocale, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
@@ -18,7 +18,7 @@ export async function GET(
     return NextResponse.json({ error: "Invalid locale" }, { status: 400 });
   }
 
-  const dictionary = await getDictionaryFromCms(locale as Locale);
+  const dictionary = await getDictionaryDraft(locale as Locale);
   return NextResponse.json(dictionary);
 }
 

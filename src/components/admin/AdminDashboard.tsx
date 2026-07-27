@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import type { SiteConfig } from "@/lib/cms/site";
 import type { Project } from "@/lib/cms/projects";
 import { formatTagsInput, ProjectEditor, prepareProjectForSave } from "./ProjectEditor";
+import { ContentEditor } from "./ContentEditor";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 type Tab = "site" | "projects" | "en" | "pt";
@@ -51,21 +52,31 @@ export function AdminDashboard() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [publishing, setPublishing] = useState(false);
+  const [hasUnpublishedChanges, setHasUnpublishedChanges] = useState(false);
 
   const [site, setSite] = useState<SiteConfig | null>(null);
   const [projects, setProjects] = useState<Project[]>([]);
   const [tagsDraft, setTagsDraft] = useState<string[]>([]);
-  const [contentEn, setContentEn] = useState("");
-  const [contentPt, setContentPt] = useState("");
+  const [dictEn, setDictEn] = useState<Dictionary | null>(null);
+  const [dictPt, setDictPt] = useState<Dictionary | null>(null);
+
+  async function refreshStatus() {
+    const res = await fetch("/api/admin/status");
+    if (!res.ok) return;
+    const data = (await res.json()) as { hasUnpublishedChanges?: boolean };
+    setHasUnpublishedChanges(Boolean(data.hasUnpublishedChanges));
+  }
 
   useEffect(() => {
     async function load() {
       try {
-        const [siteRes, projectsRes, enRes, ptRes] = await Promise.all([
+        const [siteRes, projectsRes, enRes, ptRes, statusRes] = await Promise.all([
           fetch("/api/admin/site"),
           fetch("/api/admin/projects"),
           fetch("/api/admin/content/en"),
           fetch("/api/admin/content/pt"),
+          fetch("/api/admin/status"),
         ]);
 
         if ([siteRes, projectsRes, enRes, ptRes].some((r) => r.status === 401)) {
@@ -73,18 +84,20 @@ export function AdminDashboard() {
           return;
         }
 
-        const [siteData, projectsData, enData, ptData] = await Promise.all([
+        const [siteData, projectsData, enData, ptData, statusData] = await Promise.all([
           siteRes.json(),
           projectsRes.json(),
           enRes.json(),
           ptRes.json(),
+          statusRes.ok ? statusRes.json() : Promise.resolve({ hasUnpublishedChanges: false }),
         ]);
 
         setSite(siteData);
         setProjects(projectsData);
         setTagsDraft(projectsData.map((project: Project) => formatTagsInput(project.tags)));
-        setContentEn(JSON.stringify(enData, null, 2));
-        setContentPt(JSON.stringify(ptData, null, 2));
+        setDictEn(enData);
+        setDictPt(ptData);
+        setHasUnpublishedChanges(Boolean(statusData.hasUnpublishedChanges));
       } finally {
         setLoading(false);
       }
@@ -103,7 +116,12 @@ export function AdminDashboard() {
       body: JSON.stringify(site),
     });
     setSaving(false);
-    setMessage(res.ok ? "Site salvo com sucesso." : "Erro ao salvar site.");
+    if (res.ok) {
+      setMessage("Rascunho do site salvo. Use o preview antes de publicar.");
+      await refreshStatus();
+    } else {
+      setMessage("Erro ao salvar rascunho do site.");
+    }
   }
 
   async function saveProjects() {
@@ -121,33 +139,65 @@ export function AdminDashboard() {
     if (res.ok) {
       setProjects(payload);
       setTagsDraft(payload.map((project) => formatTagsInput(project.tags)));
-      setMessage("Projetos salvos com sucesso.");
+      setMessage("Rascunho dos projetos salvo. Use o preview antes de publicar.");
+      await refreshStatus();
     } else {
       const error = (await res.json().catch(() => null)) as { error?: string } | null;
-      setMessage(error?.error || "Erro ao salvar projetos.");
+      setMessage(error?.error || "Erro ao salvar rascunho dos projetos.");
     }
   }
 
   async function saveContent(locale: "en" | "pt") {
+    const dict = locale === "en" ? dictEn : dictPt;
+    if (!dict) return;
+
     setSaving(true);
     setMessage("");
-    try {
-      const raw = locale === "en" ? contentEn : contentPt;
-      const parsed = JSON.parse(raw) as Dictionary;
-      const res = await fetch(`/api/admin/content/${locale}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(parsed),
-      });
-      setMessage(res.ok ? `Conteúdo ${locale.toUpperCase()} salvo.` : "Erro ao salvar conteúdo.");
-    } catch {
-      setMessage("JSON inválido. Verifique a formatação.");
-    } finally {
-      setSaving(false);
+    const res = await fetch(`/api/admin/content/${locale}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dict),
+    });
+    setSaving(false);
+    if (res.ok) {
+      setMessage(`Rascunho ${locale.toUpperCase()} salvo. Use o preview antes de publicar.`);
+      await refreshStatus();
+    } else {
+      setMessage("Erro ao salvar rascunho de conteúdo.");
+    }
+  }
+
+  async function openPreview(locale: "en" | "pt" = "pt") {
+    setMessage("");
+    const res = await fetch("/api/admin/preview", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ enabled: true }),
+    });
+    if (!res.ok) {
+      setMessage("Não foi possível ativar o preview.");
+      return;
+    }
+    window.open(`/${locale}`, "_blank", "noopener,noreferrer");
+  }
+
+  async function publishAll() {
+    setPublishing(true);
+    setMessage("");
+    const res = await fetch("/api/admin/publish", { method: "POST" });
+    setPublishing(false);
+    if (res.ok) {
+      setHasUnpublishedChanges(false);
+      setMessage("Alterações publicadas no site ao vivo.");
+      await refreshStatus();
+    } else {
+      const error = (await res.json().catch(() => null)) as { error?: string } | null;
+      setMessage(error?.error || "Erro ao publicar alterações.");
     }
   }
 
   async function logout() {
+    await fetch("/api/admin/preview", { method: "DELETE" }).catch(() => undefined);
     await fetch("/api/admin/logout", { method: "POST" });
     router.push("/admin/login");
     router.refresh();
@@ -199,8 +249,8 @@ export function AdminDashboard() {
             [
               ["site", "Geral"],
               ["projects", "Projetos"],
-              ["en", "Conteúdo EN"],
-              ["pt", "Conteúdo PT"],
+              ["en", "Menus & textos EN"],
+              ["pt", "Menus & textos PT"],
             ] as const
           ).map(([id, label]) => (
             <button
@@ -218,9 +268,43 @@ export function AdminDashboard() {
           ))}
         </nav>
 
-        <div className="mt-8 space-y-2 border-t border-border-default pt-6">
-          <a href="/en" target="_blank" className="block text-sm text-text-secondary hover:text-accent-primary">
-            Ver site →
+        <div className="mt-8 space-y-3 border-t border-border-default pt-6">
+          <div
+            className={`rounded-lg border px-3 py-2 text-xs ${
+              hasUnpublishedChanges
+                ? "border-amber-500/40 bg-amber-500/10 text-amber-200"
+                : "border-border-default bg-bg-secondary text-text-secondary"
+            }`}
+          >
+            {hasUnpublishedChanges
+              ? "Há alterações em rascunho aguardando publicação."
+              : "Site ao vivo está sincronizado com o rascunho."}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => openPreview("pt")}
+            className="block w-full rounded-lg border border-border-default px-3 py-2 text-left text-sm text-text-secondary hover:bg-bg-secondary hover:text-accent-primary"
+          >
+            Abrir preview PT →
+          </button>
+          <button
+            type="button"
+            onClick={() => openPreview("en")}
+            className="block w-full rounded-lg border border-border-default px-3 py-2 text-left text-sm text-text-secondary hover:bg-bg-secondary hover:text-accent-primary"
+          >
+            Abrir preview EN →
+          </button>
+          <button
+            type="button"
+            onClick={publishAll}
+            disabled={publishing || !hasUnpublishedChanges}
+            className="block w-full rounded-lg bg-accent-primary px-3 py-2 text-left text-sm font-semibold text-bg-primary disabled:opacity-50"
+          >
+            {publishing ? "Publicando..." : "Publicar alterações"}
+          </button>
+          <a href="/pt" target="_blank" className="block text-sm text-text-secondary hover:text-accent-primary">
+            Ver site ao vivo →
           </a>
           <button type="button" onClick={logout} className="text-sm text-text-secondary hover:text-red-400">
             Sair
@@ -238,6 +322,9 @@ export function AdminDashboard() {
         {tab === "site" && site && (
           <section className="space-y-4 rounded-2xl border border-border-default bg-bg-secondary p-6">
             <h2 className="text-lg font-semibold">Configurações gerais</h2>
+            <p className="text-sm text-text-secondary">
+              Salvar grava apenas o rascunho. Publique depois de conferir no preview.
+            </p>
             <div className="grid gap-4 md:grid-cols-2">
               <Field label="Nome" value={site.name} onChange={(v) => setSite({ ...site, name: v })} />
               <Field label="E-mail" value={site.email} onChange={(v) => setSite({ ...site, email: v })} />
@@ -248,7 +335,7 @@ export function AdminDashboard() {
               <Field label="GitHub" value={site.links.github} onChange={(v) => setSite({ ...site, links: { ...site.links, github: v } })} />
             </div>
             <button type="button" onClick={saveSite} disabled={saving} className="rounded-lg bg-accent-primary px-5 py-2 text-sm font-semibold text-bg-primary disabled:opacity-50">
-              Salvar geral
+              Salvar rascunho
             </button>
           </section>
         )}
@@ -256,7 +343,12 @@ export function AdminDashboard() {
         {tab === "projects" && (
           <section className="space-y-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Projetos</h2>
+              <div>
+                <h2 className="text-lg font-semibold">Projetos</h2>
+                <p className="mt-1 text-sm text-text-secondary">
+                  Alterações ficam em rascunho até a publicação.
+                </p>
+              </div>
               <button type="button" onClick={addProject} className="rounded-lg border border-border-default px-4 py-2 text-sm hover:bg-bg-secondary">
                 + Novo projeto
               </button>
@@ -274,43 +366,25 @@ export function AdminDashboard() {
             ))}
 
             <button type="button" onClick={saveProjects} disabled={saving} className="rounded-lg bg-accent-primary px-5 py-2 text-sm font-semibold text-bg-primary disabled:opacity-50">
-              Salvar projetos
+              Salvar rascunho
             </button>
           </section>
         )}
 
-        {tab === "en" && (
+        {tab === "en" && dictEn && (
           <section className="space-y-4 rounded-2xl border border-border-default bg-bg-secondary p-6">
-            <h2 className="text-lg font-semibold">Conteúdo — English</h2>
-            <p className="text-sm text-text-secondary">
-              Edite textos do site em inglês (hero, about, contact, footer, etc.).
-            </p>
-            <textarea
-              value={contentEn}
-              onChange={(e) => setContentEn(e.target.value)}
-              rows={28}
-              className="w-full rounded-lg border border-border-default bg-bg-primary p-4 font-mono text-xs outline-none focus:border-accent-primary"
-            />
+            <ContentEditor value={dictEn} onChange={setDictEn} localeLabel="English" />
             <button type="button" onClick={() => saveContent("en")} disabled={saving} className="rounded-lg bg-accent-primary px-5 py-2 text-sm font-semibold text-bg-primary disabled:opacity-50">
-              Salvar conteúdo EN
+              Salvar rascunho EN
             </button>
           </section>
         )}
 
-        {tab === "pt" && (
+        {tab === "pt" && dictPt && (
           <section className="space-y-4 rounded-2xl border border-border-default bg-bg-secondary p-6">
-            <h2 className="text-lg font-semibold">Conteúdo — Português</h2>
-            <p className="text-sm text-text-secondary">
-              Edite textos do site em português.
-            </p>
-            <textarea
-              value={contentPt}
-              onChange={(e) => setContentPt(e.target.value)}
-              rows={28}
-              className="w-full rounded-lg border border-border-default bg-bg-primary p-4 font-mono text-xs outline-none focus:border-accent-primary"
-            />
+            <ContentEditor value={dictPt} onChange={setDictPt} localeLabel="Português" />
             <button type="button" onClick={() => saveContent("pt")} disabled={saving} className="rounded-lg bg-accent-primary px-5 py-2 text-sm font-semibold text-bg-primary disabled:opacity-50">
-              Salvar conteúdo PT
+              Salvar rascunho PT
             </button>
           </section>
         )}

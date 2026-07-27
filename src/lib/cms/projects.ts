@@ -1,5 +1,6 @@
 import { normalizeProject, MAX_PROJECT_IMAGES } from "./project-images";
-import { readJsonFile, writeJsonFile } from "./storage";
+import { getContentSource } from "./content-source";
+import { readBySource, readDraftOrLive, writeDraft } from "./storage";
 
 export type ProjectLocaleContent = {
   title: string;
@@ -25,8 +26,18 @@ export type Project = {
 
 export { MAX_PROJECT_IMAGES };
 
+async function loadProjects(source: "live" | "draft") {
+  const projects = await readBySource<Project[]>("projects.json", source);
+  return projects.map(normalizeProject);
+}
+
 export async function getProjects(): Promise<Project[]> {
-  const projects = await readJsonFile<Project[]>("projects.json");
+  const source = await getContentSource();
+  return loadProjects(source);
+}
+
+export async function getProjectsDraft(): Promise<Project[]> {
+  const projects = await readDraftOrLive<Project[]>("projects.json");
   return projects.map(normalizeProject);
 }
 
@@ -35,7 +46,7 @@ export async function saveProjects(projects: Project[]) {
     ...project,
     images: project.images?.slice(0, MAX_PROJECT_IMAGES),
   }));
-  await writeJsonFile("projects.json", normalized);
+  await writeDraft("projects.json", normalized);
 }
 
 export async function getProject(slug: string) {

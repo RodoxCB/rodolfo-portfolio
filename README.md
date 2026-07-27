@@ -44,12 +44,18 @@ ADMIN_PASSWORD=rodolfo2026
 ADMIN_SECRET=rodolfo-portfolio-dev-secret
 ```
 
+**Workflow**
+1. Edit content in the admin (geral, projetos, menus & textos EN/PT)
+2. Click **Salvar rascunho** — changes are **not** live yet
+3. Click **Abrir preview** to review the draft on the real site layout
+4. Click **Publicar alterações** to push the draft to the public site
+
 **Sections:**
 - **Geral** — name, email, phone, social links
 - **Projetos** — CRUD projects (EN/PT content, tags, featured)
-- **Conteúdo EN/PT** — full dictionary JSON (hero, about, contact, footer)
+- **Menus & textos EN/PT** — structured editors for nav, hero, background statement, about, contact, footer
 
-Data is stored in `/data` as JSON files.
+Published data lives in `/data` as JSON. Drafts are stored under `/data/drafts` (or Blob `cms/drafts/` in production).
 
 ## Next steps
 

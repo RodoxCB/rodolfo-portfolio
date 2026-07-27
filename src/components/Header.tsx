@@ -20,9 +20,11 @@ const navItems = [
 export function Header({
   locale,
   dict,
+  preview = false,
 }: {
   locale: Locale;
   dict: Dictionary;
+  preview?: boolean;
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -35,7 +37,11 @@ export function Header({
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-bg-primary/80 pt-[env(safe-area-inset-top)] backdrop-blur-md">
+    <header
+      className={`fixed inset-x-0 z-50 border-b border-transparent bg-bg-primary/80 pt-[env(safe-area-inset-top)] backdrop-blur-md ${
+        preview ? "top-12" : "top-0"
+      }`}
+    >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 md:h-20">
         <Link href={localePath(locale)} className="group text-text-primary">
           <div className="glitch-stack-hover glitch-stack h-10 w-10">

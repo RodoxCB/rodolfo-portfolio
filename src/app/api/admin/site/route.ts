@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 import { cmsSaveErrorResponse, requireAdmin } from "@/lib/admin-api";
 
 export const dynamic = "force-dynamic";
-import { getSiteConfig, saveSiteConfig, type SiteConfig } from "@/lib/cms/site";
+import { getSiteConfigDraft, saveSiteConfig, type SiteConfig } from "@/lib/cms/site";
 
 export async function GET() {
   const unauthorized = await requireAdmin();
   if (unauthorized) return unauthorized;
 
-  const site = await getSiteConfig();
+  const site = await getSiteConfigDraft();
   return NextResponse.json(site);
 }
 
