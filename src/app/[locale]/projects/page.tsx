@@ -26,7 +26,7 @@ export default async function ProjectsPage({
         <SectionHeading title={dict.projects.title} />
       </div>
 
-      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid items-stretch justify-items-center gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} locale={locale as Locale} dict={dict} />
         ))}
