@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
+import Image from "next/image";
+import { shouldOptimizeImage } from "@/lib/image";
 import "./ProfileCard.css";
 
 const DEFAULT_INNER_GRADIENT =
@@ -368,37 +370,52 @@ function ProfileCardComponent({
             <div className="pc-shine" />
             <div className="pc-glare" />
             <div className="pc-content pc-avatar-content">
-              <img
-                className="avatar"
-                src={avatarUrl}
-                alt={`${name || "Project"} cover`}
-                loading="lazy"
-                decoding="async"
-                onError={(e) => {
-                  const t = e.currentTarget;
-                  if (t.dataset.failed === "1") return;
-                  t.dataset.failed = "1";
-                  t.style.visibility = "hidden";
-                }}
-              />
+              <div className="pc-avatar-frame">
+                <Image
+                  className="avatar"
+                  src={avatarUrl}
+                  alt={`${name || "Project"} cover`}
+                  fill
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
+                  unoptimized={!shouldOptimizeImage(avatarUrl)}
+                  onError={(e) => {
+                    const t = e.currentTarget;
+                    if (t.dataset.failed === "1") return;
+                    t.dataset.failed = "1";
+                    t.style.visibility = "hidden";
+                  }}
+                />
+              </div>
               <div className="pc-cover-fade" aria-hidden />
               {showUserInfo && (
                 <div className="pc-user-info">
                   <div className="pc-user-details">
-                    <div className="pc-mini-avatar">
-                      <img
-                        src={miniAvatarUrl || avatarUrl}
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                        onError={(e) => {
-                          const t = e.currentTarget;
-                          if (t.dataset.failed === "1") return;
-                          t.dataset.failed = "1";
-                          t.style.visibility = "hidden";
-                        }}
+                    {!miniAvatarUrl || miniAvatarUrl === avatarUrl ? (
+                      // Same image as the cover above: reuse it as a CSS
+                      // background instead of mounting a second <img>/Image,
+                      // so the cover is only decoded/painted once per card.
+                      <div
+                        className="pc-mini-avatar pc-mini-avatar--bg"
+                        style={{ backgroundImage: `url(${avatarUrl})` }}
+                        aria-hidden
                       />
-                    </div>
+                    ) : (
+                      <div className="pc-mini-avatar">
+                        <Image
+                          src={miniAvatarUrl}
+                          alt=""
+                          width={36}
+                          height={36}
+                          unoptimized={!shouldOptimizeImage(miniAvatarUrl)}
+                          onError={(e) => {
+                            const t = e.currentTarget;
+                            if (t.dataset.failed === "1") return;
+                            t.dataset.failed = "1";
+                            t.style.visibility = "hidden";
+                          }}
+                        />
+                      </div>
+                    )}
                     <div className="pc-user-text">
                       {handle ? <div className="pc-handle">@{handle}</div> : null}
                       {status ? <div className="pc-status">{status}</div> : null}
