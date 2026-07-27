@@ -40,7 +40,7 @@ Manage site content at **`/admin`**
 Default password (change in `.env.local`):
 
 ```
-ADMIN_PASSWORD=rodolfo2026
+ADMIN_PASSWORD=1234567890
 ADMIN_SECRET=rodolfo-portfolio-dev-secret
 ```
 

@@ -42,7 +42,7 @@ async function signPayload(payload: string) {
 }
 
 export function getAdminPassword() {
-  return process.env.ADMIN_PASSWORD || "rodolfo2026";
+  return process.env.ADMIN_PASSWORD || "1234567890";
 }
 
 export async function createSessionToken() {
