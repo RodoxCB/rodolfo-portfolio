@@ -58,8 +58,16 @@
     "slug": "delivery-highline",
     "featured": true,
     "tags": ["HMI", "Cluster", "Automotive"],
-    "thumbnail": "/media/covers/delivery-highline.jpg",
-    "images": ["/media/covers/delivery-highline.jpg"],
+    "thumbnail": "/media/covers/cluster/single-gauge.png",
+    "images": [
+      "/media/covers/cluster/single-gauge.png",
+      "/media/covers/cluster/adas.png",
+      "/media/covers/cluster/navigation.png",
+      "/media/covers/cluster/vehicle-info.png",
+      "/media/covers/cluster/gauge-menu.png",
+      "/media/covers/cluster/standard-view.png",
+      "/media/covers/delivery-highline.jpg"
+    ],
     "content": {
       "en": {
         "title": "VW Delivery Highline Cluster",
