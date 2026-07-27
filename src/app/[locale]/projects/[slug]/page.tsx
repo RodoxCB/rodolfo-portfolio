@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { getProject, getProjects } from "@/content/projects";
+import { getProject, getProjectsLive } from "@/content/projects";
 import { getProjectCover } from "@/lib/cms/project-images";
 import { shouldOptimizeImage } from "@/lib/image";
 import { getSite } from "@/content/site";
@@ -13,7 +13,7 @@ import { localePath } from "@/lib/utils";
 export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
-  const projects = await getProjects();
+  const projects = await getProjectsLive();
   return projects.flatMap((project) =>
     ["en", "pt"].map((locale) => ({
       locale,

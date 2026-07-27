@@ -36,6 +36,11 @@ export async function getProjects(): Promise<Project[]> {
   return loadProjects(source);
 }
 
+/** Always reads published projects — safe for generateStaticParams / build. */
+export async function getProjectsLive(): Promise<Project[]> {
+  return loadProjects("live");
+}
+
 export async function getProjectsDraft(): Promise<Project[]> {
   const projects = await readDraftOrLive<Project[]>("projects.json");
   return projects.map(normalizeProject);

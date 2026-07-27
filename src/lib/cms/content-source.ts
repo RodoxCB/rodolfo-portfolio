@@ -6,13 +6,18 @@ export const PREVIEW_COOKIE = "cms_preview";
 export type ContentSource = "live" | "draft";
 
 export async function getContentSource(): Promise<ContentSource> {
-  const cookieStore = await cookies();
-  if (cookieStore.get(PREVIEW_COOKIE)?.value !== "1") {
+  try {
+    const cookieStore = await cookies();
+    if (cookieStore.get(PREVIEW_COOKIE)?.value !== "1") {
+      return "live";
+    }
+
+    const ok = await isAdminAuthenticated();
+    return ok ? "draft" : "live";
+  } catch {
+    // generateStaticParams / build run outside a request scope.
     return "live";
   }
-
-  const ok = await isAdminAuthenticated();
-  return ok ? "draft" : "live";
 }
 
 export async function isPreviewMode(): Promise<boolean> {
