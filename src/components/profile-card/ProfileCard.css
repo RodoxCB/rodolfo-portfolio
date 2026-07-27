@@ -362,27 +362,26 @@
 }
 
 .pc-handle {
-  font-size: 12px;
+  font-size: clamp(0.625rem, 1.8vw, 0.7rem);
   font-weight: 500;
   color: rgba(248, 250, 252, 0.9);
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 120px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .pc-status {
-  font-size: 11px;
+  font-size: clamp(0.5625rem, 1.6vw, 0.6875rem);
   color: #14b8a6;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .pc-contact-btn {
   border: 1px solid rgba(20, 184, 166, 0.35);
   border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 11px;
+  padding: 7px 10px;
+  font-size: clamp(0.5625rem, 1.6vw, 0.6875rem);
   font-weight: 600;
   color: #f8fafc;
   background: rgba(20, 184, 166, 0.12);
@@ -416,21 +415,25 @@
 .pc-details {
   width: 100%;
   position: absolute;
-  top: 1.25rem;
+  top: 1.1rem;
   left: 0;
   right: 0;
-  padding: 0 1rem;
+  padding: 0 0.85rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
+  gap: 0.2rem;
 }
 
 .pc-details h3 {
   font-weight: 600;
   margin: 0;
-  font-size: clamp(1.15rem, 2.6vw, 1.65rem);
-  line-height: 1.2;
+  font-size: clamp(0.92rem, 2.1vw, 1.28rem);
+  line-height: 1.15;
+  max-width: 100%;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   background-image: linear-gradient(to bottom, #f8fafc, #14b8a6);
   background-size: 1em 1.6em;
   -webkit-text-fill-color: transparent;
@@ -441,11 +444,13 @@
 .pc-details p {
   font-weight: 500;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   max-width: 100%;
-  font-size: 0.8rem;
+  font-size: clamp(0.65rem, 1.7vw, 0.75rem);
+  line-height: 1.25;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
   background-image: linear-gradient(to bottom, #e2e8f0, #0f766e);
   background-size: 1em 1.6em;
   -webkit-text-fill-color: transparent;
@@ -475,16 +480,22 @@
   }
 
   .pc-details {
-    top: 1rem;
+    top: 0.9rem;
+    padding: 0 0.75rem;
   }
 
   .pc-details h3 {
-    font-size: clamp(1.05rem, 4vw, 1.4rem);
+    font-size: clamp(0.88rem, 3.4vw, 1.15rem);
+  }
+
+  .pc-details p {
+    font-size: clamp(0.62rem, 2.6vw, 0.7rem);
   }
 
   .pc-user-info {
     --ui-inset: 12px;
     padding: 8px 10px;
+    gap: 8px;
   }
 
   .pc-mini-avatar {
@@ -493,17 +504,16 @@
   }
 
   .pc-handle {
-    font-size: 11px;
-    max-width: 90px;
+    font-size: 0.625rem;
   }
 
   .pc-status {
-    font-size: 10px;
+    font-size: 0.5625rem;
   }
 
   .pc-contact-btn {
-    padding: 6px 10px;
-    font-size: 10px;
+    padding: 6px 8px;
+    font-size: 0.5625rem;
   }
 
   .pc-avatar-content .avatar {
@@ -519,15 +529,16 @@
   }
 
   .pc-details h3 {
-    font-size: 1.1rem;
+    font-size: 0.88rem;
   }
 
   .pc-details p {
-    font-size: 0.72rem;
+    font-size: 0.62rem;
   }
 
   .pc-user-info {
     --ui-inset: 10px;
+    gap: 6px;
   }
 
   .pc-mini-avatar {
@@ -536,7 +547,12 @@
   }
 
   .pc-handle {
-    max-width: 72px;
+    font-size: 0.5625rem;
+  }
+
+  .pc-contact-btn {
+    padding: 5px 7px;
+    font-size: 0.5625rem;
   }
 }
 
