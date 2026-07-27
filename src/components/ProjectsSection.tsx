@@ -24,7 +24,7 @@ export function ProjectsSection({
           <SectionHeading title={dict.projects.title} />
         </div>
 
-        <div className="grid items-stretch justify-items-center gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-stretch gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
           {featured.map((project) => (
             <ProjectCard key={project.slug} project={project} locale={locale} dict={dict} />
           ))}

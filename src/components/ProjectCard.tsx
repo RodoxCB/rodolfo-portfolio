@@ -24,9 +24,8 @@ export function ProjectCard({
   const title = project.tags.slice(0, 2).join(" · ");
 
   return (
-    <article className="h-full">
+    <article className="w-full">
       <ProfileCard
-        className="h-full"
         name={content.title}
         title={title}
         handle={project.slug}

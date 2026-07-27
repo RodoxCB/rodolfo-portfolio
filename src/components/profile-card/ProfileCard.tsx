@@ -145,8 +145,9 @@ function ProfileCardComponent({
 
       const stillFar =
         Math.abs(targetX - currentX) > 0.05 || Math.abs(targetY - currentY) > 0.05;
+      const shellActive = Boolean(shellRef.current?.classList.contains("active"));
 
-      if (stillFar || document.hasFocus()) {
+      if (stillFar || shellActive) {
         rafId = requestAnimationFrame(step);
       } else {
         running = false;
@@ -373,9 +374,12 @@ function ProfileCardComponent({
                 src={avatarUrl}
                 alt={`${name || "Project"} cover`}
                 loading="lazy"
+                decoding="async"
                 onError={(e) => {
                   const t = e.currentTarget;
-                  t.style.display = "none";
+                  if (t.dataset.failed === "1") return;
+                  t.dataset.failed = "1";
+                  t.style.visibility = "hidden";
                 }}
               />
               <div className="pc-cover-fade" aria-hidden />
@@ -387,10 +391,12 @@ function ProfileCardComponent({
                         src={miniAvatarUrl || avatarUrl}
                         alt=""
                         loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           const t = e.currentTarget;
-                          t.style.opacity = "0.5";
-                          t.src = avatarUrl;
+                          if (t.dataset.failed === "1") return;
+                          t.dataset.failed = "1";
+                          t.style.visibility = "hidden";
                         }}
                       />
                     </div>

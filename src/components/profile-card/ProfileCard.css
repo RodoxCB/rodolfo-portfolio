@@ -36,6 +36,7 @@
   transform: translate3d(0, 0, 0.1px);
   position: relative;
   width: 100%;
+  max-width: 100%;
   touch-action: manipulation;
 }
 
@@ -73,6 +74,7 @@
   width: 100%;
   max-height: 460px;
   display: grid;
+  grid-template: 1fr / 1fr;
   aspect-ratio: 0.72;
   border-radius: var(--card-radius);
   position: relative;
@@ -96,22 +98,28 @@
   transition: transform 300ms ease-out;
 }
 
-.pc-card * {
-  display: grid;
-  grid-area: 1 / -1;
+.pc-card > .pc-inside,
+.pc-inside > .pc-shine,
+.pc-inside > .pc-glare,
+.pc-inside > .pc-content {
+  grid-area: 1 / 1;
   border-radius: var(--card-radius);
   pointer-events: none;
 }
 
 .pc-inside {
   inset: 0;
-  position: absolute;
+  position: relative;
+  display: grid;
+  grid-template: 1fr / 1fr;
   background-image: var(--inner-gradient);
   background-color: #0f1115;
   transform: none;
+  min-height: 0;
 }
 
 .pc-shine {
+  position: relative;
   mask-image: var(--icon);
   mask-mode: luminance;
   mask-repeat: repeat;
@@ -241,6 +249,7 @@
 }
 
 .pc-glare {
+  position: relative;
   transform: translate3d(0, 0, 1.1px);
   overflow: hidden;
   background-image: radial-gradient(
@@ -255,6 +264,7 @@
 }
 
 .pc-avatar-content {
+  position: relative;
   overflow: hidden;
   transform: translateZ(2px);
   backface-visibility: hidden;
@@ -262,6 +272,7 @@
 }
 
 .pc-avatar-content .avatar {
+  display: block;
   width: 100%;
   height: 62%;
   position: absolute;
@@ -278,6 +289,7 @@
   will-change: transform;
   transition: transform 180ms ease-out;
   z-index: 1;
+  pointer-events: none;
 }
 
 .pc-cover-fade {
@@ -334,6 +346,7 @@
 }
 
 .pc-mini-avatar img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -397,6 +410,7 @@
     0.1px
   );
   z-index: 5;
+  pointer-events: none;
 }
 
 .pc-details {
