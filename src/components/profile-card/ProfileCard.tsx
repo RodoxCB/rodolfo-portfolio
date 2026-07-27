@@ -8,9 +8,6 @@ const DEFAULT_INNER_GRADIENT =
 const DEFAULT_BEHIND_GLOW = "rgba(20, 184, 166, 0.45)";
 
 const ANIMATION_CONFIG = {
-  INITIAL_DURATION: 1600,
-  INITIAL_X_OFFSET: 70,
-  INITIAL_Y_OFFSET: 60,
   DEVICE_BETA_OFFSET: 20,
   ENTER_TRANSITION_MS: 300,
 };
@@ -46,7 +43,6 @@ type TiltEngine = {
   setImmediate: (x: number, y: number) => void;
   setTarget: (x: number, y: number) => void;
   toCenter: () => void;
-  beginInitial: (durationMs: number) => void;
   getCurrent: () => { x: number; y: number; tx: number; ty: number };
   cancel: () => void;
 };
@@ -97,8 +93,6 @@ function ProfileCardComponent({
     let targetY = 0;
 
     const DEFAULT_TAU = 0.26;
-    const INITIAL_TAU = 0.7;
-    let initialUntil = 0;
 
     const setVarsFromXY = (x: number, y: number) => {
       const shell = shellRef.current;
@@ -135,8 +129,7 @@ function ProfileCardComponent({
       const dt = (ts - lastTs) / 1000;
       lastTs = ts;
 
-      const tau = ts < initialUntil ? INITIAL_TAU : DEFAULT_TAU;
-      const k = 1 - Math.exp(-dt / tau);
+      const k = 1 - Math.exp(-dt / DEFAULT_TAU);
 
       currentX += (targetX - currentX) * k;
       currentY += (targetY - currentY) * k;
@@ -181,10 +174,6 @@ function ProfileCardComponent({
         const shell = shellRef.current;
         if (!shell) return;
         this.setTarget(shell.clientWidth / 2, shell.clientHeight / 2);
-      },
-      beginInitial(durationMs) {
-        initialUntil = performance.now() + durationMs;
-        start();
       },
       getCurrent() {
         return { x: currentX, y: currentY, tx: targetX, ty: targetY };
@@ -313,11 +302,11 @@ function ProfileCardComponent({
     };
     shell.addEventListener("click", handleClick);
 
-    const initialX = (shell.clientWidth || 0) - ANIMATION_CONFIG.INITIAL_X_OFFSET;
-    const initialY = ANIMATION_CONFIG.INITIAL_Y_OFFSET;
-    tiltEngine.setImmediate(initialX, initialY);
-    tiltEngine.toCenter();
-    tiltEngine.beginInitial(ANIMATION_CONFIG.INITIAL_DURATION);
+    // Set a static centered pose immediately instead of animating the
+    // entrance: with many cards mounting at once (grids), running a
+    // requestAnimationFrame settle loop per card was the biggest source of
+    // jank on page load.
+    tiltEngine.setImmediate(shell.clientWidth / 2, shell.clientHeight / 2);
 
     return () => {
       shell.removeEventListener("pointerenter", pointerEnterHandler);
