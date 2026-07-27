@@ -22,6 +22,15 @@ export type ProfileCardProps = {
   iconUrl?: string;
   grainUrl?: string;
   innerGradient?: string;
+  /**
+   * "hero" keeps the full interactive effect (pointer tilt + behind glow),
+   * meant for a single showcased card. "grid" is a lighter preset for
+   * listings with many cards on screen at once: it drops the per-card
+   * pointer-tracking tilt engine and the blurred behind-glow layer by
+   * default (still overridable via `enableTilt` / `behindGlowEnabled`),
+   * keeping only the CSS-only hover shine.
+   */
+  variant?: "hero" | "grid";
   behindGlowEnabled?: boolean;
   behindGlowColor?: string;
   behindGlowSize?: string;
@@ -52,11 +61,12 @@ function ProfileCardComponent({
   iconUrl,
   grainUrl,
   innerGradient,
-  behindGlowEnabled = true,
+  variant = "hero",
+  behindGlowEnabled = variant === "hero",
   behindGlowColor,
   behindGlowSize,
   className = "",
-  enableTilt = true,
+  enableTilt = variant === "hero",
   enableMobileTilt = false,
   mobileTiltSensitivity = 5,
   miniAvatarUrl,
