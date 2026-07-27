@@ -1,7 +1,7 @@
 import type { Project } from "./projects";
 import { isManagedUpload } from "./upload-url";
 
-export const MAX_PROJECT_IMAGES = 5;
+export const MAX_PROJECT_IMAGES = 7;
 
 export function isUploadPath(path: string) {
   return isManagedUpload(path);
