@@ -22,7 +22,7 @@ export function QuoteBanner({ locale, extras }: { locale: Locale; extras: Extras
               className="hidden h-16 w-px rotate-[30deg] bg-gradient-to-b from-accent-secondary to-accent-primary sm:block"
               aria-hidden
             />
-            <p className="whitespace-nowrap font-mono text-sm text-text-tertiary">{extras.quote.author}</p>
+            <p className="font-mono text-sm text-text-tertiary sm:whitespace-nowrap">{extras.quote.author}</p>
           </div>
         </div>
       </div>

@@ -164,14 +164,14 @@ export function ProjectEditor({ project, tagsText, onTagsTextChange, onChange, o
           onBlur={commitTags}
         />
         <Field
-          label="Behance URL"
-          value={project.links?.behance || ""}
-          onChange={(v) => patch({ links: { ...project.links, behance: v } })}
-        />
-        <Field
           label="Live URL"
           value={project.links?.live || ""}
           onChange={(v) => patch({ links: { ...project.links, live: v } })}
+        />
+        <Field
+          label="Google Play URL"
+          value={project.links?.googlePlay || ""}
+          onChange={(v) => patch({ links: { ...project.links, googlePlay: v } })}
         />
       </div>
 

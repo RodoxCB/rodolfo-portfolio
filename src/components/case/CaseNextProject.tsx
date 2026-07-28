@@ -21,9 +21,9 @@ export function CaseNextProject({
       href={localePath(locale, `/projects/${project.slug}`)}
       className="group mt-20 flex items-center justify-between gap-4 border-t border-border-default py-8 transition-colors hover:border-accent-primary/40"
     >
-      <div>
+      <div className="min-w-0">
         <p className="font-mono text-xs uppercase tracking-wider text-accent-primary">{dict.case.nextProject}</p>
-        <p className="mt-2 text-xl font-bold text-text-primary sm:text-2xl">{content.title}</p>
+        <p className="mt-2 truncate text-xl font-bold text-text-primary sm:text-2xl">{content.title}</p>
       </div>
       <ArrowRight className="h-6 w-6 shrink-0 text-accent-primary transition-transform group-hover:translate-x-1" />
     </Link>

@@ -60,7 +60,7 @@ export type Project = {
   images?: string[];
   links?: {
     live?: string;
-    behance?: string;
+    googlePlay?: string;
   };
   content: {
     en: ProjectLocaleContent;

@@ -222,20 +222,20 @@ export default async function ProjectDetailPage({
               href={project.links.live}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-accent-primary/40 bg-accent-muted px-4 py-2 text-sm text-accent-primary hover:border-accent-primary hover:bg-accent-muted"
+              className="inline-flex items-center gap-2 rounded-lg border border-accent-primary/40 bg-accent-muted px-4 py-2 text-sm text-accent-primary transition-colors hover:border-accent-primary hover:bg-accent-primary hover:text-bg-primary"
             >
               {dict.projects.viewLive}
               <ExternalLink className="h-4 w-4" />
             </a>
           )}
-          {project.links?.behance && (
+          {project.links?.googlePlay && (
             <a
-              href={project.links.behance}
+              href={project.links.googlePlay}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-border-default px-4 py-2 text-sm hover:border-border-hover hover:bg-bg-tertiary"
             >
-              Behance
+              {dict.projects.downloadApp}
               <ExternalLink className="h-4 w-4" />
             </a>
           )}

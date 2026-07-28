@@ -13,7 +13,6 @@ export function ContactCTA({
   const links = [
     { key: "email" as const, href: `mailto:${site.email}`, label: site.email, external: false },
     { key: "linkedin" as const, href: site.links.linkedin, label: "linkedin.com/in/rodolfo-behr-30134674", external: true },
-    { key: "behance" as const, href: site.links.behance, label: "behance.net/rodolfobehr", external: true },
     { key: "github" as const, href: site.links.github, label: "github.com/RodoxCB", external: true },
   ];
 
@@ -24,7 +23,7 @@ export function ContactCTA({
         <Eyebrow label={dict.contact.subtitle} />
 
         <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:items-end lg:gap-8">
-          <h2 className="font-display text-5xl font-black uppercase leading-[0.95] tracking-tight text-text-primary sm:text-6xl md:text-7xl">
+          <h2 className="font-display text-4xl font-black uppercase leading-[0.95] tracking-tight text-text-primary sm:text-6xl md:text-7xl">
             <span className="bg-gradient-to-r from-accent-primary to-accent-secondary bg-clip-text text-transparent">
               {dict.contact.title.replace("// ", "")}
             </span>
@@ -37,11 +36,11 @@ export function ContactCTA({
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noreferrer" : undefined}
-                className="group flex items-center gap-2 text-base text-text-secondary transition-colors hover:text-accent-primary"
+                className="group flex flex-wrap items-center gap-x-2 gap-y-1 text-base text-text-secondary transition-colors hover:text-accent-primary"
               >
                 <ChevronRight className="h-4 w-4 shrink-0 text-accent-primary transition-transform group-hover:translate-x-1" />
                 <span className="text-text-tertiary">{dict.contact[link.key]}:</span>
-                <span className="font-medium text-text-primary group-hover:text-accent-primary">{link.label}</span>
+                <span className="break-all font-medium text-text-primary group-hover:text-accent-primary">{link.label}</span>
               </a>
             ))}
 

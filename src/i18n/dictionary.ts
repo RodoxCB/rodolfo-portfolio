@@ -28,6 +28,7 @@ export interface Dictionary {
     seeAll: string;
     viewProject: string;
     viewLive: string;
+    downloadApp: string;
     featured: string;
   };
   contact: {
@@ -38,7 +39,6 @@ export interface Dictionary {
     pageSubtitle: string;
     email: string;
     linkedin: string;
-    behance: string;
     github: string;
     location: string;
   };

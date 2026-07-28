@@ -246,7 +246,6 @@ export function ContentEditor({
           <Field label="Subtítulo da página" value={value.contact.pageSubtitle} onChange={(pageSubtitle) => update("contact", { ...value.contact, pageSubtitle })} textarea rows={2} />
           <Field label="Label e-mail" value={value.contact.email} onChange={(email) => update("contact", { ...value.contact, email })} />
           <Field label="Label LinkedIn" value={value.contact.linkedin} onChange={(linkedin) => update("contact", { ...value.contact, linkedin })} />
-          <Field label="Label Behance" value={value.contact.behance} onChange={(behance) => update("contact", { ...value.contact, behance })} />
           <Field label="Label GitHub" value={value.contact.github} onChange={(github) => update("contact", { ...value.contact, github })} />
           <Field label="Localização (texto)" value={value.contact.location} onChange={(location) => update("contact", { ...value.contact, location })} />
         </div>

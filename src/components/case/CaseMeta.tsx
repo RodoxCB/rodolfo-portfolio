@@ -13,11 +13,11 @@ export function CaseMeta({ content, dict }: { content: ProjectLocaleContent; dic
   if (items.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap gap-x-8 gap-y-5 border-y border-border-default py-6">
+    <div className="flex flex-wrap gap-x-6 gap-y-5 border-y border-border-default py-6 sm:gap-x-8">
       {items.map((item) => (
-        <div key={item.label}>
+        <div key={item.label} className="min-w-0">
           <p className="font-mono text-xs uppercase tracking-wider text-accent-primary">{item.label}</p>
-          <p className="mt-1 text-sm font-medium text-text-primary">{item.value}</p>
+          <p className="mt-1 break-words text-sm font-medium text-text-primary">{item.value}</p>
         </div>
       ))}
     </div>

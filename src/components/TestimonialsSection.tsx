@@ -42,7 +42,7 @@ export function TestimonialsSection({
           <div>
             <SectionHeading eyebrow={dict.testimonials.subtitle} title={dict.testimonials.title} />
 
-            <div className="mt-10 flex items-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center gap-3">
               {testimonials.map((testimonial, index) => {
                 const isActive = index === active;
                 return (

@@ -6,13 +6,13 @@
     "content": {
       "en": {
         "role": "Senior UX/UI Designer",
-        "period": "Current role — add start date in admin",
-        "description": "I own end-to-end UX for infotainment, digital instrument clusters, and companion apps — from discovery and technical requirements to supplier coordination and production handoff."
+        "period": "Current role, add start date in admin",
+        "description": "I own end-to-end UX for infotainment, digital instrument clusters, and companion apps, from discovery and technical requirements to supplier coordination and production handoff."
       },
       "pt": {
         "role": "UX/UI Designer Sênior",
-        "period": "Atual — adicione a data de início no painel",
-        "description": "Conduzo o UX de ponta a ponta para multimídia, cluster digital e apps companion — do discovery e requisitos técnicos até a coordenação com fornecedores e o handoff para produção."
+        "period": "Atual, adicione a data de início no painel",
+        "description": "Conduzo o UX de ponta a ponta para multimídia, cluster digital e apps companion, do discovery e requisitos técnicos até a coordenação com fornecedores e o handoff para produção."
       }
     }
   },
@@ -24,12 +24,12 @@
       "en": {
         "role": "UX/UI Designer & Front-end Developer",
         "period": "Parallel to the current role",
-        "description": "Designed and shipped institutional websites, SaaS products, and community platforms for independent clients — combining UX research, UI, and hands-on Next.js development, often with an AI-augmented workflow using Cursor."
+        "description": "Designed and shipped institutional websites, SaaS products, and community platforms for independent clients, combining UX research, UI, and hands-on Next.js development, often with an AI-augmented workflow using Cursor."
       },
       "pt": {
         "role": "UX/UI Designer & Desenvolvedor Front-end",
         "period": "Em paralelo à atuação atual",
-        "description": "Desenhei e publiquei sites institucionais, produtos SaaS e plataformas comunitárias para clientes independentes — combinando pesquisa de UX, UI e desenvolvimento prático em Next.js, muitas vezes com fluxo de trabalho apoiado por IA usando Cursor."
+        "description": "Desenhei e publiquei sites institucionais, produtos SaaS e plataformas comunitárias para clientes independentes, combinando pesquisa de UX, UI e desenvolvimento prático em Next.js, muitas vezes com fluxo de trabalho apoiado por IA usando Cursor."
       }
     }
   },
@@ -40,12 +40,12 @@
     "content": {
       "en": {
         "role": "Edit or remove this item in the admin panel",
-        "period": "—",
+        "period": "Add a period",
         "description": "Add previous jobs, internships, or freelance work you'd like to highlight on the timeline."
       },
       "pt": {
         "role": "Edite ou remova este item no painel admin",
-        "period": "—",
+        "period": "Adicione um período",
         "description": "Inclua aqui empregos, estágios ou freelas anteriores que você queira destacar na linha do tempo."
       }
     }

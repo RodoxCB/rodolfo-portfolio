@@ -44,7 +44,6 @@ export function Footer({
           </h3>
           <ul className="space-y-2 text-sm text-text-secondary">
             <li><a href={site.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent-primary">LinkedIn</a></li>
-            <li><a href={site.links.behance} target="_blank" rel="noreferrer" className="hover:text-accent-primary">Behance</a></li>
             <li><a href={site.links.github} target="_blank" rel="noreferrer" className="hover:text-accent-primary">GitHub</a></li>
             <li><a href={`mailto:${site.email}`} className="hover:text-accent-primary">{site.email}</a></li>
           </ul>

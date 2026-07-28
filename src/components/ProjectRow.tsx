@@ -25,7 +25,7 @@ export function ProjectRow({
   return (
     <Link
       href={href}
-      className="group relative flex min-h-[22rem] items-center overflow-hidden border-b border-border-default sm:min-h-[28rem]"
+      className="group relative flex min-h-[18rem] items-center overflow-hidden border-b border-border-default sm:min-h-[22rem] lg:min-h-[28rem]"
     >
       <div className="absolute inset-0">
         <Image

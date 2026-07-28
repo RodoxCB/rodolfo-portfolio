@@ -74,7 +74,7 @@ function SaveButton({ onClick, saving, label = "Salvar rascunho" }: { onClick: (
       type="button"
       onClick={onClick}
       disabled={saving}
-      className="rounded-lg bg-accent-primary px-5 py-2 text-sm font-semibold text-bg-primary disabled:opacity-50"
+      className="rounded-lg bg-accent-primary px-5 py-2 text-sm font-semibold text-bg-primary transition-colors hover:bg-accent-secondary hover:text-text-primary disabled:opacity-50"
     >
       {saving ? "Salvando..." : label}
     </button>
@@ -403,7 +403,6 @@ export function AdminDashboard() {
               <Field label="Telefone" value={site.phone} onChange={(v) => setSite({ ...site, phone: v })} />
               <Field label="Localização" value={site.location} onChange={(v) => setSite({ ...site, location: v })} />
               <Field label="LinkedIn" value={site.links.linkedin} onChange={(v) => setSite({ ...site, links: { ...site.links, linkedin: v } })} />
-              <Field label="Behance" value={site.links.behance} onChange={(v) => setSite({ ...site, links: { ...site.links, behance: v } })} />
               <Field label="GitHub" value={site.links.github} onChange={(v) => setSite({ ...site, links: { ...site.links, github: v } })} />
             </div>
             <SaveButton onClick={saveSite} saving={saving} />
