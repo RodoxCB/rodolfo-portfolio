@@ -5,6 +5,11 @@ import { hasDraftChanges, publishDraft, writeDraft, readDraftOrLive } from "./st
 const CONTENT_FILES = [
   "site.json",
   "projects.json",
+  "experience.json",
+  "certifications.json",
+  "clients.json",
+  "testimonials.json",
+  "extras.json",
   ...locales.map((locale) => `dictionaries/${locale}.json`),
 ] as const;
 

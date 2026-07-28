@@ -7,7 +7,12 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "certifications": "Certifications",
+    "experience": "Experience",
+    "clients": "Clients",
+    "portfolio": "Portfolio",
+    "testimonials": "Testimonials"
   },
   "hero": {
     "greeting": "[Hi, I'm]",
@@ -56,6 +61,46 @@
       "TypeScript",
       "Cursor & MCP"
     ]
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "// Lifelong learning"
+  },
+  "experience": {
+    "title": "My Experience",
+    "subtitle": "// Career journey",
+    "current": "Current"
+  },
+  "clients": {
+    "title": "Clients",
+    "subtitle": "// Who I've worked with"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "// What people say"
+  },
+  "case": {
+    "role": "Role",
+    "company": "Company",
+    "tools": "Tools",
+    "location": "Location",
+    "duration": "Duration",
+    "introduction": "Introduction",
+    "responsibilities": "Role & Responsibilities",
+    "challenge": "The Challenge",
+    "process": "The Process",
+    "personas": "Personas",
+    "personaBackground": "Background",
+    "personaNeeds": "Needs & Goals",
+    "personaChallenges": "Challenges",
+    "results": "Results",
+    "deliverables": "Key Deliverables",
+    "contribution": "My Contribution",
+    "testimonial": "Customer's Feedback",
+    "otherComments": "Other Comments",
+    "takeaways": "Takeaways",
+    "nextProject": "Next Project",
+    "backToPortfolio": "Back to Portfolio"
   },
   "footer": {
     "tagline": "Senior UX/UI Designer\nAutomotive HMI & Product Design",

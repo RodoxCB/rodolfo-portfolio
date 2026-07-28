@@ -90,11 +90,16 @@ export function ContentEditor({
       </section>
 
       <section className={sectionClass}>
-        <SectionTitle>Menus (navegação)</SectionTitle>
+        <SectionTitle>Menus (navegação por âncoras)</SectionTitle>
         <div className="grid gap-4 md:grid-cols-2">
           <Field label="Início / Home" value={value.nav.home} onChange={(home) => update("nav", { ...value.nav, home })} />
           <Field label="Sobre / About" value={value.nav.about} onChange={(about) => update("nav", { ...value.nav, about })} />
-          <Field label="Projetos / Projects" value={value.nav.projects} onChange={(projects) => update("nav", { ...value.nav, projects })} />
+          <Field label="Certificações" value={value.nav.certifications} onChange={(certifications) => update("nav", { ...value.nav, certifications })} />
+          <Field label="Experiência" value={value.nav.experience} onChange={(experience) => update("nav", { ...value.nav, experience })} />
+          <Field label="Clientes" value={value.nav.clients} onChange={(clients) => update("nav", { ...value.nav, clients })} />
+          <Field label="Portfolio" value={value.nav.portfolio} onChange={(portfolio) => update("nav", { ...value.nav, portfolio })} />
+          <Field label="Depoimentos" value={value.nav.testimonials} onChange={(testimonials) => update("nav", { ...value.nav, testimonials })} />
+          <Field label="Projetos / Projects (página /projects)" value={value.nav.projects} onChange={(projects) => update("nav", { ...value.nav, projects })} />
           <Field label="Contato / Contact" value={value.nav.contact} onChange={(contact) => update("nav", { ...value.nav, contact })} />
         </div>
       </section>
@@ -169,6 +174,66 @@ export function ContentEditor({
           rows={6}
           hint="Uma skill por linha."
         />
+      </section>
+
+      <section className={sectionClass}>
+        <SectionTitle>Certificações (seção)</SectionTitle>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label="Título" value={value.certifications.title} onChange={(title) => update("certifications", { ...value.certifications, title })} />
+          <Field label="Subtítulo" value={value.certifications.subtitle} onChange={(subtitle) => update("certifications", { ...value.certifications, subtitle })} />
+        </div>
+      </section>
+
+      <section className={sectionClass}>
+        <SectionTitle>Experiência (seção)</SectionTitle>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label="Título" value={value.experience.title} onChange={(title) => update("experience", { ...value.experience, title })} />
+          <Field label="Subtítulo" value={value.experience.subtitle} onChange={(subtitle) => update("experience", { ...value.experience, subtitle })} />
+          <Field label="Rótulo 'Atual'" value={value.experience.current} onChange={(current) => update("experience", { ...value.experience, current })} />
+        </div>
+      </section>
+
+      <section className={sectionClass}>
+        <SectionTitle>Clientes (seção)</SectionTitle>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label="Título" value={value.clients.title} onChange={(title) => update("clients", { ...value.clients, title })} />
+          <Field label="Subtítulo" value={value.clients.subtitle} onChange={(subtitle) => update("clients", { ...value.clients, subtitle })} />
+        </div>
+      </section>
+
+      <section className={sectionClass}>
+        <SectionTitle>Depoimentos (seção)</SectionTitle>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label="Título" value={value.testimonials.title} onChange={(title) => update("testimonials", { ...value.testimonials, title })} />
+          <Field label="Subtítulo" value={value.testimonials.subtitle} onChange={(subtitle) => update("testimonials", { ...value.testimonials, subtitle })} />
+        </div>
+      </section>
+
+      <section className={sectionClass}>
+        <SectionTitle>Página de case study — rótulos</SectionTitle>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label="Role" value={value.case.role} onChange={(role) => update("case", { ...value.case, role })} />
+          <Field label="Company" value={value.case.company} onChange={(company) => update("case", { ...value.case, company })} />
+          <Field label="Tools" value={value.case.tools} onChange={(tools) => update("case", { ...value.case, tools })} />
+          <Field label="Location" value={value.case.location} onChange={(location) => update("case", { ...value.case, location })} />
+          <Field label="Duration" value={value.case.duration} onChange={(duration) => update("case", { ...value.case, duration })} />
+          <Field label="Introduction" value={value.case.introduction} onChange={(introduction) => update("case", { ...value.case, introduction })} />
+          <Field label="Responsibilities" value={value.case.responsibilities} onChange={(responsibilities) => update("case", { ...value.case, responsibilities })} />
+          <Field label="Challenge" value={value.case.challenge} onChange={(challenge) => update("case", { ...value.case, challenge })} />
+          <Field label="Process" value={value.case.process} onChange={(process) => update("case", { ...value.case, process })} />
+          <Field label="Personas" value={value.case.personas} onChange={(personas) => update("case", { ...value.case, personas })} />
+          <Field label="Persona — Background" value={value.case.personaBackground} onChange={(personaBackground) => update("case", { ...value.case, personaBackground })} />
+          <Field label="Persona — Needs" value={value.case.personaNeeds} onChange={(personaNeeds) => update("case", { ...value.case, personaNeeds })} />
+          <Field label="Persona — Challenges" value={value.case.personaChallenges} onChange={(personaChallenges) => update("case", { ...value.case, personaChallenges })} />
+          <Field label="Results" value={value.case.results} onChange={(results) => update("case", { ...value.case, results })} />
+          <Field label="Deliverables" value={value.case.deliverables} onChange={(deliverables) => update("case", { ...value.case, deliverables })} />
+          <Field label="Contribution" value={value.case.contribution} onChange={(contribution) => update("case", { ...value.case, contribution })} />
+          <Field label="Testimonial" value={value.case.testimonial} onChange={(testimonial) => update("case", { ...value.case, testimonial })} />
+          <Field label="Other comments" value={value.case.otherComments} onChange={(otherComments) => update("case", { ...value.case, otherComments })} />
+          <Field label="Takeaways" value={value.case.takeaways} onChange={(takeaways) => update("case", { ...value.case, takeaways })} />
+          <Field label="Next project" value={value.case.nextProject} onChange={(nextProject) => update("case", { ...value.case, nextProject })} />
+          <Field label="Back to portfolio" value={value.case.backToPortfolio} onChange={(backToPortfolio) => update("case", { ...value.case, backToPortfolio })} />
+        </div>
       </section>
 
       <section className={sectionClass}>
