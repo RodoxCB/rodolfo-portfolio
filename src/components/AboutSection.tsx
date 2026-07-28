@@ -1,32 +1,33 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
-import { SectionHeading } from "./SectionHeading";
+import { Eyebrow } from "./SectionHeading";
 
 export function AboutSection({ dict }: { dict: Dictionary }) {
   return (
-    <section id="about-me" className="border-t border-border-default bg-bg-primary py-20 sm:py-28">
+    <section id="about-me" className="bg-bg-primary py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading title={dict.about.title} />
-        <p className="mt-3 text-center font-mono text-sm text-text-tertiary">{dict.about.subtitle}</p>
+        <div className="rounded-3xl bg-bg-secondary p-8 sm:p-12 md:p-16">
+          <Eyebrow label={dict.about.subtitle} />
+          <h2 className="mt-5 font-display text-3xl font-bold text-text-primary sm:text-4xl">{dict.about.title}</h2>
 
-        <div className="mx-auto mt-10 max-w-3xl space-y-5 text-center text-base leading-relaxed text-text-secondary sm:text-lg">
-          {dict.about.paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </div>
-
-        <div className="mx-auto mt-12 max-w-3xl">
-          <p className="text-center font-mono text-xs uppercase tracking-wider text-accent-primary">
-            {dict.about.skillsTitle}
-          </p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            {dict.about.skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-border-default bg-bg-secondary px-4 py-1.5 text-sm text-text-secondary transition-colors hover:border-accent-primary/50 hover:text-accent-primary"
-              >
-                {skill}
-              </span>
+          <div className="mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-text-secondary sm:text-lg">
+            {dict.about.paragraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
             ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-x-2 gap-y-3 border-t border-border-default pt-8">
+            <span className="font-mono text-xs uppercase tracking-wider text-accent-primary">
+              {dict.about.skillsTitle}
+            </span>
+            <span className="mx-1 hidden h-1 w-1 rounded-full bg-text-muted sm:inline-block" aria-hidden />
+            <p className="text-sm text-text-secondary">
+              {dict.about.skills.map((skill, index) => (
+                <span key={skill}>
+                  {skill}
+                  {index < dict.about.skills.length - 1 && <span className="text-text-muted"> &middot; </span>}
+                </span>
+              ))}
+            </p>
           </div>
         </div>
       </div>

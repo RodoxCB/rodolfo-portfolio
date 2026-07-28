@@ -14,7 +14,7 @@ export function CaseTestimonial({
   return (
     <div className="mt-14">
       <h2 className="mb-6 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.testimonial}</h2>
-      <div className="flex flex-col gap-4 rounded-2xl border border-border-default bg-bg-secondary p-8">
+      <div className="flex flex-col gap-4 border-l-2 border-accent-primary py-2 pl-6">
         <Quote className="h-7 w-7 text-accent-primary" />
         <p className="text-lg leading-relaxed text-text-primary">&ldquo;{testimonial.quote}&rdquo;</p>
         <div>

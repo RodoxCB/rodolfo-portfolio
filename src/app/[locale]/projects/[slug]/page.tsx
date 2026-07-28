@@ -177,9 +177,9 @@ export default async function ProjectDetailPage({
         {content.otherComments?.length ? (
           <div className="mt-14">
             <h2 className="mb-6 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.otherComments}</h2>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-6 sm:grid-cols-2">
               {content.otherComments.map((comment, index) => (
-                <p key={index} className="rounded-xl border border-border-default bg-bg-secondary p-4 text-sm text-text-secondary">
+                <p key={index} className="border-l-2 border-border-default pl-4 text-sm italic text-text-secondary">
                   &ldquo;{comment}&rdquo;
                 </p>
               ))}

@@ -13,7 +13,7 @@ export function CaseMeta({ content, dict }: { content: ProjectLocaleContent; dic
   if (items.length === 0) return null;
 
   return (
-    <div className="grid grid-cols-2 gap-6 rounded-2xl border border-border-default bg-bg-secondary p-6 sm:grid-cols-3 lg:grid-cols-5">
+    <div className="flex flex-wrap gap-x-8 gap-y-5 border-y border-border-default py-6">
       {items.map((item) => (
         <div key={item.label}>
           <p className="font-mono text-xs uppercase tracking-wider text-accent-primary">{item.label}</p>

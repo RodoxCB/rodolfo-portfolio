@@ -1,7 +1,7 @@
-import { Mail, MapPin } from "lucide-react";
+import { ChevronRight, MapPin } from "lucide-react";
 import type { Site } from "@/content/site";
 import type { Dictionary } from "@/i18n/get-dictionary";
-import { SectionHeading } from "./SectionHeading";
+import { Eyebrow } from "./SectionHeading";
 
 export function ContactCTA({
   dict,
@@ -18,45 +18,38 @@ export function ContactCTA({
   ];
 
   return (
-    <section id="contact-me" className="relative overflow-hidden border-t border-border-default bg-bg-primary py-24 sm:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,#0f766e_0%,transparent_55%)] opacity-25" />
-      <div className="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-        <div className="mb-10 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent-muted">
-          <Mail className="h-8 w-8 text-accent-primary" />
-        </div>
-        <SectionHeading title={dict.contact.title.replace("// ", "")} />
-        <p className="mx-auto mb-12 mt-6 max-w-2xl font-mono text-base text-text-secondary">
-          {dict.contact.subtitle}
-        </p>
+    <section id="contact-me" className="relative overflow-hidden bg-bg-primary py-24 sm:py-32">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,#0f766e_0%,transparent_55%)] opacity-20" />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Eyebrow label={dict.contact.subtitle} />
 
-        <div className="space-y-4 text-left">
-          {links.map((link) => (
-            <a
-              key={link.key}
-              href={link.href}
-              target={link.external ? "_blank" : undefined}
-              rel={link.external ? "noreferrer" : undefined}
-              className="flex items-center justify-between rounded-xl border border-border-default bg-bg-secondary px-5 py-4 transition-colors hover:border-border-hover hover:bg-bg-tertiary"
-            >
-              <span className="text-sm text-text-tertiary">{dict.contact[link.key]}</span>
-              <span className="text-sm font-medium text-text-primary">{link.label}</span>
-            </a>
-          ))}
+        <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:items-end lg:gap-8">
+          <h2 className="font-display text-5xl font-black uppercase leading-[0.95] tracking-tight text-text-primary sm:text-6xl md:text-7xl">
+            <span className="bg-gradient-to-r from-accent-primary to-accent-secondary bg-clip-text text-transparent">
+              {dict.contact.title.replace("// ", "")}
+            </span>
+          </h2>
 
-          <div className="flex items-start gap-3 rounded-xl border border-border-default bg-bg-secondary px-5 py-4 text-sm text-text-secondary">
-            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-primary" />
-            <p>{dict.contact.location}</p>
+          <div className="space-y-4">
+            {links.map((link) => (
+              <a
+                key={link.key}
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noreferrer" : undefined}
+                className="group flex items-center gap-2 text-base text-text-secondary transition-colors hover:text-accent-primary"
+              >
+                <ChevronRight className="h-4 w-4 shrink-0 text-accent-primary transition-transform group-hover:translate-x-1" />
+                <span className="text-text-tertiary">{dict.contact[link.key]}:</span>
+                <span className="font-medium text-text-primary group-hover:text-accent-primary">{link.label}</span>
+              </a>
+            ))}
+
+            <div className="flex items-start gap-2 pt-2 text-base text-text-secondary">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-primary" />
+              <p>{dict.contact.location}</p>
+            </div>
           </div>
-        </div>
-
-        <div className="mt-10">
-          <a
-            href={`mailto:${site.email}`}
-            className="code-button inline-flex items-center gap-2 rounded-lg bg-bg-secondary px-6 py-3 font-mono text-base font-semibold text-text-primary"
-          >
-            <Mail className="h-4 w-4" />
-            {dict.contact.cta}
-          </a>
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ export function CaseNextProject({
   return (
     <Link
       href={localePath(locale, `/projects/${project.slug}`)}
-      className="group mt-20 flex items-center justify-between gap-4 rounded-2xl border border-border-default bg-bg-secondary p-8 transition-colors hover:border-accent-primary/50"
+      className="group mt-20 flex items-center justify-between gap-4 border-t border-border-default py-8 transition-colors hover:border-accent-primary/40"
     >
       <div>
         <p className="font-mono text-xs uppercase tracking-wider text-accent-primary">{dict.case.nextProject}</p>

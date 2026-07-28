@@ -15,35 +15,30 @@ export function ExperienceSection({
   if (experience.length === 0) return null;
 
   return (
-    <section id="experience" className="border-t border-border-default bg-bg-primary py-20 sm:py-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading title={dict.experience.title} />
-        <p className="mt-3 text-center font-mono text-sm text-text-tertiary">{dict.experience.subtitle}</p>
+    <section id="experience" className="bg-bg-secondary py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading eyebrow={dict.experience.subtitle} title={dict.experience.title} />
 
-        <div className="relative mt-14 space-y-10 border-l border-border-default pl-8 sm:pl-10">
+        <div className="mt-14 divide-y divide-border-default">
           {experience.map((entry) => {
             const content = entry.content[locale];
             return (
-              <div key={entry.id} className="relative">
-                <span
-                  className={`absolute -left-[calc(2rem+1px)] top-1 h-3 w-3 rounded-full border-2 sm:-left-[calc(2.5rem+1px)] ${
-                    entry.current
-                      ? "border-accent-primary bg-accent-primary"
-                      : "border-border-hover bg-bg-primary"
-                  }`}
-                  aria-hidden
-                />
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="font-semibold text-text-primary">{content.role}</h3>
-                  {entry.current && (
-                    <span className="rounded-full bg-accent-muted px-3 py-0.5 font-mono text-xs text-accent-primary">
-                      {dict.experience.current}
-                    </span>
-                  )}
+              <div key={entry.id} className="grid gap-3 py-8 sm:grid-cols-[1fr_2fr] sm:gap-10 first:pt-0">
+                <div>
+                  <p className="font-mono text-xs text-text-tertiary">{content.period}</p>
+                  <p className="mt-1 text-sm font-medium text-accent-primary">{entry.company}</p>
                 </div>
-                <p className="mt-1 text-sm text-accent-primary">{entry.company}</p>
-                <p className="mt-1 font-mono text-xs text-text-tertiary">{content.period}</p>
-                <p className="mt-3 text-sm leading-relaxed text-text-secondary">{content.description}</p>
+                <div>
+                  <div className="flex flex-wrap items-baseline gap-3">
+                    <h3 className="font-semibold text-text-primary">{content.role}</h3>
+                    {entry.current && (
+                      <span className="rounded-full bg-accent-muted px-3 py-0.5 font-mono text-xs text-accent-primary">
+                        {dict.experience.current}
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-text-secondary">{content.description}</p>
+                </div>
               </div>
             );
           })}

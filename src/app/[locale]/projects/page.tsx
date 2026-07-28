@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectRow } from "@/components/ProjectRow";
 import { SectionHeading } from "@/components/SectionHeading";
 import { getProjects } from "@/content/projects";
 import { isLocale, type Locale } from "@/i18n/config";
@@ -21,14 +21,14 @@ export default async function ProjectsPage({
   ]);
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mb-16">
-        <SectionHeading title={dict.projects.title} />
+    <section className="py-24">
+      <div className="mx-auto mb-16 max-w-6xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading eyebrow={dict.projects.featured} title={dict.projects.title} />
       </div>
 
-      <div className="grid items-stretch gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="border-t border-border-default">
         {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} locale={locale as Locale} dict={dict} />
+          <ProjectRow key={project.slug} project={project} locale={locale as Locale} dict={dict} />
         ))}
       </div>
     </section>

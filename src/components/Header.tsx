@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Award, Briefcase, FolderKanban, Mail, Menu, User, Users, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
@@ -11,14 +11,14 @@ import { Logo } from "./Logo";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const baseNavItems = [
-  { key: "about", anchor: "about-me", icon: User },
-  { key: "certifications", anchor: "certifications", icon: Award },
-  { key: "experience", anchor: "experience", icon: Briefcase },
-  { key: "clients", anchor: "clients", icon: Users },
-  { key: "portfolio", anchor: "portfolio", icon: FolderKanban },
+  { key: "about", anchor: "about-me" },
+  { key: "certifications", anchor: "certifications" },
+  { key: "experience", anchor: "experience" },
+  { key: "clients", anchor: "clients" },
+  { key: "portfolio", anchor: "portfolio" },
 ] as const;
 
-const contactNavItem = { key: "contact", anchor: "contact-me", icon: Mail } as const;
+const contactNavItem = { key: "contact", anchor: "contact-me" } as const;
 
 export function Header({
   locale,
@@ -90,22 +90,21 @@ export function Header({
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
-          {navItems.map(({ key, anchor, icon: Icon }) => {
+          {baseNavItems.map(({ key, anchor }) => {
             const active = isHome && activeAnchor === anchor;
 
             return (
               <Link
                 key={key}
                 href={`${homeHref}#${anchor}`}
-                className={`group relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                   active ? "text-text-primary" : "text-text-secondary hover:text-text-primary"
                 }`}
               >
-                <Icon className={`h-4 w-4 ${active ? "text-accent-primary" : "text-text-tertiary group-hover:text-accent-primary"}`} />
-                <span>{dict.nav[key]}</span>
+                {dict.nav[key]}
                 <span
                   className={`absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-accent-primary transition-all ${
-                    active ? "w-4/5" : "w-0 group-hover:w-4/5"
+                    active ? "w-4/5" : "w-0"
                   }`}
                 />
               </Link>
@@ -114,6 +113,12 @@ export function Header({
         </div>
 
         <div className="flex items-center gap-3">
+          <Link
+            href={`${homeHref}#${contactNavItem.anchor}`}
+            className="hidden rounded-lg bg-gradient-to-r from-accent-primary to-accent-secondary px-4 py-2 text-sm font-semibold text-bg-primary transition-opacity hover:opacity-90 md:inline-flex"
+          >
+            {dict.nav[contactNavItem.key]}
+          </Link>
           <LanguageSwitcher locale={locale} />
           <button
             type="button"
@@ -129,14 +134,13 @@ export function Header({
       {open && (
         <div className="border-t border-border-default bg-bg-secondary px-4 py-4 md:hidden">
           <div className="flex flex-col gap-2">
-            {navItems.map(({ key, anchor, icon: Icon }) => (
+            {navItems.map(({ key, anchor }) => (
               <Link
                 key={key}
                 href={`${homeHref}#${anchor}`}
-                className="flex min-h-11 items-center gap-2 rounded-lg px-3 py-3 text-sm text-text-secondary hover:bg-bg-tertiary hover:text-text-primary"
+                className="flex min-h-11 items-center rounded-lg px-3 py-3 text-sm text-text-secondary hover:bg-bg-tertiary hover:text-text-primary"
                 onClick={() => setOpen(false)}
               >
-                <Icon className="h-4 w-4" />
                 {dict.nav[key]}
               </Link>
             ))}
