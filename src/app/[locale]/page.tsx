@@ -7,14 +7,12 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 import { Hero } from "@/components/Hero";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { QuoteBanner } from "@/components/QuoteBanner";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { getCertifications } from "@/content/certifications";
 import { getClients } from "@/content/clients";
 import { getExperience } from "@/content/experience";
 import { getExtras } from "@/content/extras";
 import { getProjects } from "@/content/projects";
 import { getSite } from "@/content/site";
-import { getTestimonials } from "@/content/testimonials";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 
@@ -30,14 +28,13 @@ export default async function HomePage({
 
   const currentLocale = locale as Locale;
 
-  const [dict, site, projects, experience, certifications, clients, testimonials, extras] = await Promise.all([
+  const [dict, site, projects, experience, certifications, clients, extras] = await Promise.all([
     getDictionary(currentLocale),
     getSite(),
     getProjects(),
     getExperience(),
     getCertifications(),
     getClients(),
-    getTestimonials(),
     getExtras(),
   ]);
 
@@ -50,7 +47,6 @@ export default async function HomePage({
       <ClientsSection dict={dict} clients={clients} />
       <QuoteBanner locale={currentLocale} extras={extras} />
       <ProjectsSection locale={currentLocale} dict={dict} projects={projects} />
-      <TestimonialsSection locale={currentLocale} dict={dict} testimonials={testimonials} />
       <ContactCTA dict={dict} site={site} />
     </>
   );
