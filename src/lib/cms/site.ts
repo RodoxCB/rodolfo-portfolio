@@ -8,7 +8,6 @@ export type SiteConfig = {
   location: string;
   links: {
     linkedin: string;
-    behance: string;
     github: string;
   };
 };

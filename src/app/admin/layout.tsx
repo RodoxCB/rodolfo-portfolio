@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Admin — Rodolfo Portfolio",
+  title: "Admin, Rodolfo Portfolio",
   robots: "noindex, nofollow",
 };
 

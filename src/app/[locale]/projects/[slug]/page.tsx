@@ -2,7 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { getProject, getProjectsLive } from "@/content/projects";
+import { ContactCTA } from "@/components/ContactCTA";
+import { CaseMeta } from "@/components/case/CaseMeta";
+import { CaseNextProject } from "@/components/case/CaseNextProject";
+import { CasePersonas } from "@/components/case/CasePersonas";
+import { CasePullQuote } from "@/components/case/CasePullQuote";
+import { CaseStats } from "@/components/case/CaseStats";
+import { CaseTestimonial } from "@/components/case/CaseTestimonial";
+import { getProject, getProjects, getProjectsLive } from "@/content/projects";
 import { getProjectCover } from "@/lib/cms/project-images";
 import { shouldOptimizeImage } from "@/lib/image";
 import { getSite } from "@/content/site";
@@ -22,6 +29,25 @@ export async function generateStaticParams() {
   );
 }
 
+function Prose({ children }: { children: string | undefined }) {
+  if (!children) return null;
+  return <p className="text-base leading-relaxed text-text-secondary">{children}</p>;
+}
+
+function BulletList({ items }: { items: string[] | undefined }) {
+  if (!items?.length) return null;
+  return (
+    <ul className="space-y-3">
+      {items.map((item, index) => (
+        <li key={index} className="flex gap-3 text-text-secondary">
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-primary" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default async function ProjectDetailPage({
   params,
 }: {
@@ -30,111 +56,201 @@ export default async function ProjectDetailPage({
   const { locale, slug } = await params;
   if (!isLocale(locale)) notFound();
 
-  const [project, dict, site] = await Promise.all([
+  const currentLocale = locale as Locale;
+
+  const [project, dict, site, allProjects] = await Promise.all([
     getProject(slug),
-    getDictionary(locale as Locale),
+    getDictionary(currentLocale),
     getSite(),
+    getProjects(),
   ]);
 
   if (!project) notFound();
 
-  const content = project.content[locale as Locale];
+  const content = project.content[currentLocale];
   const cover = getProjectCover(project);
   const gallery = project.images?.length ? project.images : [cover];
 
+  const currentIndex = allProjects.findIndex((p) => p.slug === project.slug);
+  const nextProject =
+    currentIndex >= 0 && allProjects.length > 1
+      ? allProjects[(currentIndex + 1) % allProjects.length]
+      : undefined;
+
   return (
-    <article className="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
-      <Link
-        href={localePath(locale as Locale, "/projects")}
-        className="mb-8 inline-flex items-center gap-2 text-sm text-text-secondary hover:text-accent-primary"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        {dict.projects.seeAll}
-      </Link>
+    <>
+      <article className="mx-auto max-w-4xl px-4 py-24 sm:px-6 lg:px-8">
+        <Link
+          href={localePath(currentLocale, "/projects")}
+          className="mb-8 inline-flex items-center gap-2 text-sm text-text-secondary hover:text-accent-primary"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          {dict.case.backToPortfolio}
+        </Link>
 
-      <div className="relative mb-10 aspect-video overflow-hidden rounded-2xl border border-border-default bg-bg-secondary">
-        <Image
-          src={cover}
-          alt={content.title}
-          fill
-          className="object-cover"
-          priority
-          unoptimized={!shouldOptimizeImage(cover)}
-        />
-      </div>
-
-      <div className="mb-6 flex flex-wrap gap-2">
-        {project.tags.map((tag) => (
-          <span key={tag} className="rounded-full bg-bg-tertiary px-3 py-1 text-xs text-text-secondary">
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      <h1 className="text-3xl font-bold md:text-4xl">{content.title}</h1>
-      <p className="mt-4 text-lg text-text-secondary">{content.description}</p>
-
-      <ul className="mt-10 space-y-4">
-        {content.overview.map((item) => (
-          <li key={item} className="flex gap-3 text-text-secondary">
-            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-primary" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-
-      {gallery.length > 1 && (
-        <div className="mt-12">
-          <h2 className="mb-4 font-mono text-sm text-accent-primary">// Gallery</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {gallery.map((image) => (
-              <div
-                key={image}
-                className="relative aspect-video overflow-hidden rounded-xl border border-border-default bg-bg-secondary"
-              >
-                <Image
-                  src={image}
-                  alt={content.title}
-                  fill
-                  className="object-cover"
-                  unoptimized={!shouldOptimizeImage(image)}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div className="mt-10 flex flex-wrap gap-4">
-        {project.links?.live && (
-          <a
-            href={project.links.live}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-accent-primary/40 bg-accent-muted px-4 py-2 text-sm text-accent-primary hover:border-accent-primary hover:bg-accent-muted"
-          >
-            {dict.projects.viewLive}
-            <ExternalLink className="h-4 w-4" />
-          </a>
+        {content.category && (
+          <p className="mb-3 font-mono text-xs uppercase tracking-wider text-accent-primary">{content.category}</p>
         )}
-        {project.links?.behance && (
+        <h1 className="text-3xl font-bold md:text-4xl">{content.title}</h1>
+        <p className="mt-4 text-lg text-text-secondary">{content.description}</p>
+
+        <div className="mb-6 mt-6 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span key={tag} className="rounded-full bg-bg-tertiary px-3 py-1 text-xs text-text-secondary">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="relative mb-10 aspect-video overflow-hidden rounded-2xl border border-border-default bg-bg-secondary">
+          <Image
+            src={cover}
+            alt={content.title}
+            fill
+            className="object-cover"
+            priority
+            unoptimized={!shouldOptimizeImage(cover)}
+          />
+        </div>
+
+        <CaseMeta content={content} dict={dict} />
+
+        <div className="mt-14 space-y-14">
+          {content.introduction && (
+            <div>
+              <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.introduction}</h2>
+              <Prose>{content.introduction}</Prose>
+            </div>
+          )}
+
+          {content.responsibilities?.length ? (
+            <div>
+              <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.responsibilities}</h2>
+              <BulletList items={content.responsibilities} />
+            </div>
+          ) : null}
+
+          {content.challenge && (
+            <div>
+              <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.challenge}</h2>
+              <Prose>{content.challenge}</Prose>
+            </div>
+          )}
+
+          {content.process && (
+            <div>
+              <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.process}</h2>
+              <Prose>{content.process}</Prose>
+            </div>
+          )}
+        </div>
+
+        <CasePersonas personas={content.personas ?? []} dict={dict} />
+        <CaseStats stats={content.stats ?? []} />
+        <CasePullQuote pullQuote={content.pullQuote} />
+
+        <div className="mt-14 space-y-14">
+          {content.results && (
+            <div>
+              <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.results}</h2>
+              <Prose>{content.results}</Prose>
+            </div>
+          )}
+
+          {content.deliverables?.length ? (
+            <div>
+              <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.deliverables}</h2>
+              <BulletList items={content.deliverables} />
+            </div>
+          ) : null}
+
+          {content.contribution && (
+            <div>
+              <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.contribution}</h2>
+              <Prose>{content.contribution}</Prose>
+            </div>
+          )}
+        </div>
+
+        <CaseTestimonial testimonial={content.testimonial} dict={dict} />
+
+        {content.otherComments?.length ? (
+          <div className="mt-14">
+            <h2 className="mb-6 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.otherComments}</h2>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {content.otherComments.map((comment, index) => (
+                <p key={index} className="border-l-2 border-border-default pl-4 text-sm italic text-text-secondary">
+                  &ldquo;{comment}&rdquo;
+                </p>
+              ))}
+            </div>
+          </div>
+        ) : null}
+
+        {content.takeaways?.length ? (
+          <div className="mt-14">
+            <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-accent-primary">{dict.case.takeaways}</h2>
+            <BulletList items={content.takeaways} />
+          </div>
+        ) : null}
+
+        {gallery.length > 1 && (
+          <div className="mt-14">
+            <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-accent-primary">// Gallery</h2>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {gallery.map((image) => (
+                <div
+                  key={image}
+                  className="relative aspect-video overflow-hidden rounded-xl border border-border-default bg-bg-secondary"
+                >
+                  <Image
+                    src={image}
+                    alt={content.title}
+                    fill
+                    className="object-cover"
+                    unoptimized={!shouldOptimizeImage(image)}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          {project.links?.live && (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-accent-primary/40 bg-accent-muted px-4 py-2 text-sm text-accent-primary transition-colors hover:border-accent-primary hover:bg-accent-primary hover:text-bg-primary"
+            >
+              {dict.projects.viewLive}
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          )}
+          {project.links?.googlePlay && (
+            <a
+              href={project.links.googlePlay}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-border-default px-4 py-2 text-sm hover:border-border-hover hover:bg-bg-tertiary"
+            >
+              {dict.projects.downloadApp}
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          )}
           <a
-            href={project.links.behance}
-            target="_blank"
-            rel="noreferrer"
+            href={`mailto:${site.email}`}
             className="inline-flex items-center gap-2 rounded-lg border border-border-default px-4 py-2 text-sm hover:border-border-hover hover:bg-bg-tertiary"
           >
-            Behance
-            <ExternalLink className="h-4 w-4" />
+            {dict.contact.email}
           </a>
-        )}
-        <a
-          href={`mailto:${site.email}`}
-          className="inline-flex items-center gap-2 rounded-lg border border-border-default px-4 py-2 text-sm hover:border-border-hover hover:bg-bg-tertiary"
-        >
-          {dict.contact.email}
-        </a>
-      </div>
-    </article>
+        </div>
+
+        {nextProject && <CaseNextProject project={nextProject} locale={currentLocale} dict={dict} />}
+      </article>
+
+      <ContactCTA dict={dict} site={site} />
+    </>
   );
 }

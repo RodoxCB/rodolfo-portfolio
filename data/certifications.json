@@ -1,0 +1,153 @@
+[
+  {
+    "id": "cert-ufes-design",
+    "year": "2013 – 2019",
+    "url": "",
+    "featured": true,
+    "content": {
+      "en": {
+        "name": "Bachelor's Degree in Design",
+        "issuer": "UFES · Federal University of Espírito Santo"
+      },
+      "pt": {
+        "name": "Bacharelado em Desenho Industrial (Design)",
+        "issuer": "UFES · Universidade Federal do Espírito Santo"
+      }
+    }
+  },
+  {
+    "id": "cert-crm-marketing",
+    "year": "2023",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "CRM e Funil de Marketing: Estratégias e Funcionalidades",
+        "issuer": "Alura"
+      },
+      "pt": {
+        "name": "CRM e Funil de Marketing: Estratégias e Funcionalidades",
+        "issuer": "Alura"
+      }
+    }
+  },
+  {
+    "id": "cert-google-tag-manager",
+    "year": "2023",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "Google Tag Manager: Aplicação e Gerenciamento de Tags",
+        "issuer": "Alura"
+      },
+      "pt": {
+        "name": "Google Tag Manager: Aplicação e Gerenciamento de Tags",
+        "issuer": "Alura"
+      }
+    }
+  },
+  {
+    "id": "cert-storytelling",
+    "year": "2023",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "Storytelling: Visão de Negócios e Desenvolvimento Pessoal",
+        "issuer": "Alura"
+      },
+      "pt": {
+        "name": "Storytelling: Visão de Negócios e Desenvolvimento Pessoal",
+        "issuer": "Alura"
+      }
+    }
+  },
+  {
+    "id": "cert-facebook-ads",
+    "year": "2023",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "Facebook Ads: Criando Campanhas de Sucesso",
+        "issuer": "Alura"
+      },
+      "pt": {
+        "name": "Facebook Ads: Criando Campanhas de Sucesso",
+        "issuer": "Alura"
+      }
+    }
+  },
+  {
+    "id": "cert-ux-design-tera",
+    "year": "2022",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "User Experience Design",
+        "issuer": "Tera Treinamentos Profissionais"
+      },
+      "pt": {
+        "name": "User Experience Design",
+        "issuer": "Tera Treinamentos Profissionais"
+      }
+    }
+  },
+  {
+    "id": "cert-html-css-responsividade",
+    "year": "2022",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "HTML e CSS: Responsividade com Mobile-First",
+        "issuer": "Alura"
+      },
+      "pt": {
+        "name": "HTML e CSS: Responsividade com Mobile-First",
+        "issuer": "Alura"
+      }
+    }
+  },
+  {
+    "id": "cert-html-css-praticando",
+    "year": "2022",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "HTML e CSS: Praticando HTML/CSS",
+        "issuer": "Alura"
+      },
+      "pt": {
+        "name": "HTML e CSS: Praticando HTML/CSS",
+        "issuer": "Alura"
+      }
+    }
+  },
+  {
+    "id": "cert-html5-css3-parte2",
+    "year": "2022",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "HTML5 e CSS3 Parte 2: Posicionamento, Listas e Navegação",
+        "issuer": "Alura"
+      },
+      "pt": {
+        "name": "HTML5 e CSS3 Parte 2: Posicionamento, Listas e Navegação",
+        "issuer": "Alura"
+      }
+    }
+  },
+  {
+    "id": "cert-html5-css3-parte1",
+    "year": "2022",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "HTML5 e CSS3 Parte 1: Crie uma Página da Web",
+        "issuer": "Alura"
+      },
+      "pt": {
+        "name": "HTML5 e CSS3 Parte 1: Crie uma Página da Web",
+        "issuer": "Alura"
+      }
+    }
+  }
+]

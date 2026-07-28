@@ -1,0 +1,121 @@
+[
+  {
+    "id": "edag",
+    "company": "EDAG Group",
+    "current": true,
+    "content": {
+      "en": {
+        "role": "Senior UX/UI Designer",
+        "period": "Feb 2024 – Present",
+        "description": "Design automotive HMI interfaces for digital instrument clusters and infotainment systems, translating discovery and technical requirements into production-ready UI aligned with OEM standards, and coordinating handoff with suppliers."
+      },
+      "pt": {
+        "role": "UX/UI Designer Sênior",
+        "period": "Fev 2024 – Presente",
+        "description": "Projeto interfaces de HMI automotivo para cluster digital e multimídia, traduzindo discovery e requisitos técnicos em UI pronta para produção alinhada aos padrões da montadora, além de coordenar o handoff com fornecedores."
+      }
+    }
+  },
+  {
+    "id": "vwtb",
+    "company": "Volkswagen Caminhões e Ônibus",
+    "current": true,
+    "content": {
+      "en": {
+        "role": "Senior Product Designer",
+        "period": "Mar 2022 – Present",
+        "description": "Lead end-to-end UX/UI for cluster, infotainment, and mobile applications at Volkswagen Trucks & Buses. Designed the Volks Connect platform connecting drivers, vehicles, and fleet managers, built scalable design systems for embedded environments, and introduced AI-assisted workflows to speed up delivery."
+      },
+      "pt": {
+        "role": "Product Designer Sênior",
+        "period": "Mar 2022 – Presente",
+        "description": "Lidero o UX/UI de ponta a ponta para cluster, multimídia e aplicativos na Volkswagen Caminhões e Ônibus. Desenhei a plataforma Volks Connect, conectando motoristas, veículos e frotistas, construí design systems escaláveis para ambientes embarcados e introduzi fluxos de trabalho com IA para acelerar a entrega."
+      }
+    }
+  },
+  {
+    "id": "freelance",
+    "company": "Freelance",
+    "current": false,
+    "content": {
+      "en": {
+        "role": "UX/UI Designer & Front-end Developer",
+        "period": "Parallel to the current role",
+        "description": "Designed and shipped institutional websites, SaaS products, and community platforms for independent clients, combining UX research, UI, and hands-on Next.js development, often with an AI-augmented workflow using Cursor."
+      },
+      "pt": {
+        "role": "UX/UI Designer & Desenvolvedor Front-end",
+        "period": "Em paralelo à atuação atual",
+        "description": "Desenhei e publiquei sites institucionais, produtos SaaS e plataformas comunitárias para clientes independentes, combinando pesquisa de UX, UI e desenvolvimento prático em Next.js, muitas vezes com fluxo de trabalho apoiado por IA usando Cursor."
+      }
+    }
+  },
+  {
+    "id": "zeentech",
+    "company": "Zeentech",
+    "current": false,
+    "content": {
+      "en": {
+        "role": "Senior UX Designer",
+        "period": "Mar 2023 – Feb 2024",
+        "description": "Designed enterprise product flows, wireframes, and high-fidelity UI to improve usability across internal and client-facing tools."
+      },
+      "pt": {
+        "role": "UX Designer Sênior",
+        "period": "Mar 2023 – Fev 2024",
+        "description": "Desenhei fluxos, wireframes e UI de alta fidelidade para produtos corporativos, melhorando a usabilidade de ferramentas internas e voltadas ao cliente."
+      }
+    }
+  },
+  {
+    "id": "sme",
+    "company": "SME",
+    "current": false,
+    "content": {
+      "en": {
+        "role": "UI Designer",
+        "period": "Jul 2021 – Dec 2023",
+        "description": "Designed visual interfaces and digital design deliverables for consulting clients, working in parallel with the automotive HMI projects."
+      },
+      "pt": {
+        "role": "UI Designer",
+        "period": "Jul 2021 – Dez 2023",
+        "description": "Desenhei interfaces visuais e entregas de design digital para clientes de consultoria, atuando em paralelo aos projetos de HMI automotivo."
+      }
+    }
+  },
+  {
+    "id": "msx",
+    "company": "MSX International",
+    "current": false,
+    "content": {
+      "en": {
+        "role": "UX/UI Designer",
+        "period": "Mar 2022 – Mar 2023",
+        "description": "Supported UX/UI and HMI initiatives for the Volkswagen Trucks & Buses account, working closely with product and engineering teams."
+      },
+      "pt": {
+        "role": "UX/UI Designer",
+        "period": "Mar 2022 – Mar 2023",
+        "description": "Apoiei iniciativas de UX/UI e HMI para a conta Volkswagen Caminhões e Ônibus, trabalhando lado a lado com os times de produto e engenharia."
+      }
+    }
+  },
+  {
+    "id": "paytime",
+    "company": "Paytime Brasil",
+    "current": false,
+    "content": {
+      "en": {
+        "role": "UX Designer",
+        "period": "Jan 2022 – Mar 2022",
+        "description": "Designed financial platform interfaces and user journeys, focusing on payment flows and onboarding."
+      },
+      "pt": {
+        "role": "UX Designer",
+        "period": "Jan 2022 – Mar 2022",
+        "description": "Desenhei interfaces e jornadas de usuário para uma plataforma financeira, com foco em fluxos de pagamento e onboarding."
+      }
+    }
+  }
+]

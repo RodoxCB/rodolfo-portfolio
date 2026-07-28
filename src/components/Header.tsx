@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FolderKanban, Home, Mail, Menu, User, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
@@ -10,12 +10,15 @@ import { localePath } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const navItems = [
-  { key: "home", href: "", icon: Home },
-  { key: "about", href: "/about", icon: User },
-  { key: "projects", href: "/projects", icon: FolderKanban },
-  { key: "contact", href: "/contact", icon: Mail },
+const baseNavItems = [
+  { key: "about", anchor: "about-me" },
+  { key: "certifications", anchor: "certifications" },
+  { key: "experience", anchor: "experience" },
+  { key: "clients", anchor: "clients" },
+  { key: "portfolio", anchor: "portfolio" },
 ] as const;
+
+const contactNavItem = { key: "contact", anchor: "contact-me" } as const;
 
 export function Header({
   locale,
@@ -28,6 +31,11 @@ export function Header({
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [activeAnchor, setActiveAnchor] = useState<string>("");
+
+  const navItems = [...baseNavItems, contactNavItem];
+  const homeHref = localePath(locale);
+  const isHome = pathname === homeHref;
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -36,6 +44,30 @@ export function Header({
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!isHome) {
+      setActiveAnchor("");
+      return;
+    }
+
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveAnchor(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [isHome, pathname]);
+
   return (
     <header
       className={`fixed inset-x-0 z-50 border-b border-transparent bg-bg-primary/80 pt-[env(safe-area-inset-top)] backdrop-blur-md ${
@@ -43,7 +75,7 @@ export function Header({
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 md:h-20">
-        <Link href={localePath(locale)} className="group text-text-primary">
+        <Link href={homeHref} className="group text-text-primary">
           <div className="glitch-stack-hover glitch-stack h-10 w-10">
             <div className="glitch-stack-layer">
               <Logo />
@@ -58,23 +90,21 @@ export function Header({
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
-          {navItems.map(({ key, href, icon: Icon }) => {
-            const link = localePath(locale, href);
-            const active = pathname === link || (href !== "" && pathname.startsWith(link));
+          {baseNavItems.map(({ key, anchor }) => {
+            const active = isHome && activeAnchor === anchor;
 
             return (
               <Link
                 key={key}
-                href={link}
-                className={`group relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                href={`${homeHref}#${anchor}`}
+                className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                   active ? "text-text-primary" : "text-text-secondary hover:text-text-primary"
                 }`}
               >
-                <Icon className={`h-4 w-4 ${active ? "text-accent-primary" : "text-text-tertiary group-hover:text-accent-primary"}`} />
-                <span>{dict.nav[key]}</span>
+                {dict.nav[key]}
                 <span
                   className={`absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-accent-primary transition-all ${
-                    active ? "w-4/5" : "w-0 group-hover:w-4/5"
+                    active ? "w-4/5" : "w-0"
                   }`}
                 />
               </Link>
@@ -83,6 +113,12 @@ export function Header({
         </div>
 
         <div className="flex items-center gap-3">
+          <Link
+            href={`${homeHref}#${contactNavItem.anchor}`}
+            className="hidden rounded-lg bg-gradient-to-r from-accent-primary to-accent-secondary px-4 py-2 text-sm font-semibold text-bg-primary transition-opacity hover:opacity-90 md:inline-flex"
+          >
+            {dict.nav[contactNavItem.key]}
+          </Link>
           <LanguageSwitcher locale={locale} />
           <button
             type="button"
@@ -98,14 +134,13 @@ export function Header({
       {open && (
         <div className="border-t border-border-default bg-bg-secondary px-4 py-4 md:hidden">
           <div className="flex flex-col gap-2">
-            {navItems.map(({ key, href, icon: Icon }) => (
+            {navItems.map(({ key, anchor }) => (
               <Link
                 key={key}
-                href={localePath(locale, href)}
-                className="flex min-h-11 items-center gap-2 rounded-lg px-3 py-3 text-sm text-text-secondary hover:bg-bg-tertiary hover:text-text-primary"
+                href={`${homeHref}#${anchor}`}
+                className="flex min-h-11 items-center rounded-lg px-3 py-3 text-sm text-text-secondary hover:bg-bg-tertiary hover:text-text-primary"
                 onClick={() => setOpen(false)}
               >
-                <Icon className="h-4 w-4" />
                 {dict.nav[key]}
               </Link>
             ))}

@@ -1,0 +1,10 @@
+[
+  { "id": "volkswagen", "name": "Volkswagen Caminhões e Ônibus", "url": "" },
+  { "id": "edag", "name": "EDAG Group", "url": "" },
+  { "id": "garage-910", "name": "Garage 910", "url": "https://garage-910.vercel.app/" },
+  { "id": "ct-michel-mendes", "name": "CT Michel Mendes", "url": "https://ct-michel-mendes.vercel.app/" },
+  { "id": "esclima", "name": "Esclima Refrigeração", "url": "https://esclima-site.vercel.app/" },
+  { "id": "jp-tecnic", "name": "JP Assistência Técnica", "url": "https://jp-tecnic.vercel.app/" },
+  { "id": "source-design", "name": "Source Design", "url": "https://sourcedesign.com.br/" },
+  { "id": "henrique-lachesis", "name": "Henrique Lachésis", "url": "https://henrique-lachesis.vercel.app/" }
+]

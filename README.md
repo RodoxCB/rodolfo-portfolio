@@ -59,7 +59,7 @@ Published data lives in `/data` as JSON. Drafts are stored under `/data/drafts` 
 
 ## Next steps
 
-- Replace placeholder SVG thumbnails with real case images from Behance
+- Replace placeholder SVG thumbnails with real case images
 - Add blog section (optional)
 - Connect contact form (Resend / Formspree)
 - Add custom logo and 3D hero if desired

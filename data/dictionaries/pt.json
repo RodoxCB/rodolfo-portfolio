@@ -1,13 +1,18 @@
 {
   "meta": {
-    "title": "Rodolfo Behr — Senior UX/UI Designer",
-    "description": "Portfólio de Rodolfo Behr — HMI automotivo, product design e design-to-code."
+    "title": "Rodolfo Behr, Senior UX/UI Designer",
+    "description": "Portfólio de Rodolfo Behr: HMI automotivo, product design e design-to-code."
   },
   "nav": {
     "home": "Início",
     "about": "Sobre",
     "projects": "Projetos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "certifications": "Certificações",
+    "experience": "Experiência",
+    "clients": "Clientes",
+    "portfolio": "Portfolio",
+    "testimonials": "Depoimentos"
   },
   "hero": {
     "greeting": "[Olá, sou]",
@@ -23,6 +28,7 @@
     "seeAll": "Ver todos os projetos",
     "viewProject": "Ver Projeto",
     "viewLive": "Site ao vivo",
+    "downloadApp": "Baixar na Google Play",
     "featured": "Destaque"
   },
   "contact": {
@@ -33,7 +39,6 @@
     "pageSubtitle": "Aberto a oportunidades sênior em UX/UI, Product Design e HMI automotivo.",
     "email": "E-mail",
     "linkedin": "LinkedIn",
-    "behance": "Behance",
     "github": "GitHub",
     "location": "Guarapari, ES, Brasil · Remoto · Disponível para viagens"
   },
@@ -41,8 +46,8 @@
     "title": "Sobre",
     "subtitle": "// Quem sou",
     "paragraphs": [
-      "Senior UX/UI Designer com mais de 6 anos criando produtos digitais centrados no usuário — de HMI embarcado e mobilidade conectada a interfaces web e mobile.",
-      "Atualmente no ecossistema Volkswagen Caminhões e Ônibus via EDAG Group, conduzo UX end-to-end para multimídia, cluster digital e apps companion — do discovery e requisitos técnicos à coordenação com fornecedores e handoff para produção.",
+      "Senior UX/UI Designer com mais de 6 anos criando produtos digitais centrados no usuário, de HMI embarcado e mobilidade conectada a interfaces web e mobile.",
+      "Atualmente no ecossistema Volkswagen Caminhões e Ônibus via EDAG Group, conduzo UX end-to-end para multimídia, cluster digital e apps companion, do discovery e requisitos técnicos à coordenação com fornecedores e handoff para produção.",
       "Uno product thinking, pesquisa e UI de alta fidelidade com front-end prático (React, Next.js, TypeScript, Tailwind) e fluxo com Cursor e MCP para prototipar mais rápido e alinhar design e engenharia."
     ],
     "skillsTitle": "// Principais skills",
@@ -56,6 +61,47 @@
       "TypeScript",
       "Cursor & MCP"
     ]
+  },
+  "certifications": {
+    "title": "Certificações",
+    "subtitle": "// Aprendizado contínuo",
+    "featured": "Formação Acadêmica"
+  },
+  "experience": {
+    "title": "Minha Experiência",
+    "subtitle": "// Trajetória de carreira",
+    "current": "Atual"
+  },
+  "clients": {
+    "title": "Clientes",
+    "subtitle": "// Com quem já trabalhei"
+  },
+  "testimonials": {
+    "title": "Depoimentos",
+    "subtitle": "// O que dizem sobre mim"
+  },
+  "case": {
+    "role": "Papel",
+    "company": "Empresa",
+    "tools": "Ferramentas",
+    "location": "Localização",
+    "duration": "Duração",
+    "introduction": "Introdução",
+    "responsibilities": "Papel & Responsabilidades",
+    "challenge": "O Desafio",
+    "process": "O Processo",
+    "personas": "Personas",
+    "personaBackground": "Contexto",
+    "personaNeeds": "Necessidades & Objetivos",
+    "personaChallenges": "Desafios",
+    "results": "Resultados",
+    "deliverables": "Principais Entregas",
+    "contribution": "Minha Contribuição",
+    "testimonial": "Depoimento do Cliente",
+    "otherComments": "Outros Comentários",
+    "takeaways": "Aprendizados",
+    "nextProject": "Próximo Projeto",
+    "backToPortfolio": "Voltar ao Portfolio"
   },
   "footer": {
     "tagline": "Senior UX/UI Designer\nHMI Automotivo & Product Design",

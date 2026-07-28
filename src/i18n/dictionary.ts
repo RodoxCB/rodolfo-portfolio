@@ -8,6 +8,11 @@ export interface Dictionary {
     about: string;
     projects: string;
     contact: string;
+    certifications: string;
+    experience: string;
+    clients: string;
+    portfolio: string;
+    testimonials: string;
   };
   hero: {
     greeting: string;
@@ -23,6 +28,7 @@ export interface Dictionary {
     seeAll: string;
     viewProject: string;
     viewLive: string;
+    downloadApp: string;
     featured: string;
   };
   contact: {
@@ -33,7 +39,6 @@ export interface Dictionary {
     pageSubtitle: string;
     email: string;
     linkedin: string;
-    behance: string;
     github: string;
     location: string;
   };
@@ -43,6 +48,47 @@ export interface Dictionary {
     paragraphs: string[];
     skillsTitle: string;
     skills: string[];
+  };
+  certifications: {
+    title: string;
+    subtitle: string;
+    featured: string;
+  };
+  experience: {
+    title: string;
+    subtitle: string;
+    current: string;
+  };
+  clients: {
+    title: string;
+    subtitle: string;
+  };
+  testimonials: {
+    title: string;
+    subtitle: string;
+  };
+  case: {
+    role: string;
+    company: string;
+    tools: string;
+    location: string;
+    duration: string;
+    introduction: string;
+    responsibilities: string;
+    challenge: string;
+    process: string;
+    personas: string;
+    personaBackground: string;
+    personaNeeds: string;
+    personaChallenges: string;
+    results: string;
+    deliverables: string;
+    contribution: string;
+    testimonial: string;
+    otherComments: string;
+    takeaways: string;
+    nextProject: string;
+    backToPortfolio: string;
   };
   footer: {
     tagline: string;

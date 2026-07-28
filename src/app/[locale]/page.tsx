@@ -1,11 +1,22 @@
+import { notFound } from "next/navigation";
+import { AboutSection } from "@/components/AboutSection";
+import { CertificationsSection } from "@/components/CertificationsSection";
+import { ClientsSection } from "@/components/ClientsSection";
 import { ContactCTA } from "@/components/ContactCTA";
+import { ExperienceSection } from "@/components/ExperienceSection";
 import { Hero } from "@/components/Hero";
 import { ProjectsSection } from "@/components/ProjectsSection";
-import { getSite } from "@/content/site";
+import { QuoteBanner } from "@/components/QuoteBanner";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { getCertifications } from "@/content/certifications";
+import { getClients } from "@/content/clients";
+import { getExperience } from "@/content/experience";
+import { getExtras } from "@/content/extras";
 import { getProjects } from "@/content/projects";
+import { getSite } from "@/content/site";
+import { getTestimonials } from "@/content/testimonials";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -17,16 +28,29 @@ export default async function HomePage({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
 
-  const [dict, site, projects] = await Promise.all([
-    getDictionary(locale as Locale),
+  const currentLocale = locale as Locale;
+
+  const [dict, site, projects, experience, certifications, clients, testimonials, extras] = await Promise.all([
+    getDictionary(currentLocale),
     getSite(),
     getProjects(),
+    getExperience(),
+    getCertifications(),
+    getClients(),
+    getTestimonials(),
+    getExtras(),
   ]);
 
   return (
     <>
-      <Hero locale={locale as Locale} dict={dict} />
-      <ProjectsSection locale={locale as Locale} dict={dict} projects={projects} />
+      <Hero locale={currentLocale} dict={dict} roles={extras.roles[currentLocale]} />
+      <AboutSection dict={dict} />
+      <CertificationsSection locale={currentLocale} dict={dict} certifications={certifications} />
+      <ExperienceSection locale={currentLocale} dict={dict} experience={experience} />
+      <ClientsSection dict={dict} clients={clients} />
+      <QuoteBanner locale={currentLocale} extras={extras} />
+      <ProjectsSection locale={currentLocale} dict={dict} projects={projects} />
+      <TestimonialsSection locale={currentLocale} dict={dict} testimonials={testimonials} />
       <ContactCTA dict={dict} site={site} />
     </>
   );

@@ -14,7 +14,7 @@ export function CodeButton({
   className?: string;
 }) {
   const classes = cn(
-    "code-button inline-flex items-center gap-2 rounded-lg bg-bg-secondary px-6 py-3 font-mono text-base font-semibold text-text-primary transition-all hover:bg-gradient-to-r hover:from-accent-primary hover:via-text-primary hover:to-accent-secondary",
+    "code-button inline-flex items-center gap-2 rounded-lg bg-bg-secondary px-6 py-3 font-mono text-base font-semibold text-text-primary transition-all hover:bg-gradient-to-r hover:from-accent-primary hover:to-accent-secondary hover:text-bg-primary",
     className,
   );
 

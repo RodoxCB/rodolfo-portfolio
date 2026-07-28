@@ -3,7 +3,7 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
 import { localePath } from "@/lib/utils";
 import { CodeButton } from "./CodeButton";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectRow } from "./ProjectRow";
 import { SectionHeading } from "./SectionHeading";
 
 export function ProjectsSection({
@@ -18,21 +18,19 @@ export function ProjectsSection({
   const featured = projects.filter((project) => project.featured);
 
   return (
-    <section className="bg-bg-primary py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-20">
-          <SectionHeading title={dict.projects.title} />
-        </div>
+    <section id="portfolio" className="bg-bg-primary py-20 sm:py-28">
+      <div className="mx-auto mb-16 max-w-6xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading eyebrow={dict.projects.featured} title={dict.projects.title} />
+      </div>
 
-        <div className="grid items-stretch gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {featured.map((project) => (
-            <ProjectCard key={project.slug} project={project} locale={locale} dict={dict} />
-          ))}
-        </div>
+      <div className="border-t border-border-default">
+        {featured.map((project) => (
+          <ProjectRow key={project.slug} project={project} locale={locale} dict={dict} />
+        ))}
+      </div>
 
-        <div className="mt-16 text-center">
-          <CodeButton href={localePath(locale, "/projects")}>{dict.projects.seeAll}</CodeButton>
-        </div>
+      <div className="mt-16 text-center">
+        <CodeButton href={localePath(locale, "/projects")}>{dict.projects.seeAll}</CodeButton>
       </div>
     </section>
   );
