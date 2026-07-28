@@ -2,9 +2,16 @@
   {
     "slug": "volks-connect",
     "featured": true,
-    "tags": ["UX/UI", "Mobile", "Automotive", "Fleet"],
+    "tags": [
+      "UX/UI",
+      "Mobile",
+      "Automotive",
+      "Fleet"
+    ],
     "thumbnail": "/media/covers/volks-connect.svg",
-    "links": { "googlePlay": "https://play.google.com/store/apps/details?id=com.vwco.vwconnect&hl=pt_BR" },
+    "links": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.vwco.vwconnect&hl=pt_BR"
+    },
     "content": {
       "en": {
         "title": "Volks | Connect",
@@ -20,26 +27,52 @@
         "tools": "Figma, Design Systems, Prototyping",
         "location": "Brazil",
         "duration": "Ongoing",
-        "introduction": "Volkswagen Trucks & Buses needed a single connected experience for drivers, vehicles, and fleet managers, one capable of turning raw telemetry into decisions operators could act on in real time. The product had to replace scattered dashboards and manual logs with a coherent app that made vehicle status, driver behavior, and fleet performance immediately usable on the road and in the back office.",
+        "introduction": "Volkswagen Trucks & Buses needed a single connected experience for drivers, vehicles, and fleet managers, one that turned raw telemetry into decisions operators could act on in real time. Scattered dashboards and manual logs made vehicle status, driver behavior, and fleet performance hard to use on the road and in the back office. Volks | Connect had to replace that fragmentation with a coherent iOS and Android app that felt safe to use as a glanceable companion to a moving commercial vehicle. The product sat at the intersection of mobility UX, fleet operations, and safety-critical embedded constraints.",
         "responsibilities": [
           "Owned UX from discovery through App Store and Google Play launch.",
-          "Designed onboarding, the vehicle simulation mode, and core fleet workflows.",
+          "Designed onboarding, vehicle simulation mode, and core fleet workflows for drivers and managers.",
           "Partnered with product and embedded engineering in a safety-critical mobility context.",
-          "Facilitated alignment between design, hardware, and Tier-1 suppliers."
+          "Facilitated alignment between design, hardware teams, and Tier-1 suppliers.",
+          "Defined information architecture that served three audiences from a shared vehicle data model.",
+          "Validated key flows for glanceability and in-cab usability before production freeze."
         ],
-        "challenge": "Fleet managers, drivers, and technicians each needed a different lens on the same vehicle data, inside an app that also had to work as a safe, glanceable companion to a moving commercial vehicle. Balancing information density with in-cab safety constraints was the central tension of the project.",
-        "process": "I mapped the three audiences (driver, vehicle, and fleet manager) and built a shared data model before touching any UI, so every screen inherited the same structure instead of three disconnected mental models. A vehicle simulation mode then let stakeholders experience the connected flows without a physical truck for every review, cutting review cycles with product and engineering from weeks to days and keeping the roadmap moving.",
-        "results": "Volks | Connect shipped to the App Store and Google Play as the official connectivity app for the Volkswagen Trucks & Buses fleet ecosystem, giving drivers and fleet managers a shared, real-time view of vehicle status and operations.",
+        "challenge": "Fleet managers, drivers, and technicians each needed a different lens on the same vehicle data, inside an app that also had to work as a safe companion to a moving commercial vehicle. Information density that helped a back-office manager could overwhelm a driver mid-route. Balancing operational depth with in-cab glanceability, across iOS and Android, while staying aligned with hardware and supplier constraints, was the central tension of the project.",
+        "process": "I mapped the three audiences (driver, vehicle context, and fleet manager) and built a shared data model before touching UI, so every screen inherited one structure instead of three disconnected mental models. Journey maps and task flows clarified which signals belonged on primary screens versus secondary drill-downs. A vehicle simulation mode then let stakeholders experience connected flows without a physical truck for every review, shortening cycles with product and engineering and keeping the roadmap moving under real hardware constraints.",
+        "results": "Volks | Connect shipped to the App Store and Google Play as the official connectivity app for the Volkswagen Trucks & Buses fleet ecosystem. Drivers and fleet managers gained a shared, real-time view of vehicle status and operations, replacing fragmented tools with one coherent connected experience. The simulation mode also became a lasting alignment asset for demos and internal reviews beyond launch.",
         "deliverables": [
-          "End-to-end iOS and Android UX/UI",
-          "Vehicle simulation mode for stakeholder demos",
-          "Fleet manager and driver-facing information architecture"
+          "End-to-end iOS and Android UX/UI for fleet connectivity",
+          "Onboarding experience for drivers and fleet managers",
+          "Vehicle simulation mode for stakeholder demos and reviews",
+          "Fleet manager and driver-facing information architecture",
+          "Interaction specs aligned with engineering and supplier constraints",
+          "Prototype flows for core monitoring and operational tasks"
         ],
-        "contribution": "I led UX end-to-end, from early discovery and technical requirements through to the shipped onboarding, simulation mode, and core fleet workflows, working directly with engineering at every stage to keep the experience aligned with hardware and safety constraints and ready for production.",
+        "contribution": "I led UX end-to-end, from early discovery and technical requirements through shipped onboarding, simulation mode, and core fleet workflows. Working directly with engineering at every stage kept the experience aligned with hardware limits, safety expectations, and production readiness. My ownership covered both the strategic framing of the three-audience model and the concrete UI decisions that made telemetry usable on the road.",
         "takeaways": [
           "Designing for a moving vehicle means glanceability beats density, every time.",
           "A simulation mode is one of the highest-leverage tools for aligning stakeholders without physical hardware.",
-          "Safety-critical mobility UX rewards close, continuous collaboration with engineering over big upfront specs."
+          "Safety-critical mobility UX rewards close, continuous collaboration with engineering over big upfront specs.",
+          "A shared data model across audiences prevents three products masquerading as one app."
+        ],
+        "personas": [
+          {
+            "name": "Carlos, long-haul driver",
+            "background": "Drives commercial Volkswagen trucks on multi-day routes across Brazil, often alone and under tight delivery windows.",
+            "needs": "Fast confirmation of vehicle health, route-relevant alerts, and simple actions that do not pull attention off the road.",
+            "challenges": "Limited time for complex menus, variable connectivity, and high risk if critical alerts are buried or poorly prioritized."
+          },
+          {
+            "name": "Marina, fleet operations manager",
+            "background": "Oversees a mixed fleet for a logistics company, balancing utilization, maintenance, and driver compliance from a desk and tablet.",
+            "needs": "A consolidated view of vehicle status, exceptions, and operational trends she can act on without jumping between tools.",
+            "challenges": "Too many signals at once, delayed updates from the field, and pressure to decide quickly when a truck goes offline or underperforms."
+          },
+          {
+            "name": "Rafael, maintenance coordinator",
+            "background": "Coordinates workshop schedules and preventive maintenance for connected commercial vehicles.",
+            "needs": "Clear fault context, vehicle history, and signals that help prioritize which trucks need attention first.",
+            "challenges": "Incomplete telemetry interpretation by non-technical staff and friction between road teams and workshop planning."
+          }
         ]
       },
       "pt": {
@@ -56,26 +89,52 @@
         "tools": "Figma, Design Systems, Prototipação",
         "location": "Brasil",
         "duration": "Em andamento",
-        "introduction": "A Volkswagen Caminhões e Ônibus precisava de uma experiência conectada única para motoristas, veículos e gestores de frota, capaz de transformar telemetria bruta em decisões que o operador pudesse tomar em tempo real. O produto precisava substituir painéis dispersos e planilhas manuais por um app coerente que tornasse status do veículo, comportamento do motorista e desempenho da frota imediatamente úteis na estrada e na retaguarda.",
+        "introduction": "A Volkswagen Caminhões e Ônibus precisava de uma experiência conectada única para motoristas, veículos e gestores de frota, capaz de transformar telemetria bruta em decisões que o operador pudesse tomar em tempo real. Painéis dispersos e registros manuais dificultavam o uso do status do veículo, do comportamento do motorista e do desempenho da frota na estrada e na retaguarda. O Volks | Connect precisava substituir essa fragmentação por um app coerente para iOS e Android, seguro e de leitura rápida como companheiro de um veículo comercial em movimento. O produto ficava na interseção entre UX de mobilidade, operação de frota e restrições embarcadas de segurança.",
         "responsibilities": [
           "Conduzi o UX do discovery ao lançamento na App Store e Google Play.",
-          "Desenhei o onboarding, o modo simulação de veículo e os fluxos centrais de frota.",
-          "Colaborei com produto e engenharia embarcada em um contexto de mobilidade e segurança.",
-          "Facilitei o alinhamento entre design, hardware e fornecedores Tier-1."
+          "Desenhei onboarding, modo simulação de veículo e fluxos centrais de frota para motoristas e gestores.",
+          "Colaborei com produto e engenharia embarcada em contexto de mobilidade e segurança.",
+          "Facilitei o alinhamento entre design, times de hardware e fornecedores Tier-1.",
+          "Defini arquitetura de informação que atendesse três públicos a partir de um modelo de dados compartilhado.",
+          "Validei fluxos-chave de legibilidade rápida e usabilidade em cabine antes do freeze de produção."
         ],
-        "challenge": "Gestores de frota, motoristas e técnicos precisavam de leituras diferentes dos mesmos dados de veículo, dentro de um app que também precisava funcionar como companheiro seguro e de leitura rápida para um veículo comercial em movimento. Equilibrar densidade de informação com segurança em cabine foi a tensão central do projeto.",
-        "process": "Mapeei os três públicos (motorista, veículo e gestor de frota) e construí um modelo de dados compartilhado antes de tocar na UI, para que cada tela herdasse a mesma estrutura em vez de três modelos mentais desconectados. Um modo simulação permitiu que os stakeholders vivenciassem os fluxos do veículo conectado sem depender de um caminhão físico em cada revisão, reduzindo os ciclos de revisão com produto e engenharia de semanas para dias.",
-        "results": "O Volks | Connect foi lançado na App Store e no Google Play como o app oficial de conectividade do ecossistema de frota Volkswagen Caminhões e Ônibus, dando a motoristas e gestores de frota uma visão compartilhada e em tempo real do status e da operação dos veículos.",
+        "challenge": "Gestores de frota, motoristas e técnicos precisavam de leituras diferentes dos mesmos dados de veículo, dentro de um app que também precisava funcionar como companheiro seguro de um veículo comercial em movimento. A densidade útil para a retaguarda podia sobrecarregar o motorista em rota. Equilibrar profundidade operacional com legibilidade em cabine, em iOS e Android, e ainda manter alinhamento com hardware e fornecedores, foi a tensão central do projeto.",
+        "process": "Mapeei os três públicos (motorista, contexto do veículo e gestor de frota) e construí um modelo de dados compartilhado antes de tocar na UI, para que cada tela herdasse a mesma estrutura em vez de três modelos mentais desconectados. Mapas de jornada e fluxos de tarefa esclareceram quais sinais pertenciam às telas principais versus drill-downs secundários. Um modo simulação permitiu que stakeholders vivenciassem os fluxos conectados sem caminhão físico em cada revisão, encurtando ciclos com produto e engenharia e mantendo o roadmap em movimento sob restrições reais de hardware.",
+        "results": "O Volks | Connect foi lançado na App Store e no Google Play como o app oficial de conectividade do ecossistema de frota Volkswagen Caminhões e Ônibus. Motoristas e gestores passaram a ter uma visão compartilhada e em tempo real do status e da operação dos veículos, substituindo ferramentas fragmentadas por uma experiência conectada coerente. O modo simulação também se tornou um ativo contínuo de alinhamento para demos e revisões internas além do lançamento.",
         "deliverables": [
-          "UX/UI completo para iOS e Android",
-          "Modo simulação de veículo para demonstrações com stakeholders",
-          "Arquitetura de informação para gestor de frota e motorista"
+          "UX/UI completo de conectividade de frota para iOS e Android",
+          "Experiência de onboarding para motoristas e gestores de frota",
+          "Modo simulação de veículo para demos e revisões com stakeholders",
+          "Arquitetura de informação para gestor de frota e motorista",
+          "Especificações de interação alinhadas a engenharia e fornecedores",
+          "Protótipos dos fluxos centrais de monitoramento e operação"
         ],
-        "contribution": "Conduzi o UX de ponta a ponta, do discovery inicial e requisitos técnicos até o onboarding, modo simulação e fluxos centrais de frota já em produção, trabalhando diretamente com engenharia em cada etapa para manter a experiência alinhada a restrições de hardware, segurança e prontidão para produção.",
+        "contribution": "Conduzi o UX de ponta a ponta, do discovery inicial e requisitos técnicos até o onboarding, modo simulação e fluxos centrais de frota em produção. Trabalhar diretamente com engenharia em cada etapa manteve a experiência alinhada a limites de hardware, expectativas de segurança e prontidão para produção. Minha ownership cobriu tanto o enquadramento estratégico do modelo de três públicos quanto as decisões concretas de UI que tornaram a telemetria usável na estrada.",
         "takeaways": [
           "Desenhar para um veículo em movimento significa que legibilidade rápida vence densidade, sempre.",
           "Um modo simulação é uma das ferramentas de maior alavancagem para alinhar stakeholders sem depender de hardware físico.",
-          "UX de mobilidade em contexto de segurança recompensa colaboração próxima e contínua com engenharia, mais do que especificações fechadas antecipadamente."
+          "UX de mobilidade em contexto de segurança recompensa colaboração próxima e contínua com engenharia, mais do que especificações fechadas antecipadamente.",
+          "Um modelo de dados compartilhado entre públicos evita três produtos disfarçados de um único app."
+        ],
+        "personas": [
+          {
+            "name": "Carlos, motorista de longa distância",
+            "background": "Dirige caminhões comerciais Volkswagen em rotas de vários dias pelo Brasil, muitas vezes sozinho e sob janelas apertadas de entrega.",
+            "needs": "Confirmação rápida da saúde do veículo, alertas relevantes à rota e ações simples que não tirem a atenção da estrada.",
+            "challenges": "Pouco tempo para menus complexos, conectividade variável e alto risco se alertas críticos ficarem enterrados ou mal priorizados."
+          },
+          {
+            "name": "Marina, gestora de operações de frota",
+            "background": "Supervisiona uma frota mista em uma empresa de logística, equilibrando utilização, manutenção e conformidade dos motoristas no desktop e no tablet.",
+            "needs": "Uma visão consolidada de status dos veículos, exceções e tendências operacionais em que ela possa agir sem saltar entre ferramentas.",
+            "challenges": "Excesso de sinais ao mesmo tempo, atualizações atrasadas do campo e pressão para decidir rápido quando um caminhão fica offline ou sob desempenho."
+          },
+          {
+            "name": "Rafael, coordenador de manutenção",
+            "background": "Coordena agendas de oficina e manutenção preventiva para veículos comerciais conectados.",
+            "needs": "Contexto claro de falhas, histórico do veículo e sinais que ajudem a priorizar quais caminhões precisam de atenção primeiro.",
+            "challenges": "Interpretação incompleta da telemetria por equipes não técnicas e atrito entre times de estrada e planejamento de oficina."
+          }
         ]
       }
     }
@@ -83,7 +142,12 @@
   {
     "slug": "vwtb-hmi",
     "featured": true,
-    "tags": ["HMI", "Infotainment", "Cluster", "Automotive"],
+    "tags": [
+      "HMI",
+      "Infotainment",
+      "Cluster",
+      "Automotive"
+    ],
     "thumbnail": "/media/covers/vwtb-hmi.svg",
     "content": {
       "en": {
@@ -100,26 +164,52 @@
         "tools": "Figma, Interaction Specs, Usability Testing",
         "location": "Brazil",
         "duration": "Ongoing",
-        "introduction": "Across the Volkswagen Trucks & Buses platform, infotainment, the digital instrument cluster, and companion touchpoints needed to feel like one coherent in-vehicle system instead of three separate screens built by three separate teams.",
+        "introduction": "Across the Volkswagen Trucks & Buses platform, infotainment, the digital instrument cluster, and companion touchpoints needed to feel like one coherent in-vehicle system instead of three separate screens built by three separate teams. Drivers expect continuity between what they see in the cluster, what they control in the head unit, and what they revisit later on a companion app. The HMI ecosystem had to deliver that coherence under hard embedded constraints: refresh rate, memory, supplier tooling, and production timelines. I owned the interaction patterns that made those touchpoints behave as one product family.",
         "responsibilities": [
-          "Owned interaction patterns, flows, and high-fidelity UI for embedded systems.",
+          "Owned interaction patterns, flows, and high-fidelity UI for embedded HMI systems.",
           "Defined technical requirements and coordinated Tier-1 supplier deliverables.",
           "Validated concepts through prototyping and usability sessions with drivers.",
-          "Kept visual and interaction consistency across cluster, infotainment, and companion app."
+          "Kept visual and interaction consistency across cluster, infotainment, and companion app.",
+          "Translated driver research into specs suppliers could implement without reinterpretation.",
+          "Prioritized glanceable states and alert hierarchy for commercial driving contexts."
         ],
-        "challenge": "Embedded automotive hardware imposes hard technical ceilings on refresh rate, memory, and supplier tooling that most consumer UI patterns simply ignore. The challenge was designing an interaction system that felt modern and legible on-screen while staying inside what the hardware and supplier pipeline could actually deliver in production.",
-        "process": "I worked backwards from technical constraints with Tier-1 suppliers before finalizing interaction patterns, then validated the resulting flows with drivers in usability sessions to catch legibility and attention issues while they were still cheap to fix, well before they reached embedded code.",
-        "results": "The interaction patterns and UI defined for the cluster and infotainment ecosystem became the reference used across the Volkswagen Trucks & Buses HMI touchpoints, reducing rework between design and the supplier's embedded implementation.",
+        "challenge": "Embedded automotive hardware imposes hard ceilings on refresh rate, memory, and supplier tooling that most consumer UI patterns simply ignore. A modern, legible interaction system still had to fit inside what the hardware and supplier pipeline could deliver in production. Multi-screen coherence made the problem harder: a pattern that worked in the head unit could fail on the cluster if attention, lighting, or performance constraints were different.",
+        "process": "I worked backwards from technical constraints with Tier-1 suppliers before finalizing interaction patterns, treating hardware limits as design inputs rather than late-stage surprises. From there I defined a shared pattern library for navigation, alerts, and status states across cluster and infotainment. Prototypes and driver usability sessions then caught legibility and attention issues while they were still cheap to fix, well before they reached embedded code.",
+        "results": "The interaction patterns and UI defined for the cluster and infotainment ecosystem became the reference used across Volkswagen Trucks & Buses HMI touchpoints. Design and supplier teams spent less time renegotiating intent during implementation. Drivers encountered a more coherent in-vehicle experience across screens that previously felt independently designed.",
         "deliverables": [
           "Interaction pattern library for embedded HMI",
-          "High-fidelity UI for cluster and infotainment",
-          "Technical requirement docs for Tier-1 suppliers"
+          "High-fidelity UI for digital cluster and infotainment",
+          "Technical requirement documentation for Tier-1 suppliers",
+          "Usability prototypes for critical driving and parked flows",
+          "Cross-touchpoint consistency guidelines (cluster, head unit, companion)",
+          "Alert and status hierarchy for commercial driving contexts"
         ],
-        "contribution": "I owned the interaction design end-to-end for the embedded ecosystem, translating driver research and usability findings into specifications that suppliers could implement directly, closing the gap between design intent and what shipped in the vehicle.",
+        "contribution": "I owned interaction design end-to-end for the embedded ecosystem, translating driver research and usability findings into specifications suppliers could implement directly. That closed the gap between design intent and what actually shipped in the vehicle. Beyond screens, I owned the connective tissue: shared patterns, requirement clarity, and the review loop that kept multi-team delivery coherent.",
         "takeaways": [
           "Designing with hardware constraints as the starting point, not an afterthought, avoids costly late-stage rework.",
           "Usability testing with real drivers surfaces attention and legibility issues that desk reviews miss.",
-          "A shared interaction pattern library is what actually keeps a multi-screen in-vehicle experience coherent."
+          "A shared interaction pattern library is what actually keeps a multi-screen in-vehicle experience coherent.",
+          "Supplier-ready specs are part of UX ownership in embedded products, not an engineering afterthought."
+        ],
+        "personas": [
+          {
+            "name": "André, professional truck driver",
+            "background": "Spends long shifts in cab operating delivery and regional routes, relying on cluster and infotainment under varying light and traffic conditions.",
+            "needs": "Immediate recognition of critical vehicle states, simple media and navigation controls, and consistent behavior across screens.",
+            "challenges": "Glare, vibration, divided attention, and frustration when UI patterns change between cluster and head unit."
+          },
+          {
+            "name": "Sofia, HMI product owner",
+            "background": "Coordinates feature scope across cluster, infotainment, and companion experiences with engineering and suppliers.",
+            "needs": "Clear interaction rules, feasible specs, and evidence from driver validation to defend prioritization.",
+            "challenges": "Conflicting stakeholder requests, late hardware discoveries, and rework when design and suppliers interpret flows differently."
+          },
+          {
+            "name": "Diego, Tier-1 HMI engineer",
+            "background": "Implements embedded UI within platform memory, performance, and tooling limits for production vehicles.",
+            "needs": "Unambiguous interaction specs, defined states and edge cases, and assets that map cleanly to the supplier toolchain.",
+            "challenges": "Ambiguous design intent, patterns that exceed hardware capability, and costly late changes after integration starts."
+          }
         ]
       },
       "pt": {
@@ -136,26 +226,52 @@
         "tools": "Figma, Especificação de Interação, Testes de Usabilidade",
         "location": "Brasil",
         "duration": "Em andamento",
-        "introduction": "Na plataforma Volkswagen Caminhões e Ônibus, multimídia, cluster digital e touchpoints companion precisavam parecer um único sistema embarcado coerente, e não três telas separadas construídas por três times diferentes.",
+        "introduction": "Na plataforma Volkswagen Caminhões e Ônibus, multimídia, cluster digital e touchpoints companion precisavam parecer um único sistema embarcado coerente, e não três telas separadas construídas por três times diferentes. Motoristas esperam continuidade entre o que veem no cluster, o que controlam na unidade principal e o que revisitam depois no app companion. O ecossistema de HMI tinha que entregar essa coerência sob restrições embarcadas reais: taxa de atualização, memória, ferramental do fornecedor e prazos de produção. Eu conduzi os padrões de interação que fizeram esses touchpoints se comportarem como uma família de produto.",
         "responsibilities": [
-          "Defini padrões de interação, fluxos e UI de alta fidelidade para sistemas embarcados.",
+          "Defini padrões de interação, fluxos e UI de alta fidelidade para sistemas HMI embarcados.",
           "Documentei requisitos técnicos e coordenei entregas de fornecedores Tier-1.",
           "Validei conceitos com prototipação e sessões de usabilidade com motoristas.",
-          "Mantive consistência visual e de interação entre cluster, multimídia e app companion."
+          "Mantive consistência visual e de interação entre cluster, multimídia e app companion.",
+          "Traduzi pesquisa com motoristas em especificações que fornecedores pudessem implementar sem reinterpretar.",
+          "Priorizei estados de leitura rápida e hierarquia de alertas para contextos de condução comercial."
         ],
-        "challenge": "Hardware automotivo embarcado impõe limites técnicos reais de taxa de atualização, memória e ferramental do fornecedor que a maioria dos padrões de UI de consumo simplesmente ignora. O desafio era desenhar um sistema de interação moderno e legível na tela sem pedir mais do que o hardware e o pipeline do fornecedor conseguiam entregar em produção.",
-        "process": "Trabalhei de trás para frente a partir das restrições técnicas junto aos fornecedores Tier-1 antes de fechar os padrões de interação, e depois validei os fluxos resultantes com motoristas em sessões de usabilidade para capturar problemas de legibilidade e atenção antes que ficassem caros de corrigir em código embarcado.",
-        "results": "Os padrões de interação e a UI definidos para o ecossistema de cluster e multimídia se tornaram a referência usada nos touchpoints de HMI da Volkswagen Caminhões e Ônibus, reduzindo retrabalho entre design e a implementação embarcada do fornecedor.",
+        "challenge": "Hardware automotivo embarcado impõe limites reais de taxa de atualização, memória e ferramental do fornecedor que a maioria dos padrões de UI de consumo simplesmente ignora. Um sistema de interação moderno e legível ainda precisava caber no que o hardware e o pipeline do fornecedor conseguiam entregar em produção. A coerência multi-tela tornava o problema mais difícil: um padrão que funcionava na unidade principal podia falhar no cluster se atenção, iluminação ou desempenho fossem diferentes.",
+        "process": "Trabalhei de trás para frente a partir das restrições técnicas junto aos fornecedores Tier-1 antes de fechar os padrões de interação, tratando limites de hardware como insumos de design e não como surpresa tardia. Em seguida defini uma biblioteca compartilhada de padrões para navegação, alertas e estados de status entre cluster e multimídia. Protótipos e sessões de usabilidade com motoristas capturaram problemas de legibilidade e atenção enquanto ainda eram baratos de corrigir, bem antes do código embarcado.",
+        "results": "Os padrões de interação e a UI definidos para o ecossistema de cluster e multimídia se tornaram a referência usada nos touchpoints de HMI da Volkswagen Caminhões e Ônibus. Design e fornecedores passaram a gastar menos tempo renegociando intenção durante a implementação. Motoristas encontraram uma experiência embarcada mais coerente entre telas que antes pareciam desenhadas de forma independente.",
         "deliverables": [
           "Biblioteca de padrões de interação para HMI embarcado",
-          "UI de alta fidelidade para cluster e multimídia",
-          "Documentação de requisitos técnicos para fornecedores Tier-1"
+          "UI de alta fidelidade para cluster digital e multimídia",
+          "Documentação de requisitos técnicos para fornecedores Tier-1",
+          "Protótipos de usabilidade para fluxos críticos em condução e parado",
+          "Diretrizes de consistência entre touchpoints (cluster, head unit, companion)",
+          "Hierarquia de alertas e status para contextos de condução comercial"
         ],
-        "contribution": "Conduzi o design de interação de ponta a ponta para o ecossistema embarcado, traduzindo pesquisa com motoristas e achados de usabilidade em especificações que os fornecedores implementavam diretamente, fechando a lacuna entre intenção de design e o que de fato ia para o veículo.",
+        "contribution": "Conduzi o design de interação de ponta a ponta para o ecossistema embarcado, traduzindo pesquisa com motoristas e achados de usabilidade em especificações que os fornecedores implementavam diretamente. Isso fechou a lacuna entre intenção de design e o que de fato ia para o veículo. Além das telas, eu era dono do tecido conectivo: padrões compartilhados, clareza de requisitos e o loop de revisão que mantinha a entrega multi-time coerente.",
         "takeaways": [
           "Desenhar a partir das restrições de hardware, e não como último passo, evita retrabalho caro em estágio avançado.",
           "Testes de usabilidade com motoristas reais revelam problemas de atenção e legibilidade que revisões de mesa não capturam.",
-          "Uma biblioteca de padrões de interação compartilhada é o que realmente mantém coerente uma experiência multi-tela dentro do veículo."
+          "Uma biblioteca de padrões de interação compartilhada é o que realmente mantém coerente uma experiência multi-tela dentro do veículo.",
+          "Especificações prontas para fornecedor fazem parte da ownership de UX em produtos embarcados, não um detalhe posterior de engenharia."
+        ],
+        "personas": [
+          {
+            "name": "André, motorista profissional de caminhão",
+            "background": "Passa turnos longos na cabine em rotas de entrega e regionais, dependendo do cluster e da multimídia sob luz e tráfego variáveis.",
+            "needs": "Reconhecimento imediato de estados críticos do veículo, controles simples de mídia e navegação, e comportamento consistente entre telas.",
+            "challenges": "Reflexo, vibração, atenção dividida e frustração quando os padrões de UI mudam entre cluster e unidade principal."
+          },
+          {
+            "name": "Sofia, product owner de HMI",
+            "background": "Coordena escopo de features entre cluster, multimídia e experiências companion com engenharia e fornecedores.",
+            "needs": "Regras claras de interação, especificações viáveis e evidência de validação com motoristas para defender priorização.",
+            "challenges": "Pedidos conflitantes de stakeholders, descobertas tardias de hardware e retrabalho quando design e fornecedores interpretam fluxos de formas diferentes."
+          },
+          {
+            "name": "Diego, engenheiro HMI Tier-1",
+            "background": "Implementa UI embarcada dentro de limites de memória, desempenho e ferramental da plataforma para veículos de produção.",
+            "needs": "Especificações de interação inequívocas, estados e edge cases definidos, e assets que mapeiem limpo para a toolchain do fornecedor.",
+            "challenges": "Intenção de design ambígua, padrões que excedem a capacidade do hardware e mudanças caras depois que a integração começa."
+          }
         ]
       }
     }
@@ -163,7 +279,11 @@
   {
     "slug": "delivery-highline",
     "featured": true,
-    "tags": ["HMI", "Cluster", "Automotive"],
+    "tags": [
+      "HMI",
+      "Cluster",
+      "Automotive"
+    ],
     "thumbnail": "/media/covers/delivery-highline.svg",
     "content": {
       "en": {
@@ -180,23 +300,46 @@
         "tools": "Figma, Cluster Prototyping",
         "location": "Brazil",
         "duration": "Shipped to production vehicle",
-        "introduction": "The VW Delivery Highline needed a digital instrument cluster that carried real connectivity features into a production light-duty truck, without overwhelming the driver with information while on the road.",
+        "introduction": "The VW Delivery Highline needed a digital instrument cluster that carried real connectivity features into a production light-duty truck, without overwhelming the driver while on the road. Unlike a greenfield concept vehicle, this work landed inside an already-defined production timeline with limited room to renegotiate scope. Every element on the cluster had to earn its place in a half-second glance. The UX problem was prioritization under constraint: what stays primary, what moves secondary, and what never makes it into the cabin at all.",
         "responsibilities": [
-          "Contributed to digital cluster UX for a shipped commercial vehicle platform.",
+          "Contributed digital cluster UX for a shipped commercial vehicle platform.",
           "Balanced information density with glanceability for in-cab driving contexts.",
-          "Aligned design decisions with engineering and supplier constraints."
+          "Aligned design decisions with engineering and supplier constraints.",
+          "Defined primary versus secondary placement for connectivity features.",
+          "Validated legibility choices against real in-cab driving conditions.",
+          "Supported production handoff with clear hierarchy and state definitions."
         ],
-        "challenge": "Every additional data point on a digital cluster competes for the same half-second of driver attention. The challenge was deciding what earned a place on the primary screen versus a secondary view, for a vehicle already in production with limited room to renegotiate scope.",
-        "process": "I worked within the existing production timeline and supplier constraints, prioritizing which connectivity features justified primary-screen real estate versus secondary views, and validated legibility choices against in-cab driving conditions rather than desk-only reviews.",
-        "results": "The digital cluster shipped as part of the production VW Delivery Highline line, bringing connectivity and driver-centric controls to a commercial vehicle already on the road.",
+        "challenge": "Every additional data point on a digital cluster competes for the same half-second of driver attention. Connectivity features that looked valuable in product discussions could become dangerous noise if they earned primary-screen real estate by default. The vehicle was already in a production path, so renegotiating scope was expensive. The challenge was ruthless prioritization: decide what belongs on the main driving view, what can live in secondary states, and what should stay out of the cabin experience entirely.",
+        "process": "I worked inside the existing production timeline and supplier constraints rather than designing an ideal cluster in isolation. Connectivity features were ranked by driver value during active driving versus parked or secondary moments. Hierarchy sketches and cluster prototypes made those trade-offs visible to engineering early. Legibility choices were then checked against in-cab conditions, lighting and glance time, instead of desk-only reviews that tend to overpack screens.",
+        "results": "The digital cluster shipped as part of the production VW Delivery Highline line, bringing connectivity and driver-centric controls into a commercial vehicle already headed to the road. The experience stayed readable under driving constraints while still surfacing the connected features that differentiated the Highline package. Design and engineering avoided late scope fights by agreeing early on what earned primary attention.",
         "deliverables": [
-          "Digital cluster UI for a production vehicle",
-          "Information hierarchy for connectivity features in-cab"
+          "Digital cluster UI for a production light-duty truck",
+          "Information hierarchy for in-cab connectivity features",
+          "Primary and secondary screen prioritization map",
+          "State definitions for driving-critical versus secondary content",
+          "Prototype references for supplier implementation reviews",
+          "Alignment notes bridging product intent and production constraints"
         ],
-        "contribution": "I contributed the UX decisions on information hierarchy and glanceability for the digital cluster, working closely with engineering and the supplier to keep the design feasible for a platform already in production.",
+        "contribution": "I contributed the UX decisions on information hierarchy and glanceability for the digital cluster, working closely with engineering and the supplier to keep the design feasible for a platform already in production. My focus was not inventing more features, but protecting driver attention while still giving connectivity a clear, honest place in the cabin. That ownership showed up most in what we cut, demoted, or sequenced rather than what we added.",
         "takeaways": [
           "Shipping into an already-defined production timeline forces sharper prioritization than a greenfield project.",
-          "Glanceability constraints are non-negotiable, every element has to earn its place on a driving screen."
+          "Glanceability constraints are non-negotiable. Every element has to earn its place on a driving screen.",
+          "Secondary views are a design tool, not a dumping ground for features that lost the primary-screen argument.",
+          "Early visible trade-offs with engineering prevent expensive scope renegotiation later."
+        ],
+        "personas": [
+          {
+            "name": "Bruno, urban delivery driver",
+            "background": "Operates light-duty trucks on short city routes with frequent stops, tight schedules, and high visual load from traffic.",
+            "needs": "Only the essentials while moving: speed, alerts, and critical vehicle status that can be read in a quick glance.",
+            "challenges": "Screen clutter, competing alerts, and features that demand interaction at moments when both hands and eyes are already busy."
+          },
+          {
+            "name": "Helena, fleet supervisor",
+            "background": "Manages Delivery Highline units for a distribution company and cares about connected features that support uptime and compliance.",
+            "needs": "Confidence that drivers can use connected capabilities without compromising safety or creating support tickets.",
+            "challenges": "Features that look useful in demos but confuse drivers in real routes, increasing training burden and operational risk."
+          }
         ]
       },
       "pt": {
@@ -213,23 +356,46 @@
         "tools": "Figma, Prototipação de Cluster",
         "location": "Brasil",
         "duration": "Entregue para veículo em produção",
-        "introduction": "O VW Delivery Highline precisava de um cluster digital que levasse conectividade real para uma linha de caminhão leve em produção, sem sobrecarregar o motorista com informação durante a condução.",
+        "introduction": "O VW Delivery Highline precisava de um cluster digital que levasse conectividade real para uma linha de caminhão leve em produção, sem sobrecarregar o motorista durante a condução. Diferente de um veículo conceito greenfield, esse trabalho caía dentro de um cronograma de produção já definido, com pouca margem para renegociar escopo. Cada elemento no cluster precisava justificar seu lugar em um olhar de meio segundo. O problema de UX era priorização sob restrição: o que fica no primário, o que vai para o secundário e o que nunca entra na cabine.",
         "responsibilities": [
-          "Contribuí para o UX do cluster digital em uma plataforma comercial já em produção.",
+          "Contribuí para o UX do cluster digital em plataforma comercial já em produção.",
           "Equilibrei densidade de informação com legibilidade rápida em contexto de condução.",
-          "Alinhei decisões de design com restrições de engenharia e fornecedores."
+          "Alinhei decisões de design com restrições de engenharia e fornecedores.",
+          "Defini o que ficava em tela principal versus estados secundários para recursos de conectividade.",
+          "Validei escolhas de legibilidade em condições reais de cabine.",
+          "Apoiei o handoff de produção com hierarquia clara e definição de estados."
         ],
-        "challenge": "Cada dado adicional em um cluster digital compete pelo mesmo meio segundo de atenção do motorista. O desafio era decidir o que merecia espaço na tela principal versus uma tela secundária, para um veículo já em produção com pouca margem para renegociar escopo.",
-        "process": "Trabalhei dentro do cronograma de produção existente e das restrições do fornecedor, priorizando quais recursos de conectividade justificavam espaço na tela principal versus telas secundárias, e validei as escolhas de legibilidade em condições reais de condução, não apenas em revisão de mesa.",
-        "results": "O cluster digital foi entregue como parte da linha de produção do VW Delivery Highline, trazendo conectividade e controles centrados no motorista para um veículo comercial já em circulação.",
+        "challenge": "Cada dado adicional em um cluster digital compete pelo mesmo meio segundo de atenção do motorista. Recursos de conectividade que pareciam valiosos em discussões de produto podiam virar ruído perigoso se ganhassem espaço na tela principal por padrão. O veículo já estava em caminho de produção, então renegociar escopo era caro. O desafio era priorização sem complacência: decidir o que pertence à visão principal de condução, o que pode viver em estados secundários e o que deve ficar fora da experiência de cabine.",
+        "process": "Trabalhei dentro do cronograma de produção existente e das restrições do fornecedor, em vez de desenhar um cluster ideal isolado. Recursos de conectividade foram ranqueados pelo valor para o motorista em condução ativa versus momentos parado ou secundários. Esboços de hierarquia e protótipos de cluster tornaram essas trocas visíveis para engenharia cedo. As escolhas de legibilidade foram então checadas em condições de cabine, luz e tempo de olhar, em vez de revisões só de mesa que tendem a sobrecarregar a tela.",
+        "results": "O cluster digital foi entregue como parte da linha de produção do VW Delivery Highline, trazendo conectividade e controles centrados no motorista para um veículo comercial já a caminho da estrada. A experiência permaneceu legível sob restrições de condução e ainda assim deu lugar claro aos recursos conectados que diferenciavam o pacote Highline. Design e engenharia evitaram brigas tardias de escopo ao concordar cedo sobre o que merecia atenção primária.",
         "deliverables": [
-          "UI de cluster digital para veículo em produção",
-          "Hierarquia de informação para recursos de conectividade em cabine"
+          "UI de cluster digital para caminhão leve em produção",
+          "Hierarquia de informação para recursos de conectividade em cabine",
+          "Mapa de priorização de tela principal e secundária",
+          "Definição de estados para conteúdo crítico de condução versus secundário",
+          "Referências de protótipo para revisões de implementação com fornecedor",
+          "Notas de alinhamento entre intenção de produto e restrições de produção"
         ],
-        "contribution": "Contribuí com as decisões de UX sobre hierarquia de informação e legibilidade do cluster digital, trabalhando de perto com engenharia e o fornecedor para manter o design viável em uma plataforma já em produção.",
+        "contribution": "Contribuí com as decisões de UX sobre hierarquia de informação e legibilidade do cluster digital, trabalhando de perto com engenharia e o fornecedor para manter o design viável em uma plataforma já em produção. Meu foco não era inventar mais features, e sim proteger a atenção do motorista e ainda dar à conectividade um lugar claro e honesto na cabine. Essa ownership apareceu sobretudo no que cortamos, rebaixamos ou sequenciamos, mais do que no que adicionamos.",
         "takeaways": [
           "Entregar dentro de um cronograma de produção já definido exige priorização mais afiada do que um projeto greenfield.",
-          "Restrições de legibilidade rápida não são negociáveis, cada elemento precisa justificar seu espaço em uma tela de condução."
+          "Restrições de legibilidade rápida não são negociáveis. Cada elemento precisa justificar seu espaço em uma tela de condução.",
+          "Telas secundárias são uma ferramenta de design, não um depósito para features que perderam a discussão da tela principal.",
+          "Trade-offs visíveis cedo com engenharia evitam renegociação cara de escopo depois."
+        ],
+        "personas": [
+          {
+            "name": "Bruno, motorista de entrega urbana",
+            "background": "Opera caminhões leves em rotas curtas na cidade, com paradas frequentes, prazos apertados e alta carga visual do trânsito.",
+            "needs": "Só o essencial em movimento: velocidade, alertas e status crítico do veículo que possam ser lidos em um olhar rápido.",
+            "challenges": "Poluição de tela, alertas concorrentes e recursos que pedem interação em momentos em que mãos e olhos já estão ocupados."
+          },
+          {
+            "name": "Helena, supervisora de frota",
+            "background": "Gerencia unidades Delivery Highline em uma empresa de distribuição e se importa com recursos conectados que apoiem uptime e conformidade.",
+            "needs": "Confiança de que motoristas consigam usar capacidades conectadas sem comprometer segurança ou gerar tickets de suporte.",
+            "challenges": "Features que parecem úteis em demos mas confundem motoristas em rotas reais, aumentando treinamento e risco operacional."
+          }
         ]
       }
     }
@@ -237,7 +403,12 @@
   {
     "slug": "prontos",
     "featured": false,
-    "tags": ["B2B", "Health", "Dashboard", "Web"],
+    "tags": [
+      "B2B",
+      "Health",
+      "Dashboard",
+      "Web"
+    ],
     "thumbnail": "/media/covers/prontos.svg",
     "content": {
       "en": {
@@ -254,24 +425,52 @@
         "tools": "Figma, Prototyping",
         "location": "Brazil",
         "duration": "Project engagement",
-        "introduction": "prontos! needed a B2B platform for occupational cognitive readiness and worker safety analytics, turning dense operational data into something safety managers could scan and act on quickly, not just view. The product's success depended entirely on whether a non-technical manager could go from screen to decision in seconds, on a job site, without training.",
+        "introduction": "prontos! needed a B2B platform for occupational cognitive readiness and worker safety analytics, turning dense operational data into something safety managers could scan and act on quickly, not just view. The product's success depended on whether a non-technical manager could go from screen to decision in seconds, often on a job site and without formal training. Dashboards that impressed analysts would fail if field supervisors could not trust what they were seeing. The UX problem was decision clarity under data density.",
         "responsibilities": [
-          "Designed UI for data-heavy operational dashboards.",
-          "Improved hierarchy and task clarity for non-technical users.",
-          "Built responsive layouts and interactive prototypes."
+          "Designed UI for data-heavy occupational safety and readiness dashboards.",
+          "Improved hierarchy and task clarity for non-technical safety managers.",
+          "Built responsive layouts that held up on desktop and job-site tablets.",
+          "Created interactive prototypes to validate findability and interpretation.",
+          "Prioritized action-driving metrics over merely interesting analytics.",
+          "Structured drill-downs so depth remained available without cluttering primary views."
         ],
-        "challenge": "The underlying data was inherently dense: readiness scores, safety analytics, and cognitive test results, but the day-to-day users were safety managers, not analysts. The interface had to translate that density into fast, confident decisions without hiding the depth those decisions relied on.",
-        "process": "I prioritized the metrics that drove action over the ones that were merely interesting, then built responsive dashboard layouts and interactive prototypes to test whether non-technical users could find and interpret the right data without training.",
-        "results": "The redesigned dashboards gave non-technical safety managers a clearer path from data to decision, with layouts that held up across desktop and the tablet-sized screens common on job sites.",
+        "challenge": "The underlying data was inherently dense: readiness scores, safety analytics, and cognitive test results. Day-to-day users were safety managers and supervisors, not analysts. If the interface hid complexity poorly, people either ignored the product or made decisions with false confidence. The challenge was translating density into fast, confident decisions without stripping away the depth those decisions relied on.",
+        "process": "I started by separating metrics that drive immediate action from metrics that only support deeper investigation. Primary dashboard views were redesigned around tasks: who needs attention, what changed, and what to do next. Responsive layouts and interactive prototypes were then tested for whether non-technical users could find and interpret the right signal without training, including on tablet-sized screens common on job sites. Drill-downs preserved analytical depth for users who needed it later.",
+        "results": "The redesigned dashboards gave non-technical safety managers a clearer path from data to decision. Layouts held up across desktop and the tablet contexts common in field operations. The product became easier to introduce operationally because primary screens answered the urgent questions first, while deeper analytics remained reachable when needed.",
         "deliverables": [
-          "Responsive dashboard UI",
-          "Interactive prototypes for validation",
-          "Information hierarchy for safety analytics"
+          "Responsive operational dashboard UI",
+          "Information hierarchy for cognitive readiness and safety analytics",
+          "Interactive prototypes for validation with non-technical users",
+          "Task-oriented primary views for supervisors and safety managers",
+          "Drill-down patterns for deeper investigation without primary clutter",
+          "Responsive layout system for desktop and job-site tablets"
         ],
-        "contribution": "I owned the UI design for the dashboards, focused on making dense operational and cognitive-readiness data legible and actionable for non-technical safety managers.",
+        "contribution": "I owned the UI design for the dashboards, focused on making dense operational and cognitive-readiness data legible and actionable for non-technical safety managers. That meant pushing back on putting every available metric on the first screen, and instead designing for the decisions people actually make under time pressure. My contribution sat in hierarchy, task framing, and prototype validation more than in decorative dashboard polish.",
         "takeaways": [
-          "Data density and decision clarity are different problems, solving one doesn't solve the other.",
-          "Designing for job-site conditions (tablets, quick glances) matters as much as the desktop dashboard view."
+          "Data density and decision clarity are different problems. Solving one does not solve the other.",
+          "Designing for job-site conditions (tablets, quick glances) matters as much as the desktop dashboard view.",
+          "Action-first metric prioritization builds more trust than exhaustive visibility.",
+          "Drill-downs protect depth without forcing every user through analyst-grade complexity."
+        ],
+        "personas": [
+          {
+            "name": "Patrícia, occupational safety manager",
+            "background": "Oversees worker readiness and safety compliance across multiple sites for an industrial client.",
+            "needs": "Quick identification of people or teams that need intervention, with enough context to act confidently.",
+            "challenges": "Limited time for analysis, mixed digital literacy on her team, and pressure when an unclear signal delays a field decision."
+          },
+          {
+            "name": "Lucas, site supervisor",
+            "background": "Runs day-to-day operations on a job site and checks readiness status on a tablet before shifts start.",
+            "needs": "A short, unambiguous list of who is clear to work and who needs follow-up before operations begin.",
+            "challenges": "Noisy environments, interrupted attention, and frustration with dashboards that look complete but do not answer the immediate go or no-go question."
+          },
+          {
+            "name": "Camila, HR and people operations lead",
+            "background": "Uses readiness and safety analytics to support policies, training decisions, and broader workforce health conversations.",
+            "needs": "Trends and summaries she can discuss with leadership without needing a data analyst in every meeting.",
+            "challenges": "Reports that are either too shallow for decisions or too technical to socialize across stakeholders."
+          }
         ]
       },
       "pt": {
@@ -288,24 +487,52 @@
         "tools": "Figma, Prototipação",
         "location": "Brasil",
         "duration": "Projeto pontual",
-        "introduction": "A prontos! precisava de uma plataforma B2B para prontidão cognitiva ocupacional e analytics de segurança do trabalhador, transformando dados operacionais densos em algo que gestores de segurança pudessem escanear e usar para agir rápido, não apenas visualizar. O sucesso do produto dependia inteiramente da capacidade de um gestor não técnico ir da tela à decisão em segundos, em campo, sem treinamento.",
+        "introduction": "A prontos! precisava de uma plataforma B2B para prontidão cognitiva ocupacional e analytics de segurança do trabalhador, transformando dados operacionais densos em algo que gestores de segurança pudessem escanear e usar para agir rápido, não apenas visualizar. O sucesso do produto dependia da capacidade de um gestor não técnico ir da tela à decisão em segundos, muitas vezes em campo e sem treinamento formal. Dashboards que impressionavam analistas falhariam se supervisores de campo não confiassem no que viam. O problema de UX era clareza de decisão sob densidade de dados.",
         "responsibilities": [
-          "Desenhei UI para dashboards operacionais com alta densidade de dados.",
-          "Melhorei hierarquia e clareza de tarefas para usuários não técnicos.",
-          "Criei layouts responsivos e protótipos interativos."
+          "Desenhei UI para dashboards densos de segurança ocupacional e prontidão.",
+          "Melhorei hierarquia e clareza de tarefas para gestores de segurança não técnicos.",
+          "Criei layouts responsivos que se sustentam em desktop e tablets de campo.",
+          "Construí protótipos interativos para validar encontrabilidade e interpretação.",
+          "Priorizei métricas que geram ação em detrimento de analytics apenas interessantes.",
+          "Estruturei drill-downs para manter profundidade disponível sem poluir as views primárias."
         ],
-        "challenge": "Os dados subjacentes eram densos por natureza: scores de prontidão, analytics de segurança e resultados de testes cognitivos, mas os usuários do dia a dia eram gestores de segurança, não analistas. A interface precisava traduzir essa densidade em decisões rápidas e confiantes sem esconder a profundidade por trás delas.",
-        "process": "Priorizei as métricas que geravam ação em detrimento das que eram apenas interessantes, e então construí layouts de dashboard responsivos e protótipos interativos para testar se usuários não técnicos conseguiam encontrar e interpretar o dado certo sem treinamento.",
-        "results": "Os dashboards redesenhados deram a gestores de segurança não técnicos um caminho mais claro entre dado e decisão, com layouts que se sustentam tanto em desktop quanto nas telas de tablet comuns em campo.",
+        "challenge": "Os dados subjacentes eram densos por natureza: scores de prontidão, analytics de segurança e resultados de testes cognitivos. Os usuários do dia a dia eram gestores e supervisores de segurança, não analistas. Se a interface escondesse mal a complexidade, as pessoas ou ignoravam o produto ou decidiam com falsa confiança. O desafio era traduzir densidade em decisões rápidas e confiantes sem retirar a profundidade de que essas decisões dependiam.",
+        "process": "Comecei separando métricas que geram ação imediata das que só apoiam investigação mais profunda. As views primárias do dashboard foram redesenhadas em torno de tarefas: quem precisa de atenção, o que mudou e o que fazer em seguida. Layouts responsivos e protótipos interativos foram então testados para verificar se usuários não técnicos conseguiam achar e interpretar o sinal certo sem treinamento, inclusive em tablets comuns em campo. Drill-downs preservaram profundidade analítica para quem precisasse depois.",
+        "results": "Os dashboards redesenhados deram a gestores de segurança não técnicos um caminho mais claro entre dado e decisão. Os layouts se sustentaram em desktop e nos contextos de tablet comuns em operação de campo. O produto ficou mais fácil de introduzir operacionalmente porque as telas primárias respondiam primeiro às perguntas urgentes, enquanto analytics mais profundos continuavam acessíveis quando necessário.",
         "deliverables": [
-          "UI de dashboard responsiva",
-          "Protótipos interativos para validação",
-          "Hierarquia de informação para analytics de segurança"
+          "UI responsiva de dashboards operacionais",
+          "Hierarquia de informação para prontidão cognitiva e analytics de segurança",
+          "Protótipos interativos para validação com usuários não técnicos",
+          "Views primárias orientadas a tarefa para supervisores e gestores de segurança",
+          "Padrões de drill-down para investigação profunda sem poluir a view principal",
+          "Sistema de layout responsivo para desktop e tablets de campo"
         ],
-        "contribution": "Conduzi o design de UI dos dashboards, com foco em tornar os dados densos de operação e prontidão cognitiva legíveis e acionáveis para gestores de segurança não técnicos.",
+        "contribution": "Conduzi o design de UI dos dashboards, com foco em tornar os dados densos de operação e prontidão cognitiva legíveis e acionáveis para gestores de segurança não técnicos. Isso significou resistir a colocar toda métrica disponível na primeira tela, e desenhar para as decisões que as pessoas realmente tomam sob pressão de tempo. Minha contribuição esteve na hierarquia, no enquadramento de tarefas e na validação por protótipo, mais do que em polimento decorativo de dashboard.",
         "takeaways": [
-          "Densidade de dados e clareza de decisão são problemas diferentes, resolver um não resolve o outro.",
-          "Desenhar para as condições de campo (tablets, leitura rápida) importa tanto quanto o dashboard de desktop."
+          "Densidade de dados e clareza de decisão são problemas diferentes. Resolver um não resolve o outro.",
+          "Desenhar para as condições de campo (tablets, leitura rápida) importa tanto quanto o dashboard de desktop.",
+          "Priorizar métricas que geram ação constrói mais confiança do que visibilidade exaustiva.",
+          "Drill-downs protegem a profundidade sem forçar todo usuário a atravessar complexidade de analista."
+        ],
+        "personas": [
+          {
+            "name": "Patrícia, gestora de segurança ocupacional",
+            "background": "Supervisiona prontidão e conformidade de segurança de trabalhadores em múltiplos sites para um cliente industrial.",
+            "needs": "Identificação rápida de pessoas ou equipes que precisam de intervenção, com contexto suficiente para agir com confiança.",
+            "challenges": "Pouco tempo para análise, letramento digital misto na equipe e pressão quando um sinal pouco claro atrasa uma decisão de campo."
+          },
+          {
+            "name": "Lucas, supervisor de obra",
+            "background": "Conduz a operação do dia a dia em campo e confere status de prontidão no tablet antes do início dos turnos.",
+            "needs": "Uma lista curta e inequívoca de quem está liberado para trabalhar e quem precisa de follow-up antes da operação começar.",
+            "challenges": "Ambientes barulhentos, atenção interrompida e frustração com dashboards que parecem completos mas não respondem à pergunta imediata de liberar ou não."
+          },
+          {
+            "name": "Camila, líder de RH e people ops",
+            "background": "Usa analytics de prontidão e segurança para apoiar políticas, decisões de treinamento e conversas mais amplas de saúde da força de trabalho.",
+            "needs": "Tendências e resumos que ela consiga discutir com a liderança sem precisar de um analista de dados em toda reunião.",
+            "challenges": "Relatórios ou rasos demais para decidir, ou técnicos demais para socializar entre stakeholders."
+          }
         ]
       }
     }
@@ -313,9 +540,16 @@
   {
     "slug": "garage-910",
     "featured": false,
-    "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
+    "tags": [
+      "Web",
+      "UX/UI",
+      "Institutional",
+      "Vercel"
+    ],
     "thumbnail": "/media/covers/garage-910.png",
-    "links": { "live": "https://garage-910.vercel.app/" },
+    "links": {
+      "live": "https://garage-910.vercel.app/"
+    },
     "content": {
       "en": {
         "title": "Garage 910",
@@ -331,24 +565,46 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Guarapari, Brazil",
         "duration": "Project engagement",
-        "introduction": "Garage 910, an auto body and paint repair shop, needed a website that reliably turned local search traffic into WhatsApp conversations, without a slow, generic template getting in the way of that single outcome.",
+        "introduction": "Garage 910, an auto body and paint repair shop in Guarapari, needed a website that reliably turned local search traffic into WhatsApp conversations. A slow or generic template would get in the way of that single outcome. Local customers arrive comparing shops, looking for proof of craftsmanship, and deciding whether to ask for a quote. The site had to make services, real work, and contact feel immediate on mobile, where most of that decision happens.",
         "responsibilities": [
-          "Mapped the customer journey from search to quote request.",
-          "Built the responsive layout in Next.js and shipped it on Vercel.",
-          "Used Cursor and AI to speed up component iteration."
+          "Mapped the customer journey from local search to quote request.",
+          "Designed service, portfolio, and trust sections around that conversion path.",
+          "Built the responsive front end in Next.js and shipped it on Vercel.",
+          "Placed direct WhatsApp CTAs at natural decision points across the page.",
+          "Used Cursor and AI to accelerate component iteration without losing visual consistency.",
+          "Optimized the experience for fast, mobile-first browsing by local customers."
         ],
-        "challenge": "Local service businesses lose customers the moment a site feels slow or generic. The challenge was building something fast and specific enough to a body shop's real customer journey (see the work, trust it, ask for a quote) on a freelance timeline, with no room for a second draft of the core flow.",
-        "process": "I mapped the journey from a customer landing on the site to requesting a quote, then structured the page around that flow: services, real work samples, and a direct WhatsApp CTA at every natural decision point.",
-        "results": "The site shipped on Vercel with a fast, mobile-first experience built around the quote-request flow, giving Garage 910 a direct, low-friction channel from search traffic to WhatsApp conversations.",
+        "challenge": "Local service businesses lose customers the moment a site feels slow, vague, or interchangeable with every other workshop page. Garage 910 needed specificity: show the work, explain the services, and make asking for a quote effortless. The timeline was freelance-tight, with little room for a second draft of the core flow. The challenge was shipping a focused conversion experience that still felt crafted enough to earn trust for body and paint work.",
+        "process": "I mapped the journey from landing to quote request before designing sections, then structured the page around services, real work samples, and a persistent path to WhatsApp. Visual hierarchy favored proof of craftsmanship over long institutional copy. Mobile composition came first because local search and referral traffic arrives mostly on phones. Cursor-assisted iteration helped refine components quickly while keeping spacing, type, and CTA treatment consistent.",
+        "results": "The site shipped on Vercel as a fast, mobile-first experience built around the quote-request flow. Garage 910 gained a direct, low-friction channel from search traffic to WhatsApp conversations. Prospects can understand services and see real work before contacting the shop, which reduces uncertain first messages and strengthens local trust.",
         "deliverables": [
-          "Responsive institutional website",
-          "Service and portfolio sections",
-          "Direct WhatsApp contact flow"
+          "Responsive institutional website for a local body shop",
+          "Service sections with clear scope and next-step cues",
+          "Work portfolio / before-after style showcase structure",
+          "Direct WhatsApp contact flow at key decision points",
+          "Mobile-first responsive layout system",
+          "Production deployment on Vercel"
         ],
-        "contribution": "I designed the full customer journey and information architecture, then built and shipped the responsive front end myself, using Cursor and AI to iterate on components quickly while keeping visual consistency across sections.",
+        "contribution": "I designed the full customer journey and information architecture, then built and shipped the responsive front end myself. Using Cursor and AI, I iterated on components quickly while keeping visual consistency across sections. Ownership covered both the conversion strategy (search to WhatsApp) and the craft of the interface that made that path feel trustworthy for a local workshop.",
         "takeaways": [
-          "For local service businesses, the WhatsApp CTA is the real conversion point, everything else on the page should lead to it.",
-          "AI-assisted iteration (Cursor) meaningfully speeds up freelance timelines without sacrificing visual consistency."
+          "For local service businesses, the WhatsApp CTA is the real conversion point. Everything else on the page should lead to it.",
+          "AI-assisted iteration (Cursor) meaningfully speeds up freelance timelines without sacrificing visual consistency.",
+          "Real work samples outperform generic workshop copy when trust is the bottleneck.",
+          "Mobile-first composition is not optional when local search is the primary acquisition channel."
+        ],
+        "personas": [
+          {
+            "name": "Fernanda, car owner after a collision",
+            "background": "Lives in Guarapari, needs body and paint repair soon, and is comparing local shops after an accident or parking damage.",
+            "needs": "Quick proof the shop can handle her car well, clear services, and an easy way to request a quote on WhatsApp.",
+            "challenges": "Anxiety about quality and timeline, little patience for slow sites, and distrust of generic workshop pages with no real work shown."
+          },
+          {
+            "name": "Eduardo, fleet or small business vehicle owner",
+            "background": "Maintains one or more work vehicles and needs reliable, local repair without long back-and-forth.",
+            "needs": "Clear service coverage, confidence in craftsmanship, and fast scheduling via a familiar channel like WhatsApp.",
+            "challenges": "Time pressure, uncertainty about whether the shop handles his vehicle type, and friction if contact is buried or unclear."
+          }
         ]
       },
       "pt": {
@@ -365,24 +621,46 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Guarapari, Brasil",
         "duration": "Projeto pontual",
-        "introduction": "A Garage 910, oficina de pintura e lanternagem, precisava de um site que transformasse de forma confiável busca local em conversas no WhatsApp, sem que um template lento e genérico ficasse no caminho desse único resultado.",
+        "introduction": "A Garage 910, oficina de pintura e lanternagem em Guarapari, precisava de um site que transformasse de forma confiável busca local em conversas no WhatsApp. Um template lento ou genérico atrapalharia esse único resultado. Clientes locais chegam comparando oficinas, buscando prova de qualidade e decidindo se pedem orçamento. O site precisava tornar serviços, trabalhos reais e contato imediatos no celular, onde essa decisão acontece na maior parte das vezes.",
         "responsibilities": [
-          "Mapeei a jornada do cliente da busca ao pedido de orçamento.",
-          "Construí o layout responsivo em Next.js e publiquei na Vercel.",
-          "Usei Cursor e IA para acelerar a iteração de componentes."
+          "Mapeei a jornada do cliente da busca local ao pedido de orçamento.",
+          "Desenhei seções de serviços, portfólio e confiança em torno desse caminho de conversão.",
+          "Construí o front end responsivo em Next.js e publiquei na Vercel.",
+          "Posicionei CTAs diretos de WhatsApp nos pontos naturais de decisão da página.",
+          "Usei Cursor e IA para acelerar iteração de componentes sem perder consistência visual.",
+          "Otimizei a experiência para navegação rápida e mobile first de clientes locais."
         ],
-        "challenge": "Negócios de serviço local perdem clientes no instante em que o site parece lento ou genérico. O desafio era construir algo rápido e específico o suficiente para a jornada real de um cliente de oficina (ver o trabalho, confiar, pedir orçamento) dentro de um prazo de freela, sem espaço para uma segunda versão do fluxo principal.",
-        "process": "Mapeei a jornada desde a chegada ao site até o pedido de orçamento, e estruturei a página em torno desse fluxo: serviços, exemplos reais de trabalho e um CTA direto de WhatsApp em cada ponto natural de decisão.",
-        "results": "O site foi publicado na Vercel com uma experiência rápida e mobile first construída em torno do fluxo de pedido de orçamento, dando à Garage 910 um canal direto e de baixo atrito entre tráfego de busca e conversas no WhatsApp.",
+        "challenge": "Negócios de serviço local perdem clientes no instante em que o site parece lento, vago ou igual a qualquer outra página de oficina. A Garage 910 precisava de especificidade: mostrar o trabalho, explicar os serviços e tornar o pedido de orçamento sem esforço. O prazo era de freela apertado, com pouca margem para uma segunda versão do fluxo principal. O desafio era entregar uma experiência de conversão focada que ainda parecesse cuidada o bastante para gerar confiança em lanternagem e pintura.",
+        "process": "Mapeei a jornada da chegada ao pedido de orçamento antes de desenhar seções, e estruturei a página em torno de serviços, exemplos reais de trabalho e um caminho persistente para o WhatsApp. A hierarquia visual privilegiou prova de qualidade em vez de texto institucional longo. A composição mobile veio primeiro porque busca local e indicação chegam sobretudo no celular. A iteração com apoio do Cursor ajudou a refinar componentes rápido mantendo espaçamento, tipografia e tratamento de CTA consistentes.",
+        "results": "O site foi publicado na Vercel como uma experiência rápida e mobile first construída em torno do fluxo de pedido de orçamento. A Garage 910 ganhou um canal direto e de baixo atrito entre tráfego de busca e conversas no WhatsApp. Interessados conseguem entender serviços e ver trabalhos reais antes de entrar em contato, o que reduz primeiras mensagens inseguras e fortalece a confiança local.",
         "deliverables": [
-          "Site institucional responsivo",
-          "Seções de serviços e portfólio",
-          "Fluxo direto de contato via WhatsApp"
+          "Site institucional responsivo para oficina local",
+          "Seções de serviços com escopo claro e indicação de próximo passo",
+          "Estrutura de portfólio / vitrine de trabalhos realizados",
+          "Fluxo direto de contato via WhatsApp em pontos-chave de decisão",
+          "Sistema de layout responsivo mobile first",
+          "Deploy em produção na Vercel"
         ],
-        "contribution": "Desenhei toda a jornada do cliente e a arquitetura de informação, e depois construí e publiquei o front end sozinho, usando Cursor e IA para iterar componentes rápido mantendo consistência visual entre as seções.",
+        "contribution": "Desenhei toda a jornada do cliente e a arquitetura de informação, e depois construí e publiquei o front end responsivo sozinho. Com Cursor e IA, iterei componentes rápido mantendo consistência visual entre as seções. A ownership cobriu tanto a estratégia de conversão (busca para WhatsApp) quanto o craft da interface que fez esse caminho parecer confiável para uma oficina local.",
         "takeaways": [
-          "Para negócios de serviço local, o CTA de WhatsApp é o verdadeiro ponto de conversão, o resto da página deve conduzir até ele.",
-          "Iteração com apoio de IA (Cursor) acelera de forma real os prazos de freela sem perder consistência visual."
+          "Para negócios de serviço local, o CTA de WhatsApp é o verdadeiro ponto de conversão. O resto da página deve conduzir até ele.",
+          "Iteração com apoio de IA (Cursor) acelera de forma real os prazos de freela sem perder consistência visual.",
+          "Exemplos reais de trabalho superam texto genérico de oficina quando a confiança é o gargalo.",
+          "Composição mobile first não é opcional quando a busca local é o principal canal de aquisição."
+        ],
+        "personas": [
+          {
+            "name": "Fernanda, dona de carro após colisão",
+            "background": "Mora em Guarapari, precisa de lanternagem e pintura em breve, e está comparando oficinas locais depois de um acidente ou dano em estacionamento.",
+            "needs": "Prova rápida de que a oficina faz um bom trabalho, serviços claros e um jeito fácil de pedir orçamento no WhatsApp.",
+            "challenges": "Ansiedade com qualidade e prazo, pouca paciência para site lento, e desconfiança de páginas genéricas sem trabalhos reais."
+          },
+          {
+            "name": "Eduardo, dono de veículo de trabalho",
+            "background": "Mantém um ou mais veículos de trabalho e precisa de reparo local confiável sem troca longa de mensagens.",
+            "needs": "Cobertura clara de serviços, confiança na qualidade e agendamento rápido por um canal familiar como WhatsApp.",
+            "challenges": "Pressão de tempo, dúvida se a oficina atende o tipo de veículo e atrito se o contato estiver escondido ou pouco claro."
+          }
         ]
       }
     }
@@ -390,9 +668,16 @@
   {
     "slug": "ct-michel-mendes",
     "featured": false,
-    "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
+    "tags": [
+      "Web",
+      "UX/UI",
+      "Institutional",
+      "Vercel"
+    ],
     "thumbnail": "/media/covers/ct-michel-mendes.png",
-    "links": { "live": "https://ct-michel-mendes.vercel.app/" },
+    "links": {
+      "live": "https://ct-michel-mendes.vercel.app/"
+    },
     "content": {
       "en": {
         "title": "CT Michel Mendes",
@@ -408,24 +693,52 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Guarapari, Brazil",
         "duration": "Project engagement",
-        "introduction": "CT Michel Mendes, a Muay Thai, MMA, and Jiu-Jitsu training center, needed a site that helped prospective students understand modalities, schedules, and credibility before ever sending a message.",
+        "introduction": "CT Michel Mendes, a Muay Thai, MMA, and Jiu-Jitsu training center in Guarapari, needed a site that helped prospective students understand modalities, schedules, and credibility before sending a first message. Combat sports prospects often arrive curious but hesitant, especially beginners. The website had to feel energetic and approachable without becoming a wall of classes, achievements, and coach bios. Clarity before contact was the conversion strategy.",
         "responsibilities": [
           "Designed information hierarchy separating modalities, schedules, and social proof.",
+          "Structured sections so first-time visitors could self-qualify before contacting.",
           "Developed the interface with Next.js and deployed on Vercel.",
-          "Refined layout and copy with Cursor to match an energetic, approachable tone."
+          "Refined layout and copy with Cursor to keep an energetic, approachable tone.",
+          "Prioritized mobile readability for local prospects browsing on phones.",
+          "Connected content sections to a clear next step for trial or contact."
         ],
-        "challenge": "A combat sports academy has a lot to say: modalities, schedules, achievements, and coaches, and cramming all of it onto one page risks overwhelming exactly the nervous first-time visitor it most needs to convert.",
-        "process": "I separated modalities, class schedules, and achievements into distinct, scannable sections, keeping the tone energetic but uncluttered so a first-time visitor could self-qualify before reaching out.",
-        "results": "The site gives prospects a clear picture of the academy (modalities, schedules, and track record) before they ever send a message, cutting the back-and-forth needed to convert interest into a first visit.",
+        "challenge": "A combat sports academy has a lot to say: modalities, schedules, achievements, and coaches. Cramming all of it onto one undifferentiated page risks overwhelming exactly the nervous first-time visitor the gym most needs to convert. Too little structure makes the academy look incomplete. Too much density makes it feel intimidating. The challenge was energetic clarity without clutter.",
+        "process": "I separated modalities, class schedules, and achievements into distinct scannable sections so each question had a place. Tone stayed energetic, but visual noise stayed low so beginners could self-qualify without decoding a brochure. Social proof supported trust without turning the first viewport into a trophy wall. Mobile composition and copy iteration with Cursor kept the experience approachable for the local audience.",
+        "results": "The site gives prospects a clear picture of the academy (modalities, schedules, and track record) before they send a message. That reduces back-and-forth needed to convert interest into a first visit. Visitors can decide whether the gym fits them faster, and the brand tone feels aligned with combat sports without sacrificing usability.",
         "deliverables": [
-          "Responsive institutional website",
-          "Modality and schedule sections",
-          "Achievements / social proof section"
+          "Responsive institutional website for a combat sports academy",
+          "Modality sections with clear positioning for each discipline",
+          "Class schedule information architecture",
+          "Achievements / social proof section",
+          "Contact path for trial interest and first messages",
+          "Mobile-first layout and energetic visual system"
         ],
-        "contribution": "I designed the information hierarchy and built the Next.js front end, iterating quickly with Cursor on layout and copy to keep the tone energetic and approachable for a local audience.",
+        "contribution": "I designed the information hierarchy and built the Next.js front end, iterating quickly with Cursor on layout and copy to keep the tone energetic and approachable for a local audience. Ownership covered both content structure (what a hesitant prospect needs to know first) and the interface craft that made that structure feel like the academy, not a generic gym template.",
         "takeaways": [
           "Separating 'what we offer' from 'why trust us' makes dense academy information much easier to scan.",
-          "Tone matters as much as structure for a combat sports audience, energetic beats corporate every time."
+          "Tone matters as much as structure for a combat sports audience. Energetic beats corporate every time.",
+          "First-time visitors convert better when they can self-qualify before contacting.",
+          "Social proof works best as support, not as the entire first impression."
+        ],
+        "personas": [
+          {
+            "name": "João, curious beginner",
+            "background": "Local resident interested in starting Muay Thai or Jiu-Jitsu, unsure about level, schedule fit, and whether the gym feels welcoming.",
+            "needs": "Simple explanation of modalities, class times that fit his routine, and an easy, low-pressure way to ask about a trial.",
+            "challenges": "Intimidation, fear of looking out of place, and overload when sites dump every achievement and class into one dense block."
+          },
+          {
+            "name": "Amanda, returning athlete",
+            "background": "Has trained combat sports before and is evaluating CT Michel Mendes based on coaching credibility and training quality.",
+            "needs": "Clear proof of experience, modality depth, and practical details that show the academy is serious.",
+            "challenges": "Generic gym marketing, weak social proof placement, and sites that hide the information experienced athletes actually compare."
+          },
+          {
+            "name": "Ricardo, parent of a young student",
+            "background": "Researching a training center for a teenager and cares about schedule clarity, safety perception, and easy contact.",
+            "needs": "Transparent class information, trustworthy presentation, and a direct channel to ask practical questions.",
+            "challenges": "Unclear schedules, overly aggressive tone, and difficulty understanding whether the gym is appropriate for his child."
+          }
         ]
       },
       "pt": {
@@ -442,24 +755,52 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Guarapari, Brasil",
         "duration": "Projeto pontual",
-        "introduction": "O CT Michel Mendes, centro de treinamento de Muay Thai, MMA e Jiu-Jitsu, precisava de um site que ajudasse futuros alunos a entender modalidades, horários e credibilidade antes de enviar a primeira mensagem.",
+        "introduction": "O CT Michel Mendes, centro de treinamento de Muay Thai, MMA e Jiu-Jitsu em Guarapari, precisava de um site que ajudasse futuros alunos a entender modalidades, horários e credibilidade antes de enviar a primeira mensagem. Interessados em esportes de combate muitas vezes chegam curiosos, mas hesitantes, sobretudo iniciantes. O site precisava parecer energético e acessível sem virar um muro de aulas, conquistas e bios de professores. Clareza antes do contato era a estratégia de conversão.",
         "responsibilities": [
           "Desenhei hierarquia de informação separando modalidades, horários e prova social.",
+          "Estruturei seções para que visitantes de primeira vez pudessem se autoqualificar antes do contato.",
           "Desenvolvi a interface em Next.js e publiquei na Vercel.",
-          "Refinei layout e copy com Cursor para manter um tom energético e acessível."
+          "Refinei layout e copy com Cursor para manter tom energético e acessível.",
+          "Priorizei legibilidade mobile para interessados locais navegando no celular.",
+          "Conectei as seções de conteúdo a um próximo passo claro de aula experimental ou contato."
         ],
-        "challenge": "Uma academia de luta tem muito a dizer: modalidades, horários, conquistas e professores, e colocar tudo isso em uma única página arrisca sobrecarregar exatamente o visitante nervoso de primeira vez que ela mais precisa converter.",
-        "process": "Separei modalidades, horários de aula e conquistas em seções distintas e escaneáveis, mantendo o tom energético mas sem poluição visual, para que um visitante de primeira vez conseguisse se autoqualificar antes de entrar em contato.",
-        "results": "O site dá aos interessados uma visão clara da academia (modalidades, horários e histórico) antes mesmo de enviarem uma mensagem, reduzindo a troca de mensagens necessária para converter interesse em uma primeira visita.",
+        "challenge": "Uma academia de luta tem muito a dizer: modalidades, horários, conquistas e professores. Colocar tudo isso em uma página indiferenciada sobrecarrega exatamente o visitante nervoso de primeira vez que a academia mais precisa converter. Pouca estrutura faz a academia parecer incompleta. Densidade demais a torna intimidadora. O desafio era clareza energética sem poluição visual.",
+        "process": "Separei modalidades, horários de aula e conquistas em seções distintas e escaneáveis, para que cada pergunta tivesse um lugar. O tom ficou energético, mas o ruído visual baixo, para iniciantes se autoqualificarem sem decifrar um folder. A prova social sustentou confiança sem transformar o primeiro viewport em um mural de troféus. Composição mobile e iteração de copy com Cursor mantiveram a experiência acessível para o público local.",
+        "results": "O site dá aos interessados uma visão clara da academia (modalidades, horários e histórico) antes de enviarem uma mensagem. Isso reduz a troca necessária para converter interesse em uma primeira visita. Visitantes decidem mais rápido se a academia combina com eles, e o tom da marca permanece alinhado aos esportes de combate sem sacrificar usabilidade.",
         "deliverables": [
-          "Site institucional responsivo",
-          "Seções de modalidades e horários",
-          "Seção de conquistas / prova social"
+          "Site institucional responsivo para academia de combate",
+          "Seções de modalidades com posicionamento claro de cada disciplina",
+          "Arquitetura de informação de horários de aula",
+          "Seção de conquistas / prova social",
+          "Caminho de contato para interesse em aula experimental",
+          "Layout mobile first e sistema visual energético"
         ],
-        "contribution": "Desenhei a hierarquia de informação e construí o front end em Next.js, iterando rápido com Cursor em layout e copy para manter o tom energético e acessível para o público local.",
+        "contribution": "Desenhei a hierarquia de informação e construí o front end em Next.js, iterando rápido com Cursor em layout e copy para manter o tom energético e acessível para o público local. A ownership cobriu tanto a estrutura de conteúdo (o que um interessado hesitante precisa saber primeiro) quanto o craft da interface que fez essa estrutura parecer a academia, e não um template genérico de gym.",
         "takeaways": [
           "Separar 'o que oferecemos' de 'por que confiar' torna a informação densa de uma academia muito mais fácil de escanear.",
-          "Tom importa tanto quanto estrutura para um público de esportes de combate, energia vence formalidade sempre."
+          "Tom importa tanto quanto estrutura para um público de esportes de combate. Energia vence formalidade sempre.",
+          "Visitantes de primeira vez convertem melhor quando conseguem se autoqualificar antes do contato.",
+          "Prova social funciona melhor como suporte, não como toda a primeira impressão."
+        ],
+        "personas": [
+          {
+            "name": "João, iniciante curioso",
+            "background": "Morador local interessado em começar Muay Thai ou Jiu-Jitsu, inseguro sobre nível, encaixe de horário e se a academia parece acolhedora.",
+            "needs": "Explicação simples das modalidades, horários que caibam na rotina e um jeito fácil e de baixa pressão para perguntar sobre aula experimental.",
+            "challenges": "Intimidação, medo de parecer deslocado e sobrecarga quando o site despeja todas as conquistas e aulas em um bloco denso."
+          },
+          {
+            "name": "Amanda, atleta em retorno",
+            "background": "Já treinou esportes de combate e avalia o CT Michel Mendes pela credibilidade do coaching e pela qualidade do treino.",
+            "needs": "Prova clara de experiência, profundidade das modalidades e detalhes práticos que mostrem que a academia é séria.",
+            "challenges": "Marketing genérico de academia, prova social mal posicionada e sites que escondem a informação que atletas experientes realmente comparam."
+          },
+          {
+            "name": "Ricardo, pai de aluno jovem",
+            "background": "Pesquisa um centro de treinamento para um adolescente e se importa com clareza de horários, percepção de segurança e contato fácil.",
+            "needs": "Informação transparente de aulas, apresentação confiável e um canal direto para perguntas práticas.",
+            "challenges": "Horários pouco claros, tom agressivo demais e dificuldade de entender se a academia é adequada para o filho."
+          }
         ]
       }
     }
@@ -467,9 +808,16 @@
   {
     "slug": "source-design",
     "featured": false,
-    "tags": ["Web", "UX/UI", "Branding", "Institutional"],
+    "tags": [
+      "Web",
+      "UX/UI",
+      "Branding",
+      "Institutional"
+    ],
     "thumbnail": "/media/covers/source-design.png",
-    "links": { "live": "https://sourcedesign.com.br/" },
+    "links": {
+      "live": "https://sourcedesign.com.br/"
+    },
     "content": {
       "en": {
         "title": "Source Design",
@@ -485,24 +833,46 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Brazil",
         "duration": "Project engagement",
-        "introduction": "Source Design, a graphic design and visual communication studio, needed its own site to do what it asks of clients every day: turn a brand identity into a clear, credible digital presence.",
+        "introduction": "Source Design, a graphic design and visual communication studio, needed its own site to do what it asks of clients every day: turn a brand identity into a clear, credible digital presence. Studio websites are judged more harshly than client work. Services, pricing, and contact had to be scannable, while the UI itself proved taste, craft, and professionalism. The product was both sales tool and portfolio proof.",
         "responsibilities": [
-          "Structured the service catalog and pricing with scannable cards.",
-          "Translated brand identity into a cohesive web UI.",
-          "Built and iterated the front end with Cursor and AI, shipped on Vercel."
+          "Structured the service catalog and pricing into scannable, decision-friendly sections.",
+          "Translated brand identity into a cohesive web UI with consistent type, spacing, and color rhythm.",
+          "Designed clear CTAs for WhatsApp and email across key conversion moments.",
+          "Built and iterated the front end with Cursor and AI assistance.",
+          "Shipped the production site on Vercel with a polished institutional experience.",
+          "Balanced brand expression with practical hiring clarity for potential clients."
         ],
-        "challenge": "A design studio's own website is judged more harshly than any client project. It has to prove the studio's taste while still making services and pricing easy to scan and act on, with no excuse for friction it wouldn't tolerate from a client.",
-        "process": "I translated the studio's existing brand identity into a cohesive web UI (typography, spacing, and color rhythm), then organized the service catalog and pricing into scannable cards with clear CTAs to WhatsApp and email, so browsing services felt as considered as the studio's own client work.",
-        "results": "The studio now has a site that reflects its own design standard while making it easy for potential clients to understand offerings, pricing, and how to get in touch.",
+        "challenge": "A design studio's own website is judged more harshly than any client project. It has to prove taste while still making services and pricing easy to scan and act on. Too much artistic expression creates friction. Too much template pragmatism undermines credibility. The challenge was building a site Source Design would be proud to send, without inventing excuses for contact friction it would never accept from a client.",
+        "process": "I started from the studio's existing brand identity and translated it into web foundations: typography, spacing, and color rhythm. Services and pricing were then organized into scannable cards and sections with unambiguous next steps. Contact CTAs for WhatsApp and email were placed where intent naturally peaks. Cursor-assisted iteration helped refine details quickly while protecting the studio-level finish the brand required.",
+        "results": "The studio now has a site that reflects its own design standard while making offerings, pricing, and contact easy to understand. Potential clients can evaluate fit faster and reach out with fewer clarifying messages. The website works as both a credibility proof and a practical hiring path.",
         "deliverables": [
-          "Service catalog and pricing pages",
-          "Brand-consistent web UI",
-          "WhatsApp and email contact CTAs"
+          "Brand-consistent institutional website",
+          "Service catalog with clear offering definitions",
+          "Pricing presentation designed for scanning and comparison",
+          "WhatsApp and email contact CTAs",
+          "Responsive UI system aligned to studio identity",
+          "Production deployment on Vercel"
         ],
-        "contribution": "I translated the existing brand identity into the web UI and structured the service/pricing information, building and iterating the front end with Cursor before shipping on Vercel.",
+        "contribution": "I translated the existing brand identity into the web UI and structured service and pricing information for decision-making, then built and iterated the front end with Cursor before shipping on Vercel. Ownership spanned brand translation, information design, and implementation. The goal was a site that sells the studio without lowering the visual bar the studio sets for clients.",
         "takeaways": [
           "A design studio's own site is the highest-stakes proof of its visual standards.",
-          "Scannable pricing cards reduce the friction between interest and a first message."
+          "Scannable pricing and services reduce friction between interest and a first message.",
+          "Brand expression and conversion clarity are not opposites when hierarchy is intentional.",
+          "AI-assisted iteration helps protect craft under short freelance timelines."
+        ],
+        "personas": [
+          {
+            "name": "Beatriz, small business owner",
+            "background": "Needs branding or visual communication support and is comparing local or regional studios before making contact.",
+            "needs": "Clear understanding of services, pricing signals, and an easy way to start a conversation.",
+            "challenges": "Vague service descriptions, hidden pricing logic, and portfolio-only sites that never explain how to hire."
+          },
+          {
+            "name": "Thiago, marketing coordinator",
+            "background": "Evaluates design partners for campaigns and ongoing visual work inside a company with limited vendor-selection time.",
+            "needs": "Fast scanning of capabilities, professional presentation, and credible contact paths for a first briefing.",
+            "challenges": "Overly artistic sites that obscure offerings, and weak differentiation between studios with similar aesthetics."
+          }
         ]
       },
       "pt": {
@@ -519,24 +889,46 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Brasil",
         "duration": "Projeto pontual",
-        "introduction": "A Source Design, estúdio de design gráfico e comunicação visual, precisava que o próprio site fizesse o que ela pede aos clientes todos os dias: transformar identidade de marca em presença digital clara e confiável.",
+        "introduction": "A Source Design, estúdio de design gráfico e comunicação visual, precisava que o próprio site fizesse o que ela pede aos clientes todos os dias: transformar identidade de marca em presença digital clara e confiável. Sites de estúdio são julgados com mais rigor do que o trabalho para clientes. Serviços, preços e contato precisavam ser escaneáveis, enquanto a própria UI comprovava gosto, craft e profissionalismo. O produto era ao mesmo tempo ferramenta comercial e prova de portfólio.",
         "responsibilities": [
-          "Estruturei o catálogo de serviços e a tabela de preços com cards escaneáveis.",
-          "Traduzi a identidade de marca em uma UI web coesa.",
-          "Construí e iterei o front end com Cursor e IA, publicando na Vercel."
+          "Estruturei o catálogo de serviços e a tabela de preços em seções escaneáveis e fáceis de decidir.",
+          "Traduzi a identidade de marca em uma UI web coesa, com tipografia, espaçamento e ritmo de cor consistentes.",
+          "Desenhei CTAs claros para WhatsApp e e-mail nos momentos-chave de conversão.",
+          "Construí e iterei o front end com Cursor e apoio de IA.",
+          "Publiquei o site em produção na Vercel com experiência institucional polida.",
+          "Equilibrei expressão de marca com clareza prática de contratação para clientes potenciais."
         ],
-        "challenge": "O site de um estúdio de design é julgado com mais rigor do que qualquer projeto de cliente. Precisa comprovar o bom gosto do estúdio e, ao mesmo tempo, deixar serviços e preços fáceis de escanear e agir, sem desculpa para o atrito que o estúdio não toleraria em um cliente.",
-        "process": "Traduzi a identidade de marca já existente do estúdio em uma UI web coesa (tipografia, espaçamento e ritmo de cor) e depois organizei catálogo de serviços e preços em cards escaneáveis com CTAs claros para WhatsApp e e-mail, para que navegar pelos serviços parecesse tão cuidado quanto o próprio trabalho do estúdio para clientes.",
-        "results": "O estúdio agora tem um site que reflete seu próprio padrão de design, ao mesmo tempo em que facilita para clientes potenciais entenderem oferta, preços e como entrar em contato.",
+        "challenge": "O site de um estúdio de design é julgado com mais rigor do que qualquer projeto de cliente. Precisa comprovar gosto e, ao mesmo tempo, deixar serviços e preços fáceis de escanear e agir. Expressão artística demais cria atrito. Pragmatismo de template demais mina credibilidade. O desafio era construir um site que a Source Design tivesse orgulho de enviar, sem inventar desculpas para o atrito de contato que ela nunca aceitaria em um cliente.",
+        "process": "Parti da identidade de marca já existente do estúdio e a traduzi em fundamentos web: tipografia, espaçamento e ritmo de cor. Depois organizei serviços e preços em cards e seções escaneáveis com próximos passos inequívocos. CTAs de WhatsApp e e-mail foram posicionados onde a intenção naturalmente sobe. A iteração com Cursor ajudou a refinar detalhes rápido protegendo o acabamento de estúdio que a marca exigia.",
+        "results": "O estúdio agora tem um site que reflete seu próprio padrão de design e, ao mesmo tempo, facilita entender oferta, preços e contato. Clientes potenciais avaliam o fit mais rápido e entram em contato com menos mensagens de esclarecimento. O site funciona como prova de credibilidade e como caminho prático de contratação.",
         "deliverables": [
-          "Páginas de catálogo de serviços e preços",
-          "UI web consistente com a marca",
-          "CTAs de contato via WhatsApp e e-mail"
+          "Site institucional consistente com a marca",
+          "Catálogo de serviços com definição clara da oferta",
+          "Apresentação de preços pensada para escaneamento e comparação",
+          "CTAs de contato via WhatsApp e e-mail",
+          "Sistema de UI responsiva alinhado à identidade do estúdio",
+          "Deploy em produção na Vercel"
         ],
-        "contribution": "Traduzi a identidade de marca existente na UI web e estruturei as informações de serviço/preço, construindo e iterando o front end com Cursor antes de publicar na Vercel.",
+        "contribution": "Traduzi a identidade de marca existente na UI web e estruturei as informações de serviço e preço para decisão, depois construí e iterei o front end com Cursor antes de publicar na Vercel. A ownership atravessou tradução de marca, design de informação e implementação. O objetivo era um site que vende o estúdio sem baixar a barra visual que o estúdio cobra dos clientes.",
         "takeaways": [
           "O site de um estúdio de design é a prova de maior risco dos seus próprios padrões visuais.",
-          "Cards de preço escaneáveis reduzem o atrito entre interesse e a primeira mensagem."
+          "Serviços e preços escaneáveis reduzem o atrito entre interesse e a primeira mensagem.",
+          "Expressão de marca e clareza de conversão não são opostos quando a hierarquia é intencional.",
+          "Iteração com apoio de IA ajuda a proteger craft sob prazos curtos de freela."
+        ],
+        "personas": [
+          {
+            "name": "Beatriz, dona de pequeno negócio",
+            "background": "Precisa de apoio em branding ou comunicação visual e está comparando estúdios locais ou regionais antes de entrar em contato.",
+            "needs": "Entender com clareza os serviços, ter sinais de preço e um jeito fácil de começar a conversa.",
+            "challenges": "Descrições vagas de serviço, lógica de preço escondida e sites só de portfólio que nunca explicam como contratar."
+          },
+          {
+            "name": "Thiago, coordenador de marketing",
+            "background": "Avalia parceiros de design para campanhas e trabalho visual contínuo dentro de uma empresa com pouco tempo para selecionar fornecedores.",
+            "needs": "Escaneamento rápido de capacidades, apresentação profissional e caminhos de contato credíveis para um primeiro briefing.",
+            "challenges": "Sites excessivamente artísticos que obscurecem a oferta, e fraca diferenciação entre estúdios com estética parecida."
+          }
         ]
       }
     }
@@ -544,9 +936,17 @@
   {
     "slug": "idea-validator",
     "featured": true,
-    "tags": ["SaaS", "AI", "UX/UI", "Supabase", "Vercel"],
+    "tags": [
+      "SaaS",
+      "AI",
+      "UX/UI",
+      "Supabase",
+      "Vercel"
+    ],
     "thumbnail": "/media/covers/idea-validator.png",
-    "links": { "live": "https://www.ideavalidator.com.br/" },
+    "links": {
+      "live": "https://www.ideavalidator.com.br/"
+    },
     "content": {
       "en": {
         "title": "Idea Validator",
@@ -562,24 +962,52 @@
         "tools": "Next.js, Supabase, Vercel, Cursor",
         "location": "Brazil",
         "duration": "Ongoing product",
-        "introduction": "Idea Validator helps founders pressure-test a startup idea with AI, covering market analysis, risk assessment, and MVP planning in a single flow. The core product problem was making dense AI output feel like a structured report a founder could trust, not a wall of generated text.",
+        "introduction": "Idea Validator is my own SaaS product that helps founders pressure-test a startup idea with AI, covering market analysis, risk assessment, and MVP planning in one flow. Dense AI output is easy to generate and hard to trust. The core product problem was making that output feel like a structured report a founder could scan, believe, and act on, not a wall of generated text. Around the report, authentication, plans, and a client area had to support a real subscription product, not just a demo.",
         "responsibilities": [
-          "Designed the end-to-end flow from idea input to structured report.",
-          "Built authentication, plans, and client dashboard on Supabase.",
-          "Used Cursor and AI throughout the workflow to prototype UI and refine microcopy."
+          "Designed the end-to-end flow from idea input to structured validation report.",
+          "Defined report hierarchy, sections, and progressive disclosure for dense AI output.",
+          "Built authentication, subscription plans, and client dashboard on Supabase.",
+          "Shipped the product front end on Next.js and Vercel.",
+          "Used Cursor and AI throughout to prototype UI, refine microcopy, and move faster.",
+          "Owned product decisions on what the report must answer for early-stage founders."
         ],
-        "challenge": "AI-generated analysis is naturally dense and unstructured. The challenge was designing sections, hierarchy, and progressive disclosure so a founder could scan a report in minutes and still trust the depth behind it.",
-        "process": "I designed the flow from idea input to a structured, sectioned report first, then built the underlying authentication, subscription plans, and client dashboard on Supabase, treating the report's readability as the product's core UX problem instead of an afterthought bolted on at the end.",
-        "results": "Idea Validator ships as a live SaaS with subscription plans and a client dashboard, giving founders a fast path from a raw idea to a structured, readable validation report.",
+        "challenge": "AI-generated analysis is naturally dense and unstructured. Founders do not have time to decode a blob of text, and they distrust outputs that feel generic or unreadable. The challenge was designing sections, hierarchy, and progressive disclosure so someone could scan a report in minutes and still trust the depth behind it. At the same time, the SaaS shell (auth, plans, dashboard) had to feel product-grade, not bolted on.",
+        "process": "I designed the reading experience of the report before optimizing surrounding account flows. Idea input, sectioned output, and progressive disclosure were treated as the core UX loop. Only then did I build authentication, plans, and the client dashboard on Supabase around that loop. Prototyping with Cursor helped test microcopy and section naming quickly, because wording is part of whether AI output feels credible.",
+        "results": "Idea Validator ships as a live SaaS with subscription plans and a client dashboard. Founders get a fast path from a raw idea to a structured, readable validation report. The product demonstrates that AI features become useful when the interface designs the reading experience as carefully as the generation prompt.",
         "deliverables": [
-          "End-to-end SaaS UX (idea input to report)",
-          "Auth, plans, and client dashboard",
-          "AI-output report design system"
+          "End-to-end SaaS UX from idea input to validation report",
+          "AI report design system with section hierarchy and progressive disclosure",
+          "Authentication and account experience",
+          "Subscription plans and client dashboard",
+          "Microcopy system for trust and scanability in AI output",
+          "Production app on Next.js, Supabase, and Vercel"
         ],
-        "contribution": "I designed the product end-to-end and built the front end and Supabase integration myself, using an AI-augmented workflow to prototype UI and refine microcopy without slowing down delivery.",
+        "contribution": "I designed the product end-to-end and built the front end and Supabase integration myself, using an AI-augmented workflow to prototype UI and refine microcopy without slowing delivery. Ownership covered product framing, UX of AI output, and implementation. Idea Validator is both a SaaS and a case for designing AI products around comprehension, not just generation.",
         "takeaways": [
           "Designing for AI output means designing the reading experience as much as the input flow.",
-          "Progressive disclosure is what makes a dense AI report feel trustworthy instead of overwhelming."
+          "Progressive disclosure is what makes a dense AI report feel trustworthy instead of overwhelming.",
+          "A SaaS shell only works when auth, plans, and dashboard support the core aha moment.",
+          "Microcopy is part of AI UX. Section names and framing change whether output feels usable."
+        ],
+        "personas": [
+          {
+            "name": "Marina, first-time founder",
+            "background": "Has a startup idea and limited time, looking for structured feedback before investing months in building the wrong thing.",
+            "needs": "A clear report she can scan quickly, covering market, risks, and a practical MVP direction.",
+            "challenges": "Generic AI answers, information overload, and uncertainty about which insights actually matter for next steps."
+          },
+          {
+            "name": "Pedro, indie maker validating side projects",
+            "background": "Tests multiple product ideas while working another job and needs fast validation without heavy research process.",
+            "needs": "Speed, a repeatable flow, and reports organized enough to compare ideas over time.",
+            "challenges": "Tool fatigue, shallow outputs, and products that feel like demos rather than something worth returning to."
+          },
+          {
+            "name": "Julia, early-stage product lead",
+            "background": "Helps evaluate internal venture ideas and needs a shared artifact to discuss risks and MVP scope with stakeholders.",
+            "needs": "Structured sections she can walk through in a meeting, with enough depth to support a go or no-go conversation.",
+            "challenges": "Unstructured AI dumps that are hard to socialize, and missing hierarchy between critical risks and secondary notes."
+          }
         ]
       },
       "pt": {
@@ -596,24 +1024,52 @@
         "tools": "Next.js, Supabase, Vercel, Cursor",
         "location": "Brasil",
         "duration": "Produto em andamento",
-        "introduction": "O Idea Validator ajuda fundadores a testar uma ideia de startup com IA, cobrindo análise de mercado, avaliação de risco e plano de MVP em um único fluxo. O problema central de produto era fazer uma saída densa de IA parecer um relatório estruturado em que o fundador confiasse, não um bloco de texto gerado.",
+        "introduction": "O Idea Validator é meu produto SaaS próprio que ajuda fundadores a testar uma ideia de startup com IA, cobrindo análise de mercado, avaliação de risco e plano de MVP em um único fluxo. Saída densa de IA é fácil de gerar e difícil de confiar. O problema central de produto era fazer essa saída parecer um relatório estruturado que o fundador pudesse escanear, acreditar e usar, não um bloco de texto gerado. Em torno do relatório, autenticação, planos e área do cliente precisavam sustentar um produto de assinatura de verdade, não só uma demo.",
         "responsibilities": [
-          "Desenhei o fluxo ponta a ponta da ideia ao relatório estruturado.",
-          "Implementei autenticação, planos e dashboard do cliente no Supabase.",
-          "Usei Cursor e IA em todo o fluxo para prototipar UI e refinar microcopy."
+          "Desenhei o fluxo ponta a ponta da entrada da ideia ao relatório estruturado de validação.",
+          "Defini hierarquia, seções e revelação progressiva para saída densa de IA.",
+          "Implementei autenticação, planos de assinatura e dashboard do cliente no Supabase.",
+          "Publiquei o front end do produto em Next.js e Vercel.",
+          "Usei Cursor e IA em todo o fluxo para prototipar UI, refinar microcopy e acelerar entrega.",
+          "Conduzi decisões de produto sobre o que o relatório precisa responder para fundadores early-stage."
         ],
-        "challenge": "Análise gerada por IA é densa e desestruturada por natureza. O desafio era desenhar seções, hierarquia e revelação progressiva para que um fundador conseguisse escanear um relatório em minutos e ainda confiar na profundidade por trás dele.",
-        "process": "Desenhei primeiro o fluxo da entrada da ideia até um relatório estruturado e seccionado, e só depois construí a autenticação, os planos de assinatura e o dashboard do cliente no Supabase, tratando a legibilidade do relatório como o problema central de UX do produto, não um detalhe resolvido no final.",
-        "results": "O Idea Validator roda como um SaaS ativo com planos de assinatura e dashboard do cliente, dando a fundadores um caminho rápido de uma ideia bruta a um relatório de validação estruturado e legível.",
+        "challenge": "Análise gerada por IA é densa e desestruturada por natureza. Fundadores não têm tempo para decifrar um bloco de texto, e desconfiam de saídas que parecem genéricas ou ilegíveis. O desafio era desenhar seções, hierarquia e revelação progressiva para que alguém escaneasse um relatório em minutos e ainda confiasse na profundidade por trás dele. Ao mesmo tempo, o shell do SaaS (auth, planos, dashboard) precisava parecer produto maduro, não um encaixe posterior.",
+        "process": "Desenhei a experiência de leitura do relatório antes de otimizar os fluxos de conta ao redor. Entrada da ideia, saída seccionada e revelação progressiva foram tratados como o loop central de UX. Só então construí autenticação, planos e dashboard do cliente no Supabase em torno desse loop. Prototipar com Cursor ajudou a testar microcopy e nomes de seção rápido, porque a redação faz parte de a saída de IA parecer crível.",
+        "results": "O Idea Validator roda como um SaaS ativo com planos de assinatura e dashboard do cliente. Fundadores têm um caminho rápido de uma ideia bruta a um relatório de validação estruturado e legível. O produto mostra que features de IA se tornam úteis quando a interface desenha a experiência de leitura com o mesmo cuidado do prompt de geração.",
         "deliverables": [
-          "UX ponta a ponta do SaaS (entrada da ideia ao relatório)",
-          "Autenticação, planos e dashboard do cliente",
-          "Sistema de design para saída de relatório de IA"
+          "UX ponta a ponta do SaaS da entrada da ideia ao relatório de validação",
+          "Sistema de design do relatório de IA com hierarquia de seções e revelação progressiva",
+          "Experiência de autenticação e conta",
+          "Planos de assinatura e dashboard do cliente",
+          "Sistema de microcopy para confiança e escaneabilidade na saída de IA",
+          "App em produção com Next.js, Supabase e Vercel"
         ],
-        "contribution": "Desenhei o produto de ponta a ponta e construí o front end e a integração com Supabase sozinho, usando um fluxo de trabalho com apoio de IA para prototipar UI e refinar microcopy sem perder velocidade de entrega.",
+        "contribution": "Desenhei o produto de ponta a ponta e construí o front end e a integração com Supabase sozinho, usando um fluxo com apoio de IA para prototipar UI e refinar microcopy sem perder velocidade de entrega. A ownership cobriu enquadramento de produto, UX da saída de IA e implementação. O Idea Validator é ao mesmo tempo um SaaS e um case de desenhar produtos de IA em torno de compreensão, não só de geração.",
         "takeaways": [
           "Desenhar para saída de IA significa desenhar a experiência de leitura tanto quanto o fluxo de entrada.",
-          "Revelação progressiva é o que faz um relatório denso de IA parecer confiável em vez de sobrecarregado."
+          "Revelação progressiva é o que faz um relatório denso de IA parecer confiável em vez de sobrecarregado.",
+          "O shell de um SaaS só funciona quando auth, planos e dashboard sustentam o aha moment central.",
+          "Microcopy faz parte da UX de IA. Nomes de seção e enquadramento mudam se a saída parece utilizável."
+        ],
+        "personas": [
+          {
+            "name": "Marina, fundadora de primeira viagem",
+            "background": "Tem uma ideia de startup e pouco tempo, buscando feedback estruturado antes de investir meses construindo a coisa errada.",
+            "needs": "Um relatório claro que ela consiga escanear rápido, cobrindo mercado, riscos e uma direção prática de MVP.",
+            "challenges": "Respostas genéricas de IA, sobrecarga de informação e incerteza sobre quais insights realmente importam para os próximos passos."
+          },
+          {
+            "name": "Pedro, indie maker validando side projects",
+            "background": "Testa várias ideias de produto enquanto trabalha em outro emprego e precisa de validação rápida sem processo pesado de pesquisa.",
+            "needs": "Velocidade, um fluxo repetível e relatórios organizados o bastante para comparar ideias ao longo do tempo.",
+            "challenges": "Fadiga de ferramentas, saídas rasas e produtos que parecem demo em vez de algo a que valha voltar."
+          },
+          {
+            "name": "Julia, product lead early-stage",
+            "background": "Ajuda a avaliar ideias internas de venture e precisa de um artefato compartilhado para discutir riscos e escopo de MVP com stakeholders.",
+            "needs": "Seções estruturadas que ela consiga percorrer em uma reunião, com profundidade suficiente para uma conversa de seguir ou não.",
+            "challenges": "Dumps desestruturados de IA difíceis de socializar, e falta de hierarquia entre riscos críticos e notas secundárias."
+          }
         ]
       }
     }
@@ -621,9 +1077,16 @@
   {
     "slug": "henrique-lachesis",
     "featured": false,
-    "tags": ["Web", "UX/UI", "Portfolio", "Vercel"],
+    "tags": [
+      "Web",
+      "UX/UI",
+      "Portfolio",
+      "Vercel"
+    ],
     "thumbnail": "/media/covers/henrique-lachesis.png",
-    "links": { "live": "https://henrique-lachesis.vercel.app/" },
+    "links": {
+      "live": "https://henrique-lachesis.vercel.app/"
+    },
     "content": {
       "en": {
         "title": "Henrique Lachésis",
@@ -639,24 +1102,46 @@
         "tools": "Next.js, Responsive Layouts, Vercel, Cursor",
         "location": "Espírito Santo, Brazil",
         "duration": "Project engagement",
-        "introduction": "Henrique Lachésis, a multimedia designer, needed a portfolio that let visual and motion work speak for itself, without navigation or layout choices competing for attention.",
+        "introduction": "Henrique Lachésis, a multimedia designer from Espírito Santo, needed a portfolio that let visual and motion work speak for itself. Navigation and layout could not compete with the craft on display. Visitors arrive to explore projects, understand services, and decide whether to reach out. The site had to frame the work generously, stay simple on mobile, and end in a direct WhatsApp path without feeling salesy.",
         "responsibilities": [
           "Designed a portfolio grid and service sections that prioritize visual work.",
-          "Developed responsive layouts tuned for images and motion.",
-          "Iterated quickly on layout variants based on client feedback."
+          "Developed responsive layouts tuned for images and motion pieces.",
+          "Kept navigation intentionally restrained so framing stayed clean.",
+          "Iterated layout variants quickly based on direct client feedback.",
+          "Built and shipped the site in Next.js on Vercel.",
+          "Connected exploration of work to a clear WhatsApp contact path."
         ],
-        "challenge": "A multimedia portfolio lives or dies by how well the work is framed. The challenge was building a grid and service structure simple enough to stay out of the way of images and motion pieces, while still guiding visitors to contact.",
-        "process": "I kept the navigation and layout intentionally simple, letting the portfolio grid carry the visual weight, and iterated the layout in several rounds directly against the client's feedback on how his work was being framed.",
-        "results": "The site gives visitors a clean path through Henrique's portfolio and services, ending in a direct WhatsApp contact point, with layouts tuned specifically for showcasing images and motion work.",
+        "challenge": "A multimedia portfolio lives or dies by how well the work is framed. Too much UI chrome steals attention from images and motion. Too little structure leaves visitors unsure how to explore services or contact the designer. The challenge was restraint with direction: stay out of the way of the work, while still guiding people toward a confident next step.",
+        "process": "I kept navigation and layout intentionally simple, letting the portfolio grid carry visual weight. Service sections were secondary to the work, clear but not competing. Several layout rounds were reviewed directly with Henrique against how his projects were being framed, because portfolio UX is subjective until the author sees their work in context. Cursor helped produce variants fast enough for that feedback loop to stay productive.",
+        "results": "The site gives visitors a clean path through Henrique's portfolio and services, ending in a direct WhatsApp contact point. Layouts are tuned specifically for showcasing images and motion work. The designer can send a single link that presents his craft without apology or clutter, which is the real job of a multimedia portfolio.",
         "deliverables": [
-          "Portfolio grid",
-          "Service sections",
-          "WhatsApp contact flow"
+          "Portfolio grid optimized for visual and motion work",
+          "Service sections with clear offering hierarchy",
+          "WhatsApp contact flow",
+          "Responsive layouts for image-heavy pages",
+          "Iterated layout variants based on client review",
+          "Production deployment on Vercel"
         ],
-        "contribution": "I designed the portfolio grid and service structure and built the responsive Next.js front end, iterating quickly on layout variants with Cursor based on the client's direct feedback.",
+        "contribution": "I designed the portfolio grid and service structure and built the responsive Next.js front end, iterating quickly on layout variants with Cursor based on the client's direct feedback. Ownership covered visual hierarchy, restraint in chrome, and the implementation details that keep media looking intentional on every breakpoint. The result is a portfolio that frames Henrique's work instead of competing with it.",
         "takeaways": [
           "For a visual portfolio, restraint in navigation and layout is what actually showcases the work.",
-          "Fast iteration cycles with the client matter more than getting the first layout right."
+          "Fast iteration cycles with the client matter more than getting the first layout right.",
+          "Services should support the portfolio, not fight it for attention.",
+          "Image and motion framing is a UX problem, not only an art direction problem."
+        ],
+        "personas": [
+          {
+            "name": "Larissa, creative director hiring freelancers",
+            "background": "Reviews multimedia portfolios quickly to shortlist designers for campaigns and motion pieces.",
+            "needs": "Immediate sense of craft quality, relevant project range, and an easy way to start a conversation.",
+            "challenges": "Overdesigned portfolio chrome, slow image-heavy sites, and unclear contact paths after browsing work."
+          },
+          {
+            "name": "Gabriel, local business owner needing multimedia",
+            "background": "Wants visual or motion support for a brand and is less fluent in design jargon.",
+            "needs": "Simple understanding of services and confidence from seeing real work before messaging on WhatsApp.",
+            "challenges": "Portfolios that show art without explaining what can be hired, and intimidating presentation that blocks contact."
+          }
         ]
       },
       "pt": {
@@ -673,24 +1158,46 @@
         "tools": "Next.js, Layouts Responsivos, Vercel, Cursor",
         "location": "Espírito Santo, Brasil",
         "duration": "Projeto pontual",
-        "introduction": "Henrique Lachésis, designer multimídia, precisava de um portfólio que deixasse o trabalho visual e de motion falar por si, sem que escolhas de navegação ou layout competissem por atenção.",
+        "introduction": "Henrique Lachésis, designer multimídia do Espírito Santo, precisava de um portfólio que deixasse o trabalho visual e de motion falar por si. Navegação e layout não podiam competir com o craft em exibição. Visitantes chegam para explorar projetos, entender serviços e decidir se entram em contato. O site precisava enquadrar o trabalho com generosidade, permanecer simples no celular e terminar em um caminho direto de WhatsApp sem parecer forçado.",
         "responsibilities": [
           "Desenhei uma grade de portfólio e seções de serviços que priorizam o trabalho visual.",
-          "Desenvolvi layouts responsivos pensados para imagens e motion.",
-          "Iterei rápido em variações de layout com base no feedback do cliente."
+          "Desenvolvi layouts responsivos pensados para imagens e peças em motion.",
+          "Mantive a navegação intencionalmente contida para o enquadramento permanecer limpo.",
+          "Iterei rápido em variações de layout com base no feedback direto do cliente.",
+          "Construí e publiquei o site em Next.js na Vercel.",
+          "Conectei a exploração do trabalho a um caminho claro de contato no WhatsApp."
         ],
-        "challenge": "Um portfólio multimídia vive ou morre pela forma como o trabalho é enquadrado. O desafio era construir uma grade e uma estrutura de serviços simples o suficiente para não competir com imagens e peças em motion, enquanto ainda guiava o visitante até o contato.",
-        "process": "Mantive navegação e layout intencionalmente simples, deixando a grade de portfólio carregar o peso visual, e iterei o layout em várias rodadas diretamente com base no feedback do cliente sobre como seu trabalho estava sendo enquadrado.",
-        "results": "O site dá aos visitantes um caminho limpo pelo portfólio e serviços de Henrique, terminando em um ponto direto de contato no WhatsApp, com layouts pensados especificamente para exibir imagens e trabalhos em motion.",
+        "challenge": "Um portfólio multimídia vive ou morre pela forma como o trabalho é enquadrado. Chrome de UI demais rouba atenção de imagens e motion. Estrutura de menos deixa o visitante sem saber como explorar serviços ou entrar em contato. O desafio era contenção com direção: sair do caminho do trabalho e, ao mesmo tempo, guiar as pessoas a um próximo passo confiante.",
+        "process": "Mantive navegação e layout intencionalmente simples, deixando a grade de portfólio carregar o peso visual. As seções de serviços ficaram secundárias ao trabalho, claras mas sem competir. Várias rodadas de layout foram revistas diretamente com o Henrique a partir de como os projetos estavam sendo enquadrados, porque UX de portfólio é subjetiva até o autor ver o próprio trabalho em contexto. O Cursor ajudou a produzir variantes rápido o bastante para esse loop de feedback continuar produtivo.",
+        "results": "O site dá aos visitantes um caminho limpo pelo portfólio e serviços de Henrique, terminando em um ponto direto de contato no WhatsApp. Os layouts foram pensados especificamente para exibir imagens e trabalhos em motion. O designer pode enviar um único link que apresenta seu craft sem desculpas e sem poluição, que é o trabalho real de um portfólio multimídia.",
         "deliverables": [
-          "Grade de portfólio",
-          "Seções de serviços",
-          "Fluxo de contato via WhatsApp"
+          "Grade de portfólio otimizada para trabalho visual e motion",
+          "Seções de serviços com hierarquia clara da oferta",
+          "Fluxo de contato via WhatsApp",
+          "Layouts responsivos para páginas densas de imagem",
+          "Variantes de layout iteradas com revisão do cliente",
+          "Deploy em produção na Vercel"
         ],
-        "contribution": "Desenhei a grade de portfólio e a estrutura de serviços e construí o front end responsivo em Next.js, iterando rápido em variações de layout com Cursor com base no feedback direto do cliente.",
+        "contribution": "Desenhei a grade de portfólio e a estrutura de serviços e construí o front end responsivo em Next.js, iterando rápido em variações de layout com Cursor com base no feedback direto do cliente. A ownership cobriu hierarquia visual, contenção de chrome e os detalhes de implementação que mantêm a mídia intencional em cada breakpoint. O resultado é um portfólio que enquadra o trabalho do Henrique em vez de competir com ele.",
         "takeaways": [
           "Para um portfólio visual, contenção em navegação e layout é o que realmente valoriza o trabalho.",
-          "Ciclos rápidos de iteração com o cliente importam mais do que acertar o primeiro layout."
+          "Ciclos rápidos de iteração com o cliente importam mais do que acertar o primeiro layout.",
+          "Serviços devem apoiar o portfólio, não disputar atenção com ele.",
+          "Enquadramento de imagem e motion é um problema de UX, não só de direção de arte."
+        ],
+        "personas": [
+          {
+            "name": "Larissa, diretora de criação contratando freelas",
+            "background": "Revisa portfólios multimídia rapidamente para shortlist de designers em campanhas e peças de motion.",
+            "needs": "Percepção imediata da qualidade do craft, amplitude relevante de projetos e um jeito fácil de começar a conversa.",
+            "challenges": "Chrome excessivo de portfólio, sites pesados de imagem e caminhos de contato pouco claros depois de ver o trabalho."
+          },
+          {
+            "name": "Gabriel, dono de negócio local precisando de multimídia",
+            "background": "Quer apoio visual ou de motion para a marca e tem menos fluência em jargão de design.",
+            "needs": "Entender serviços com simplicidade e ganhar confiança vendo trabalhos reais antes de mandar mensagem no WhatsApp.",
+            "challenges": "Portfólios que mostram arte sem explicar o que se contrata, e apresentação intimidadora que trava o contato."
+          }
         ]
       }
     }
@@ -698,9 +1205,17 @@
   {
     "slug": "freelas-vagas-design",
     "featured": true,
-    "tags": ["Web", "UX/UI", "Platform", "Supabase", "Vercel"],
+    "tags": [
+      "Web",
+      "UX/UI",
+      "Platform",
+      "Supabase",
+      "Vercel"
+    ],
     "thumbnail": "/media/covers/freelas-vagas-design.png",
-    "links": { "live": "https://freelas-vagas-design.vercel.app/" },
+    "links": {
+      "live": "https://freelas-vagas-design.vercel.app/"
+    },
     "content": {
       "en": {
         "title": "Freelas & Design Jobs",
@@ -716,24 +1231,52 @@
         "tools": "Next.js, Supabase, Vercel, Cursor",
         "location": "Brazil",
         "duration": "Ongoing product",
-        "introduction": "Freelas & Design Jobs connects designers directly to freelance gigs and job openings. The core product bet was that removing intermediaries and friction between discovery and conversation would build a more trusted community than existing job boards, and the UX had to prove that bet in every flow.",
+        "introduction": "Freelas & Design Jobs is my own community platform connecting designers directly to freelance gigs and job openings. The product bet was that removing intermediaries and friction between discovery and conversation would build more trust than existing job boards. Profiles, listings, search, and contact had to feel transparent enough for a design community to use daily. Every flow had to prove that direct connection was safer and clearer than noisy alternatives.",
         "responsibilities": [
-          "Mapped flows for posting, browsing, and contacting opportunities.",
-          "Built profiles, listings, and search on Supabase.",
-          "Prototyped listing cards, filters, and empty states with Cursor and AI."
+          "Mapped flows for posting, browsing, and contacting opportunities with minimal friction.",
+          "Designed profiles, listing cards, filters, and empty states for a listings-heavy product.",
+          "Built profiles, listings, and search on Supabase with a Next.js front end.",
+          "Shipped and iterated the live product on Vercel.",
+          "Used Cursor and AI to prototype UI faster and refine UX from real usage patterns.",
+          "Owned product decisions around transparency, direct contact, and community trust."
         ],
-        "challenge": "Job platforms often bury the actual opportunity behind noise: ads, unclear listings, and indirect contact. The challenge was designing a minimal-friction path from browsing to having a real conversation that a design community would actually trust enough to use daily.",
-        "process": "I mapped the full flow for posting, browsing, and contacting opportunities before building anything, then implemented profiles, listings, and search on Supabase, refining listing cards, filters, and empty states based on real usage patterns.",
-        "results": "The platform runs live on Vercel with direct, intermediary-free contact between designers and opportunities, refined over time through real usage rather than assumptions made upfront.",
+        "challenge": "Job platforms often bury the actual opportunity behind noise: ads, unclear listings, and indirect contact. Designers distrust boards that feel extractive or opaque. Posters distrust low-quality applications and confusing flows. The challenge was designing a minimal-friction path from browsing to a real conversation that both sides would trust enough to use repeatedly, including the unglamorous moments like empty states and weak search results.",
+        "process": "I mapped posting, browsing, and contact flows before building features, because the product only works if those three paths stay short and honest. Profiles, listings, and search were then implemented on Supabase with UI patterns tuned for scanning opportunities quickly. Listing cards, filters, and empty states were refined from real usage rather than assumed completeness. The UX loop favored transparency: clear opportunity context, direct contact, and less chrome between intent and conversation.",
+        "results": "The platform runs live on Vercel with direct, intermediary-free contact between designers and opportunities. Flows have been refined through real community usage instead of only upfront assumptions. The product stands as a working alternative to noisier boards for designers who value clarity and directness.",
         "deliverables": [
           "Profiles and listings system",
-          "Search and filters",
-          "Direct contact flow between designers and posters"
+          "Search and filter experience for opportunities",
+          "Direct contact flow between designers and posters",
+          "Listing cards, empty states, and browsing patterns",
+          "Supabase-backed data model for community listings",
+          "Production web app on Next.js and Vercel"
         ],
-        "contribution": "I designed and built the product end-to-end, covering flows, the Supabase data model, and the front end, using Cursor and AI to prototype UI faster and refine UX based on how the community actually used it in practice.",
+        "contribution": "I designed and built the product end-to-end, covering flows, the Supabase data model, and the front end. Cursor and AI helped prototype UI faster, but the harder ownership was product judgment: what to keep simple, what to expose, and how to make direct contact feel safe. Freelas & Design Jobs reflects my bias toward transparent community tools over intermediary-heavy marketplaces.",
         "takeaways": [
           "Removing intermediaries only works if the UX around direct contact feels safe and clear.",
-          "Empty states and filters are where a listings platform's UX quality is really tested."
+          "Empty states and filters are where a listings platform's UX quality is really tested.",
+          "Community trust is designed through transparency in listings, not through more features.",
+          "Real usage should rewrite assumptions about how people post, browse, and reply."
+        ],
+        "personas": [
+          {
+            "name": "Ana, freelance product designer",
+            "background": "Looks for remote and local gigs between client projects and wants opportunities that are clear about scope and contact.",
+            "needs": "Fast browsing, trustworthy listings, and a direct path to conversation without platform theater.",
+            "challenges": "Vague job posts, intermediary friction, and boards that waste time with noise or unclear next steps."
+          },
+          {
+            "name": "Felipe, startup founder hiring design help",
+            "background": "Needs a designer for a short project or early hire and wants to reach candidates directly.",
+            "needs": "Simple posting, enough profile context to evaluate fit, and quick replies from interested designers.",
+            "challenges": "Complicated posting flows, low-quality inbound interest, and uncertainty about how visible or clear his listing is."
+          },
+          {
+            "name": "Renata, design community organizer",
+            "background": "Shares opportunities with peers and cares about platforms that respect designers rather than extract attention.",
+            "needs": "Transparent listings she can confidently recommend, with low spam and clear contact norms.",
+            "challenges": "Opaque boards, aggressive monetization patterns, and experiences that erode community trust over time."
+          }
         ]
       },
       "pt": {
@@ -750,24 +1293,52 @@
         "tools": "Next.js, Supabase, Vercel, Cursor",
         "location": "Brasil",
         "duration": "Produto em andamento",
-        "introduction": "A Freelas & Vagas de Design conecta designers diretamente a freelas e vagas. A aposta central de produto era que remover intermediários e atrito entre descoberta e conversa construiria uma comunidade mais confiável do que os quadros de vaga existentes, e a UX precisava comprovar essa aposta em cada fluxo.",
+        "introduction": "A Freelas & Vagas de Design é minha plataforma comunitária própria para conectar designers diretamente a freelas e vagas. A aposta de produto era que remover intermediários e atrito entre descoberta e conversa construiria mais confiança do que os quadros de vaga existentes. Perfis, listagens, busca e contato precisavam parecer transparentes o bastante para uma comunidade de design usar no dia a dia. Cada fluxo tinha que provar que a conexão direta era mais segura e clara do que alternativas barulhentas.",
         "responsibilities": [
-          "Mapeei fluxos de publicação, navegação e contato com oportunidades.",
-          "Implementei perfis, listagens e busca no Supabase.",
-          "Prototipei cards de vaga, filtros e estados vazios com Cursor e IA."
+          "Mapeei fluxos de publicação, navegação e contato com o mínimo de atrito.",
+          "Desenhei perfis, cards de vaga, filtros e estados vazios para um produto centrado em listagens.",
+          "Implementei perfis, listagens e busca no Supabase com front end em Next.js.",
+          "Publiquei e iterei o produto ao vivo na Vercel.",
+          "Usei Cursor e IA para prototipar UI mais rápido e refinar UX a partir de padrões reais de uso.",
+          "Conduzi decisões de produto em torno de transparência, contato direto e confiança da comunidade."
         ],
-        "challenge": "Plataformas de vaga frequentemente escondem a oportunidade real por trás de ruído: anúncios, listagens confusas e contato indireto. O desafio era desenhar um caminho de mínimo atrito entre navegar e ter uma conversa real que uma comunidade de design realmente confiasse o suficiente para usar no dia a dia.",
-        "process": "Mapeei o fluxo completo de publicação, navegação e contato antes de construir qualquer coisa, e depois implementei perfis, listagens e busca no Supabase, refinando cards de vaga, filtros e estados vazios com base em padrões reais de uso.",
-        "results": "A plataforma roda em produção na Vercel com contato direto e sem intermediários entre designers e oportunidades, refinada ao longo do tempo por uso real, e não por suposições feitas de antemão.",
+        "challenge": "Plataformas de vaga frequentemente escondem a oportunidade real por trás de ruído: anúncios, listagens confusas e contato indireto. Designers desconfiam de boards que parecem extrativos ou opacos. Quem publica desconfia de candidaturas de baixa qualidade e fluxos confusos. O desafio era desenhar um caminho de mínimo atrito entre navegar e ter uma conversa real que os dois lados confiassem o bastante para usar de novo, inclusive nos momentos pouco glamourosos como estados vazios e resultados fracos de busca.",
+        "process": "Mapeei os fluxos de publicação, navegação e contato antes de construir features, porque o produto só funciona se esses três caminhos permanecerem curtos e honestos. Depois implementei perfis, listagens e busca no Supabase com padrões de UI afinados para escanear oportunidades rápido. Cards de vaga, filtros e estados vazios foram refinados a partir do uso real, não de uma completude assumida. O loop de UX privilegiou transparência: contexto claro da oportunidade, contato direto e menos chrome entre intenção e conversa.",
+        "results": "A plataforma roda em produção na Vercel com contato direto e sem intermediários entre designers e oportunidades. Os fluxos foram refinados pelo uso real da comunidade, e não só por suposições iniciais. O produto se sustenta como alternativa prática a boards mais barulhentos para designers que valorizam clareza e direteza.",
         "deliverables": [
           "Sistema de perfis e listagens",
-          "Busca e filtros",
-          "Fluxo de contato direto entre designers e anunciantes"
+          "Experiência de busca e filtros para oportunidades",
+          "Fluxo de contato direto entre designers e anunciantes",
+          "Cards de vaga, estados vazios e padrões de navegação",
+          "Modelo de dados no Supabase para listagens da comunidade",
+          "Web app em produção com Next.js e Vercel"
         ],
-        "contribution": "Desenhei e construí o produto de ponta a ponta, cobrindo fluxos, modelo de dados no Supabase e front end, usando Cursor e IA para prototipar UI mais rápido e refinar a UX com base no uso real da comunidade.",
+        "contribution": "Desenhei e construí o produto de ponta a ponta, cobrindo fluxos, modelo de dados no Supabase e front end. Cursor e IA ajudaram a prototipar UI mais rápido, mas a ownership mais difícil foi julgamento de produto: o que manter simples, o que expor e como fazer o contato direto parecer seguro. A Freelas & Vagas de Design reflete meu viés por ferramentas comunitárias transparentes em vez de marketplaces cheios de intermediários.",
         "takeaways": [
           "Remover intermediários só funciona se a UX em torno do contato direto parecer segura e clara.",
-          "Estados vazios e filtros são onde a qualidade de UX de uma plataforma de listagens é realmente testada."
+          "Estados vazios e filtros são onde a qualidade de UX de uma plataforma de listagens é realmente testada.",
+          "Confiança da comunidade se desenha com transparência nas listagens, não com mais features.",
+          "Uso real deve reescrever suposições sobre como as pessoas publicam, navegam e respondem."
+        ],
+        "personas": [
+          {
+            "name": "Ana, product designer freelancer",
+            "background": "Busca freelas remotos e locais entre projetos de cliente e quer oportunidades claras sobre escopo e contato.",
+            "needs": "Navegação rápida, listagens confiáveis e um caminho direto para conversa sem teatro de plataforma.",
+            "challenges": "Vagas vagas, atrito de intermediários e boards que desperdiçam tempo com ruído ou próximo passo pouco claro."
+          },
+          {
+            "name": "Felipe, founder de startup contratando design",
+            "background": "Precisa de um designer para um projeto curto ou contratação inicial e quer alcançar candidatos diretamente.",
+            "needs": "Publicação simples, contexto suficiente de perfil para avaliar fit e respostas rápidas de designers interessados.",
+            "challenges": "Fluxos de publicação complicados, inbound de baixa qualidade e incerteza sobre quão visível ou clara está a listagem."
+          },
+          {
+            "name": "Renata, organizadora de comunidade de design",
+            "background": "Compartilha oportunidades com pares e se importa com plataformas que respeitam designers em vez de extrair atenção.",
+            "needs": "Listagens transparentes que ela possa recomendar com confiança, com pouco spam e normas claras de contato.",
+            "challenges": "Boards opacos, padrões agressivos de monetização e experiências que corroem a confiança da comunidade com o tempo."
+          }
         ]
       }
     }
@@ -775,9 +1346,16 @@
   {
     "slug": "esclima-refrigeracao",
     "featured": false,
-    "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
+    "tags": [
+      "Web",
+      "UX/UI",
+      "Institutional",
+      "Vercel"
+    ],
     "thumbnail": "/media/covers/esclima-refrigeracao.png",
-    "links": { "live": "https://esclima-site.vercel.app/" },
+    "links": {
+      "live": "https://esclima-site.vercel.app/"
+    },
     "content": {
       "en": {
         "title": "Esclima Refrigeração",
@@ -793,24 +1371,46 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Brazil",
         "duration": "Project engagement",
-        "introduction": "Esclima, an HVAC and refrigeration company, needed a site where past work and customer testimonials did the trust-building before a prospect ever requested a visit.",
+        "introduction": "Esclima Refrigeração, an HVAC and refrigeration company, needed a website where past work and customer stories built trust before a prospect requested a visit. These are high-trust, low-frequency purchases. Most visitors are still comparing providers, not ready to commit. The site had to make services, completed projects, and the WhatsApp quote path feel professional and decisive on both desktop and mobile.",
         "responsibilities": [
-          "Organized service pages and a project gallery.",
+          "Organized service pages and a project gallery around real trust assets.",
           "Designed clear budget-request CTAs for desktop and mobile.",
-          "Iterated UI details with Cursor to match a professional tone."
+          "Structured testimonials and completed jobs as decision support, not decoration.",
+          "Built the site in Next.js and shipped it on Vercel.",
+          "Iterated UI details with Cursor to match the client's professional tone.",
+          "Prioritized mobile quote flow for local comparison-stage traffic."
         ],
-        "challenge": "HVAC decisions are high-trust, low-frequency purchases, and most visitors were still comparing providers, not ready to commit. The site had to build confidence fast enough to move a comparison-stage visitor to a WhatsApp quote request.",
-        "process": "I organized services and a real project gallery around the trust-building assets the client already had, testimonials and completed jobs, and designed the budget-request CTA to work identically well on mobile, where most local traffic actually arrived.",
-        "results": "The site pairs real project history and testimonials with a clear WhatsApp quote flow, giving prospects the confidence to request a visit rather than keep comparing providers.",
+        "challenge": "HVAC decisions are high-trust and low-frequency, and most visitors are still comparing providers. Marketing copy alone rarely closes that gap. The site had to build confidence fast enough to move a comparison-stage visitor into a WhatsApp quote request. If services felt generic or projects felt thin, prospects would keep shopping. Trust had to be earned through evidence, then converted through a frictionless CTA.",
+        "process": "I organized services and a real project gallery around the trust assets the client already had: completed jobs and customer stories. Hierarchy favored proof before persuasion. The budget-request CTA was designed to work identically well on mobile, where most local traffic arrives during comparison. Cursor-assisted UI refinement kept the tone professional and calm, matching the seriousness of an HVAC purchase.",
+        "results": "The site pairs real project history and testimonials with a clear WhatsApp quote flow, giving prospects confidence to request a visit rather than keep comparing endlessly. Esclima presents services with more clarity and professionalism, and the contact path is obvious at the moment trust tips into action.",
         "deliverables": [
-          "Service pages",
-          "Project gallery",
-          "WhatsApp budget-request CTA"
+          "Service pages with clear HVAC and refrigeration offerings",
+          "Project gallery based on completed work",
+          "Testimonials presented as trust support",
+          "WhatsApp budget-request CTA for desktop and mobile",
+          "Professional responsive institutional UI",
+          "Production deployment on Vercel"
         ],
-        "contribution": "I structured the services and project gallery to lead into a clear quote-request flow, building the site in Next.js and refining UI details with Cursor to match the client's professional tone.",
+        "contribution": "I structured services and the project gallery to lead into a clear quote-request flow, building the site in Next.js and refining UI details with Cursor to match the client's professional tone. Ownership covered trust architecture as much as visual design: what evidence appears first, how services are explained, and when the CTA should feel natural. The result is a site built for comparison-stage confidence, not just brochure presence.",
         "takeaways": [
           "For high-trust, low-frequency services, real project history outperforms any amount of marketing copy.",
-          "The CTA has to work as well on mobile as on desktop, that's where most local traffic actually is."
+          "The CTA has to work as well on mobile as on desktop. That is where most local traffic actually is.",
+          "Testimonials help most when they support evidence, not when they replace it.",
+          "Comparison-stage visitors need clarity and proof before they will ask for a visit."
+        ],
+        "personas": [
+          {
+            "name": "Marcos, homeowner needing AC service",
+            "background": "Comparing local HVAC companies after a breakdown or before a seasonal install, often browsing on his phone.",
+            "needs": "Proof of reliable work, clear services, and a fast way to request a quote or visit on WhatsApp.",
+            "challenges": "Distrust of vague claims, uncertainty about price and scope, and impatience with sites that hide contact."
+          },
+          {
+            "name": "Cláudia, facilities or store manager",
+            "background": "Responsible for commercial refrigeration or climate comfort and needs a provider that looks dependable under operational pressure.",
+            "needs": "Professional presentation, relevant project evidence, and a contact path suitable for urgent or planned service.",
+            "challenges": "Generic service lists, weak proof of commercial experience, and friction when requesting timely assistance."
+          }
         ]
       },
       "pt": {
@@ -827,24 +1427,46 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Brasil",
         "duration": "Projeto pontual",
-        "introduction": "A Esclima, empresa de climatização e refrigeração, precisava de um site em que trabalhos anteriores e depoimentos de clientes construíssem confiança antes de qualquer visitante pedir uma visita.",
+        "introduction": "A Esclima Refrigeração, empresa de climatização e refrigeração, precisava de um site em que trabalhos anteriores e histórias de clientes construíssem confiança antes de qualquer visitante pedir uma visita. Essas são compras de alta confiança e baixa frequência. A maioria dos visitantes ainda está comparando fornecedores, não pronta para fechar. O site precisava tornar serviços, projetos realizados e o caminho de orçamento no WhatsApp profissionais e decisivos no desktop e no celular.",
         "responsibilities": [
-          "Organizei páginas de serviços e uma galeria de projetos.",
+          "Organizei páginas de serviços e galeria de projetos em torno de ativos reais de confiança.",
           "Desenhei CTAs claros de orçamento para desktop e mobile.",
-          "Refinei detalhes de UI com Cursor para combinar com o tom profissional do cliente."
+          "Estruturei depoimentos e trabalhos concluídos como suporte à decisão, não como decoração.",
+          "Construí o site em Next.js e publiquei na Vercel.",
+          "Refinei detalhes de UI com Cursor para combinar com o tom profissional do cliente.",
+          "Priorizei o fluxo de orçamento mobile para tráfego local em fase de comparação."
         ],
-        "challenge": "Decisões de climatização são compras de alta confiança e baixa frequência, e a maioria dos visitantes ainda estava comparando fornecedores, não pronta para fechar. O site precisava construir confiança rápido o suficiente para levar um visitante em fase de comparação até um pedido de orçamento no WhatsApp.",
-        "process": "Organizei serviços e uma galeria real de projetos em torno dos ativos de confiança que o cliente já tinha, depoimentos e trabalhos concluídos, e desenhei o CTA de orçamento para funcionar igualmente bem no celular, de onde vinha a maior parte do tráfego local.",
-        "results": "O site combina histórico real de projetos e depoimentos com um fluxo claro de orçamento no WhatsApp, dando ao visitante confiança para pedir uma visita em vez de continuar comparando fornecedores.",
+        "challenge": "Decisões de climatização são de alta confiança e baixa frequência, e a maioria dos visitantes ainda está comparando fornecedores. Texto de marketing sozinho raramente fecha essa lacuna. O site precisava construir confiança rápido o suficiente para levar um visitante em fase de comparação até um pedido de orçamento no WhatsApp. Se os serviços parecessem genéricos ou os projetos fracos, o interessado continuaria procurando. A confiança tinha que ser ganha com evidência e depois convertida por um CTA sem atrito.",
+        "process": "Organizei serviços e uma galeria real de projetos em torno dos ativos de confiança que o cliente já tinha: trabalhos concluídos e histórias de clientes. A hierarquia privilegiou prova antes de persuasão. O CTA de orçamento foi desenhado para funcionar igualmente bem no celular, de onde vem a maior parte do tráfego local durante a comparação. O refino de UI com Cursor manteve o tom profissional e calmo, alinhado à seriedade de uma compra de climatização.",
+        "results": "O site combina histórico real de projetos e depoimentos com um fluxo claro de orçamento no WhatsApp, dando ao visitante confiança para pedir uma visita em vez de comparar sem fim. A Esclima apresenta serviços com mais clareza e profissionalismo, e o caminho de contato fica óbvio no momento em que a confiança vira ação.",
         "deliverables": [
-          "Páginas de serviços",
-          "Galeria de projetos",
-          "CTA de orçamento via WhatsApp"
+          "Páginas de serviços com oferta clara de climatização e refrigeração",
+          "Galeria de projetos baseada em trabalhos realizados",
+          "Depoimentos apresentados como suporte de confiança",
+          "CTA de orçamento via WhatsApp para desktop e mobile",
+          "UI institucional responsiva e profissional",
+          "Deploy em produção na Vercel"
         ],
-        "contribution": "Estruturei os serviços e a galeria de projetos para conduzir a um fluxo claro de pedido de orçamento, construindo o site em Next.js e refinando detalhes de UI com Cursor para combinar com o tom profissional do cliente.",
+        "contribution": "Estruturei os serviços e a galeria de projetos para conduzir a um fluxo claro de pedido de orçamento, construindo o site em Next.js e refinando detalhes de UI com Cursor para combinar com o tom profissional do cliente. A ownership cobriu arquitetura de confiança tanto quanto design visual: qual evidência aparece primeiro, como os serviços são explicados e quando o CTA deve parecer natural. O resultado é um site feito para confiança em fase de comparação, não só presença de folder.",
         "takeaways": [
           "Para serviços de alta confiança e baixa frequência, histórico real de projetos supera qualquer quantidade de texto de marketing.",
-          "O CTA precisa funcionar tão bem no celular quanto no desktop, é onde está a maior parte do tráfego local."
+          "O CTA precisa funcionar tão bem no celular quanto no desktop. É onde está a maior parte do tráfego local.",
+          "Depoimentos ajudam mais quando sustentam evidência, não quando a substituem.",
+          "Visitantes em fase de comparação precisam de clareza e prova antes de pedir uma visita."
+        ],
+        "personas": [
+          {
+            "name": "Marcos, morador precisando de ar-condicionado",
+            "background": "Compara empresas locais de climatização depois de uma falha ou antes de uma instalação sazonal, muitas vezes navegando no celular.",
+            "needs": "Prova de trabalho confiável, serviços claros e um jeito rápido de pedir orçamento ou visita no WhatsApp.",
+            "challenges": "Desconfiança de promessas vagas, incerteza de preço e escopo, e impaciência com sites que escondem o contato."
+          },
+          {
+            "name": "Cláudia, gestora de facilities ou loja",
+            "background": "Responsável por refrigeração comercial ou conforto térmico e precisa de um fornecedor que pareça confiável sob pressão operacional.",
+            "needs": "Apresentação profissional, evidência relevante de projetos e um caminho de contato adequado para serviço urgente ou planejado.",
+            "challenges": "Listas genéricas de serviço, pouca prova de experiência comercial e atrito ao solicitar atendimento no tempo certo."
+          }
         ]
       }
     }
@@ -852,9 +1474,16 @@
   {
     "slug": "jp-assistencia-tecnica",
     "featured": false,
-    "tags": ["Web", "UX/UI", "Institutional", "Vercel"],
+    "tags": [
+      "Web",
+      "UX/UI",
+      "Institutional",
+      "Vercel"
+    ],
     "thumbnail": "/media/covers/jp-assistencia-tecnica.png",
-    "links": { "live": "https://jp-tecnic.vercel.app/" },
+    "links": {
+      "live": "https://jp-tecnic.vercel.app/"
+    },
     "content": {
       "en": {
         "title": "JP Assistência Técnica",
@@ -870,24 +1499,46 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Domingos Martins, Brazil",
         "duration": "Project engagement",
-        "introduction": "JP Assistência Técnica, a phone repair shop, needed a mobile-first site that answered the most common repair questions before the first WhatsApp message.",
+        "introduction": "JP Assistência Técnica, a phone repair shop in Domingos Martins and region, needed a mobile-first site that answered the most common repair questions before the first WhatsApp message. Locals arrive anxious about a broken device, coverage, and price. The website had to make services, completed repairs, and contact feel immediate on a phone screen. Reducing uncertainty before conversation was the entire UX goal.",
         "responsibilities": [
-          "Designed a service list and repair showcase answering common questions.",
-          "Prioritized mobile UX for search and social traffic.",
-          "Tightened spacing, typography, and CTA placement with Cursor."
+          "Designed a service list and repair showcase that answers common questions upfront.",
+          "Prioritized mobile UX for search and social traffic from local customers.",
+          "Structured coverage and next steps so visitors know how to get help quickly.",
+          "Built the site in Next.js and deployed it on Vercel.",
+          "Tightened spacing, typography, and CTA placement with Cursor.",
+          "Created a direct WhatsApp path for the anxious 'is my phone fixable' moment."
         ],
-        "challenge": "Most visitors arrived from search or social already on their phones, often anxious about a broken device and price. The site had to answer 'do they fix my problem, and how much will it cost' almost immediately.",
-        "process": "I designed the service list and repair showcase specifically for mobile-first scanning, prioritizing the questions customers ask most before ever tightening desktop layout details.",
-        "results": "The mobile-first site helps local customers quickly understand coverage and next steps, with a direct WhatsApp path for the anxious 'is my phone fixable' moment.",
+        "challenge": "Most visitors arrived from search or social already on their phones, often anxious about a broken device and cost. If the site did not answer 'do they fix my problem, and what happens next' almost immediately, people bounced or sent vague messages that slowed everything down. Desktop polish mattered less than mobile clarity under stress. The challenge was designing for urgency without looking cheap or unclear.",
+        "process": "I designed the service list and repair showcase specifically for mobile-first scanning, prioritizing the questions customers ask most before refining desktop details. Hierarchy put coverage, proof of repairs, and WhatsApp contact within the first decisive scrolls. Micro-spacing, type, and CTA placement were tightened with Cursor so the page felt calm and usable on small screens. The flow assumed interrupted attention and low patience.",
+        "results": "The mobile-first site helps local customers quickly understand coverage and next steps, with a direct WhatsApp path for the anxious moment of wondering whether a phone can be fixed. JP presents services more clearly, and first messages tend to start from better-informed visitors. The shop gains a simple digital front door matched to how locals actually seek help.",
         "deliverables": [
-          "Mobile-first service list",
-          "Repair showcase",
-          "WhatsApp contact flow"
+          "Mobile-first service list for phone repairs",
+          "Repair showcase / completed work section",
+          "WhatsApp contact flow for urgent local requests",
+          "Clear coverage and next-step messaging",
+          "Responsive institutional UI tuned for small screens",
+          "Production deployment on Vercel"
         ],
-        "contribution": "I designed and built the mobile-first service and repair showcase structure, using Cursor to tighten spacing, typography, and CTA placement for a local, phone-first audience.",
+        "contribution": "I designed and built the mobile-first service and repair showcase structure, using Cursor to tighten spacing, typography, and CTA placement for a local, phone-first audience. Ownership focused on reducing anxiety before contact: answer the obvious questions, show proof, and make WhatsApp unavoidable without being pushy. That made the site useful in the exact context where repair decisions actually happen.",
         "takeaways": [
-          "For a repair shop, mobile-first isn't a nice-to-have, it's where nearly all real traffic actually is.",
-          "Answering price and feasibility questions upfront reduces anxious back-and-forth before the first message."
+          "For a repair shop, mobile-first is not a nice-to-have. It is where nearly all real traffic actually is.",
+          "Answering feasibility and next-step questions upfront reduces anxious back-and-forth before the first message.",
+          "Under stress, clarity beats cleverness. Hierarchy and CTA placement do the heavy lifting.",
+          "Local service UX succeeds when it respects urgency without looking rushed or sparse."
+        ],
+        "personas": [
+          {
+            "name": "Isabela, phone owner with a broken screen",
+            "background": "Lives in Domingos Martins or nearby, just damaged her phone, and is searching on mobile for a local repair option.",
+            "needs": "Immediate confirmation that her issue is covered, a sense of trust, and a fast WhatsApp path to ask about timing and price.",
+            "challenges": "Stress, low patience for slow pages, and fear of unclear pricing or shops that may not handle her device."
+          },
+          {
+            "name": "Paulo, parent repairing a family phone",
+            "background": "Handling repair for a spouse or teenager and wants a straightforward local shop without technical jargon.",
+            "needs": "Simple service explanations, proof of previous repairs, and easy contact to arrange drop-off or questions.",
+            "challenges": "Confusing service lists, weak mobile layouts, and uncertainty about what information to send in the first message."
+          }
         ]
       },
       "pt": {
@@ -904,24 +1555,46 @@
         "tools": "Next.js, Tailwind CSS, Vercel, Cursor",
         "location": "Domingos Martins, Brasil",
         "duration": "Projeto pontual",
-        "introduction": "A JP Assistência Técnica, loja de conserto de celulares, precisava de um site mobile first que respondesse às dúvidas mais comuns de reparo antes da primeira mensagem no WhatsApp.",
+        "introduction": "A JP Assistência Técnica, loja de conserto de celulares em Domingos Martins e região, precisava de um site mobile first que respondesse às dúvidas mais comuns de reparo antes da primeira mensagem no WhatsApp. Clientes locais chegam ansiosos com aparelho quebrado, cobertura e preço. O site precisava tornar serviços, consertos realizados e contato imediatos na tela do celular. Reduzir incerteza antes da conversa era o objetivo inteiro de UX.",
         "responsibilities": [
-          "Desenhei uma lista de serviços e vitrine de consertos que respondem dúvidas comuns.",
-          "Priorizei UX mobile para tráfego de busca e redes sociais.",
-          "Ajustei espaçamento, tipografia e posição de CTA com Cursor."
+          "Desenhei uma lista de serviços e vitrine de consertos que respondem dúvidas comuns de antemão.",
+          "Priorizei UX mobile para tráfego de busca e redes sociais de clientes locais.",
+          "Estruturei cobertura e próximos passos para o visitante saber como pedir ajuda rápido.",
+          "Construí o site em Next.js e publiquei na Vercel.",
+          "Ajustei espaçamento, tipografia e posição de CTA com Cursor.",
+          "Criei um caminho direto de WhatsApp para o momento ansioso de 'meu celular tem conserto?'."
         ],
-        "challenge": "A maioria dos visitantes chegava pela busca ou redes sociais já no celular, muitas vezes ansiosa com um aparelho quebrado e preocupada com o preço. O site precisava responder 'eles resolvem meu problema, e quanto custa' quase imediatamente.",
-        "process": "Desenhei a lista de serviços e a vitrine de consertos pensando primeiro na leitura mobile, priorizando as perguntas que os clientes mais fazem antes de refinar qualquer detalhe de layout de desktop.",
-        "results": "O site mobile first ajuda o cliente local a entender rapidamente cobertura e próximos passos, com um caminho direto de WhatsApp para o momento ansioso de 'meu celular tem conserto?'.",
+        "challenge": "A maioria dos visitantes chegava pela busca ou redes sociais já no celular, muitas vezes ansiosa com um aparelho quebrado e preocupada com o custo. Se o site não respondesse 'eles resolvem meu problema, e o que acontece depois' quase imediatamente, as pessoas bounceavam ou mandavam mensagens vagas que atrasavam tudo. Polimento de desktop importava menos do que clareza mobile sob estresse. O desafio era desenhar para urgência sem parecer barato ou confuso.",
+        "process": "Desenhei a lista de serviços e a vitrine de consertos pensando primeiro na leitura mobile, priorizando as perguntas que os clientes mais fazem antes de refinar detalhes de desktop. A hierarquia colocou cobertura, prova de consertos e contato no WhatsApp nos primeiros scrolls decisivos. Microespaçamento, tipografia e posição de CTA foram ajustados com Cursor para a página parecer calma e usável em telas pequenas. O fluxo assumiu atenção interrompida e pouca paciência.",
+        "results": "O site mobile first ajuda o cliente local a entender rapidamente cobertura e próximos passos, com um caminho direto de WhatsApp para o momento ansioso de descobrir se o celular tem conserto. A JP apresenta os serviços com mais clareza, e as primeiras mensagens tendem a começar de visitantes melhor informados. A loja ganha uma porta digital simples, alinhada a como as pessoas locais realmente pedem ajuda.",
         "deliverables": [
-          "Lista de serviços mobile first",
-          "Vitrine de consertos",
-          "Fluxo de contato via WhatsApp"
+          "Lista de serviços mobile first para conserto de celulares",
+          "Seção de vitrine / consertos realizados",
+          "Fluxo de contato via WhatsApp para pedidos locais urgentes",
+          "Mensagens claras de cobertura e próximo passo",
+          "UI institucional responsiva afinada para telas pequenas",
+          "Deploy em produção na Vercel"
         ],
-        "contribution": "Desenhei e construí a estrutura mobile first de serviços e vitrine de consertos, usando Cursor para ajustar espaçamento, tipografia e posição de CTA para um público local e majoritariamente mobile.",
+        "contribution": "Desenhei e construí a estrutura mobile first de serviços e vitrine de consertos, usando Cursor para ajustar espaçamento, tipografia e posição de CTA para um público local e majoritariamente mobile. A ownership focou em reduzir ansiedade antes do contato: responder as perguntas óbvias, mostrar prova e tornar o WhatsApp inevitável sem ser invasivo. Isso tornou o site útil exatamente no contexto em que as decisões de reparo acontecem.",
         "takeaways": [
-          "Para uma assistência técnica, mobile first não é um diferencial, é onde está quase todo o tráfego real.",
-          "Responder preço e viabilidade logo de início reduz a troca de mensagens ansiosa antes do primeiro contato."
+          "Para uma assistência técnica, mobile first não é um diferencial. É onde está quase todo o tráfego real.",
+          "Responder viabilidade e próximos passos logo de início reduz a troca de mensagens ansiosa antes do primeiro contato.",
+          "Sob estresse, clareza vence esperteza. Hierarquia e posição de CTA fazem o trabalho pesado.",
+          "UX de serviço local funciona quando respeita urgência sem parecer apressada ou pobre."
+        ],
+        "personas": [
+          {
+            "name": "Isabela, dona de celular com tela quebrada",
+            "background": "Mora em Domingos Martins ou região, acabou de danificar o celular e busca no mobile uma opção local de conserto.",
+            "needs": "Confirmação imediata de que o problema é atendido, senso de confiança e um caminho rápido de WhatsApp para perguntar prazo e preço.",
+            "challenges": "Estresse, pouca paciência para página lenta e medo de preço pouco claro ou de loja que talvez não atenda o aparelho."
+          },
+          {
+            "name": "Paulo, responsável pelo celular da família",
+            "background": "Cuida do reparo do aparelho do cônjuge ou do adolescente e quer uma loja local direta, sem jargão técnico.",
+            "needs": "Explicações simples de serviço, prova de consertos anteriores e contato fácil para combinar entrega ou dúvidas.",
+            "challenges": "Listas de serviço confusas, layouts mobile fracos e incerteza sobre o que enviar na primeira mensagem."
+          }
         ]
       }
     }
