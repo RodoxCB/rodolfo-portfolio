@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import { put } from "@vercel/blob";
+import { head, put } from "@vercel/blob";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -10,13 +10,25 @@ const dataDir = path.join(root, "data");
 const JSON_FILES = [
   "site.json",
   "projects.json",
+  "experience.json",
+  "certifications.json",
+  "clients.json",
+  "testimonials.json",
+  "extras.json",
   "dictionaries/en.json",
   "dictionaries/pt.json",
 ];
 
-const ASSET_ROOTS = ["projects", "media"];
+async function blobExists(key) {
+  try {
+    await head(key);
+    return true;
+  } catch {
+    return false;
+  }
+}
 
-const LOCAL_ASSET_PREFIXES = ["/projects/", "/media/"];
+const ASSET_ROOTS = ["projects", "media"];
 
 function contentTypeFor(filePath) {
   const ext = path.extname(filePath).toLowerCase();
@@ -64,53 +76,6 @@ async function uploadPublicAsset(relativeFromPublic) {
   return blob.url;
 }
 
-function resolveLocalAsset(pathOrUrl, assetUrlByPath) {
-  if (!pathOrUrl || !LOCAL_ASSET_PREFIXES.some((prefix) => pathOrUrl.startsWith(prefix))) {
-    return pathOrUrl;
-  }
-
-  // SVGs ficam como caminho local — URLs do Blob para SVG quebram no next/image.
-  if (pathOrUrl.endsWith(".svg")) return pathOrUrl;
-
-  return assetUrlByPath.get(pathOrUrl) ?? pathOrUrl;
-}
-
-async function prepareProjectsForBlob(repoProjects) {
-  const assetPaths = [];
-
-  for (const rootDir of ASSET_ROOTS) {
-    const absoluteDir = path.join(root, "public", rootDir);
-    try {
-      const files = await collectPublicAssets(absoluteDir, rootDir);
-      assetPaths.push(...files);
-    } catch {
-      // diretório opcional
-    }
-  }
-
-  const assetUrlByPath = new Map();
-
-  for (const relativePath of assetPaths) {
-    const publicPath = `/${relativePath}`;
-    if (publicPath.endsWith(".svg")) continue;
-
-    const url = await uploadPublicAsset(relativePath);
-    assetUrlByPath.set(publicPath, url);
-    console.log(`✓ media/${relativePath} → ${url}`);
-  }
-
-  return repoProjects.map((project) => {
-    const thumbnail = resolveLocalAsset(project.thumbnail, assetUrlByPath);
-    const images = project.images?.map((image) => resolveLocalAsset(image, assetUrlByPath));
-
-    return {
-      ...project,
-      thumbnail,
-      ...(images?.length ? { images } : {}),
-    };
-  });
-}
-
 async function uploadJson(relativePath, data) {
   const payload = `${JSON.stringify(data, null, 2)}\n`;
   const blob = await put(`cms/${relativePath}`, payload, {
@@ -122,28 +87,44 @@ async function uploadJson(relativePath, data) {
   console.log(`✓ ${relativePath} → ${blob.url}`);
 }
 
+async function syncPublicAssets() {
+  for (const rootDir of ASSET_ROOTS) {
+    const absoluteDir = path.join(root, "public", rootDir);
+    let files = [];
+    try {
+      files = await collectPublicAssets(absoluteDir, rootDir);
+    } catch {
+      continue;
+    }
+
+    for (const relativePath of files) {
+      if (relativePath.endsWith(".svg")) continue;
+      const url = await uploadPublicAsset(relativePath);
+      console.log(`✓ media/${relativePath} → ${url}`);
+    }
+  }
+}
+
+async function seedJsonIfMissing(relativePath, data) {
+  const key = `cms/${relativePath}`;
+  if (await blobExists(key)) {
+    console.log(`↷ ${relativePath} já existe no Blob — mantendo conteúdo do admin`);
+    return;
+  }
+  await uploadJson(relativePath, data);
+}
+
 if (!process.env.BLOB_READ_WRITE_TOKEN) {
   console.log("BLOB_READ_WRITE_TOKEN não definido — pulando sync do CMS para o Blob.");
   process.exit(0);
 }
 
-const repoProjects = await readRepoJson("projects.json");
-const projectsForBlob = await prepareProjectsForBlob(repoProjects);
+// Assets can always be refreshed; CMS JSON must not overwrite admin edits.
+await syncPublicAssets();
 
 for (const relativePath of JSON_FILES) {
-  if (relativePath === "projects.json") {
-    await uploadJson(relativePath, projectsForBlob);
-    continue;
-  }
-
-  const content = await fs.readFile(path.join(dataDir, relativePath), "utf-8");
-  const blob = await put(`cms/${relativePath}`, content, {
-    access: "public",
-    addRandomSuffix: false,
-    allowOverwrite: true,
-    contentType: "application/json",
-  });
-  console.log(`✓ ${relativePath} → ${blob.url}`);
+  const data = await readRepoJson(relativePath);
+  await seedJsonIfMissing(relativePath, data);
 }
 
 console.log("\nCMS seed concluído no Vercel Blob.");
