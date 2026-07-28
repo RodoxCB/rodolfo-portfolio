@@ -63,6 +63,15 @@ export function CertificationsEditor({
         <Field label="URL da credencial (opcional)" value={entry.url || ""} onChange={(v) => patch({ url: v })} />
       </div>
 
+      <label className="flex items-center gap-2 text-sm text-text-secondary">
+        <input
+          type="checkbox"
+          checked={entry.featured ?? false}
+          onChange={(e) => patch({ featured: e.target.checked })}
+        />
+        Destacar (ex: formação acadêmica)
+      </label>
+
       <div className="grid gap-6 lg:grid-cols-2">
         {(["en", "pt"] as const).map((lang) => (
           <div key={lang} className="space-y-3 rounded-xl border border-border-default p-4">
@@ -81,6 +90,7 @@ export function createCertification(): Certification {
     id: `certification-${Date.now()}`,
     year: "20XX",
     url: "",
+    featured: false,
     content: {
       en: { name: "New certification", issuer: "" },
       pt: { name: "Nova certificação", issuer: "" },

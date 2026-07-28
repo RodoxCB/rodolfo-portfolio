@@ -52,6 +52,7 @@ export interface Dictionary {
   certifications: {
     title: string;
     subtitle: string;
+    featured: string;
   };
   experience: {
     title: string;

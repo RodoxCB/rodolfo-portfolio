@@ -10,6 +10,7 @@ export type Certification = {
   id: string;
   year: string;
   url?: string;
+  featured?: boolean;
   content: {
     en: CertificationLocaleContent;
     pt: CertificationLocaleContent;

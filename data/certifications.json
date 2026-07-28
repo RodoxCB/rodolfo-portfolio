@@ -1,5 +1,21 @@
 [
   {
+    "id": "cert-ufes-design",
+    "year": "2013 – 2019",
+    "url": "",
+    "featured": true,
+    "content": {
+      "en": {
+        "name": "Bachelor's Degree in Design",
+        "issuer": "UFES · Federal University of Espírito Santo"
+      },
+      "pt": {
+        "name": "Bacharelado em Desenho Industrial (Design)",
+        "issuer": "UFES · Universidade Federal do Espírito Santo"
+      }
+    }
+  },
+  {
     "id": "cert-crm-marketing",
     "year": "2023",
     "url": "",
