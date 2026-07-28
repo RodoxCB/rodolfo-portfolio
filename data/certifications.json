@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cert-placeholder-1",
+    "year": "20XX",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "Add your certification",
+        "issuer": "Edit in the admin panel"
+      },
+      "pt": {
+        "name": "Adicione sua certificação",
+        "issuer": "Edite no painel admin"
+      }
+    }
+  },
+  {
+    "id": "cert-placeholder-2",
+    "year": "20XX",
+    "url": "",
+    "content": {
+      "en": {
+        "name": "Add your certification",
+        "issuer": "Edit in the admin panel"
+      },
+      "pt": {
+        "name": "Adicione sua certificação",
+        "issuer": "Edite no painel admin"
+      }
+    }
+  }
+]

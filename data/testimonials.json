@@ -1,0 +1,32 @@
+[
+  {
+    "id": "testimonial-placeholder-1",
+    "name": "Adicione o nome",
+    "company": "",
+    "content": {
+      "en": {
+        "role": "Edit in the admin panel",
+        "quote": "Add a real testimonial from a client or colleague here."
+      },
+      "pt": {
+        "role": "Edite no painel admin",
+        "quote": "Adicione aqui um depoimento real de um cliente ou colega de trabalho."
+      }
+    }
+  },
+  {
+    "id": "testimonial-placeholder-2",
+    "name": "Adicione o nome",
+    "company": "",
+    "content": {
+      "en": {
+        "role": "Edit in the admin panel",
+        "quote": "Add a real testimonial from a client or colleague here."
+      },
+      "pt": {
+        "role": "Edite no painel admin",
+        "quote": "Adicione aqui um depoimento real de um cliente ou colega de trabalho."
+      }
+    }
+  }
+]

@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
-import { localePath } from "@/lib/utils";
 import { CodeButton } from "./CodeButton";
 import { Logo } from "./Logo";
+import { RoleRotator } from "./hero/RoleRotator";
 
 const LiquidGlassCanvas = dynamic(
   () => import("./hero/LiquidGlassCanvas").then((m) => m.LiquidGlassCanvas),
@@ -19,9 +19,11 @@ const LiquidGlassCanvas = dynamic(
 export function Hero({
   locale,
   dict,
+  roles = [],
 }: {
   locale: Locale;
   dict: Dictionary;
+  roles?: string[];
 }) {
   const [showLiquidGlass, setShowLiquidGlass] = useState(false);
 
@@ -63,7 +65,7 @@ export function Hero({
   }, []);
 
   return (
-    <section className="relative min-h-[120vh] overflow-x-hidden md:min-h-[140vh]">
+    <section id="home" className="relative min-h-[120vh] overflow-x-hidden md:min-h-[140vh]">
       <div className="pointer-events-none absolute inset-0 h-[100dvh] touch-pan-y">
         <div className="grid-floor absolute inset-0 z-0" aria-hidden />
         {showLiquidGlass && (
@@ -122,6 +124,18 @@ export function Hero({
             {dict.hero.roleLine}
           </motion.p>
 
+          {roles.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 }}
+              className="mb-8"
+            >
+              <RoleRotator roles={roles} />
+            </motion.div>
+          )}
+
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -129,9 +143,9 @@ export function Hero({
             transition={{ delay: 0.3 }}
             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <CodeButton href={localePath(locale, "/projects")}>{dict.hero.viewProjects}</CodeButton>
+            <CodeButton href="#portfolio">{dict.hero.viewProjects}</CodeButton>
             <Link
-              href={localePath(locale, "/contact")}
+              href="#contact-me"
               className="inline-flex h-12 items-center justify-center rounded-lg border border-border-default px-8 text-base font-medium transition-all hover:border-border-hover hover:bg-bg-tertiary"
             >
               {dict.hero.getInTouch}

@@ -1,0 +1,13 @@
+{
+  "roles": {
+    "en": ["Senior UX/UI Designer", "HMI Designer", "Design Systems", "Design-to-Code"],
+    "pt": ["UX/UI Designer Sênior", "Designer HMI", "Design Systems", "Design-to-Code"]
+  },
+  "quote": {
+    "text": {
+      "en": "Design is not just what it looks like and feels like. Design is how it works.",
+      "pt": "Design não é apenas como algo parece ou como se sente. Design é como funciona."
+    },
+    "author": "Steve Jobs"
+  }
+}

@@ -1,4 +1,5 @@
-import { readJsonFile, writeJsonFile } from "./storage";
+import { getContentSource } from "./content-source";
+import { readBySource, readDraftOrLive, writeDraft } from "./storage";
 
 export type SiteConfig = {
   name: string;
@@ -13,9 +14,14 @@ export type SiteConfig = {
 };
 
 export async function getSiteConfig(): Promise<SiteConfig> {
-  return readJsonFile<SiteConfig>("site.json");
+  const source = await getContentSource();
+  return readBySource<SiteConfig>("site.json", source);
+}
+
+export async function getSiteConfigDraft(): Promise<SiteConfig> {
+  return readDraftOrLive<SiteConfig>("site.json");
 }
 
 export async function saveSiteConfig(data: SiteConfig) {
-  await writeJsonFile("site.json", data);
+  await writeDraft("site.json", data);
 }

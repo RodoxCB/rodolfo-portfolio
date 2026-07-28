@@ -11,7 +11,7 @@ if [ ! -f .env.local ]; then
   echo "→ Criando .env.local..."
   cat > .env.local <<'EOF'
 # Desenvolvimento local
-ADMIN_PASSWORD=rodolfo2026
+ADMIN_PASSWORD=1234567890
 ADMIN_SECRET=rodolfo-portfolio-dev-secret
 BLOB_READ_WRITE_TOKEN=
 EOF
@@ -28,3 +28,4 @@ echo "  npm run dev"
 echo ""
 echo "Abra: http://localhost:3000/pt"
 echo "Admin: http://localhost:3000/admin"
+echo "Senha padrão: 1234567890"

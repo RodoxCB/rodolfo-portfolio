@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import ProfileCard from "@/components/profile-card/ProfileCard";
 import type { Project } from "@/content/projects";
@@ -8,7 +9,7 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
 import { localePath } from "@/lib/utils";
 
-export function ProjectCard({
+function ProjectCardComponent({
   project,
   locale,
   dict,
@@ -24,6 +25,13 @@ export function ProjectCard({
   // One tag keeps the subtitle readable inside the portrait card.
   const title = project.tags[0] ?? "";
 
+  // Keeping this stable across re-renders lets ProfileCard's own memoization
+  // (and its tilt engine, which is recreated via useMemo) actually take
+  // effect instead of getting a "new" prop on every parent render.
+  const handleContactClick = useCallback(() => {
+    router.push(href);
+  }, [router, href]);
+
   return (
     <article className="w-full">
       <ProfileCard
@@ -35,13 +43,14 @@ export function ProjectCard({
         avatarUrl={cover}
         miniAvatarUrl={cover}
         showUserInfo
-        enableTilt
+        variant="grid"
         enableMobileTilt={false}
-        behindGlowEnabled
         behindGlowColor="rgba(20, 184, 166, 0.45)"
         innerGradient="linear-gradient(145deg, rgba(15, 118, 110, 0.55) 0%, rgba(20, 184, 166, 0.28) 100%)"
-        onContactClick={() => router.push(href)}
+        onContactClick={handleContactClick}
       />
     </article>
   );
 }
+
+export const ProjectCard = React.memo(ProjectCardComponent);

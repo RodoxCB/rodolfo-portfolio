@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
+import Image from "next/image";
+import { shouldOptimizeImage } from "@/lib/image";
 import "./ProfileCard.css";
 
 const DEFAULT_INNER_GRADIENT =
@@ -8,9 +10,6 @@ const DEFAULT_INNER_GRADIENT =
 const DEFAULT_BEHIND_GLOW = "rgba(20, 184, 166, 0.45)";
 
 const ANIMATION_CONFIG = {
-  INITIAL_DURATION: 1600,
-  INITIAL_X_OFFSET: 70,
-  INITIAL_Y_OFFSET: 60,
   DEVICE_BETA_OFFSET: 20,
   ENTER_TRANSITION_MS: 300,
 };
@@ -25,6 +24,15 @@ export type ProfileCardProps = {
   iconUrl?: string;
   grainUrl?: string;
   innerGradient?: string;
+  /**
+   * "hero" keeps the full interactive effect (pointer tilt + behind glow),
+   * meant for a single showcased card. "grid" is a lighter preset for
+   * listings with many cards on screen at once: it drops the per-card
+   * pointer-tracking tilt engine and the blurred behind-glow layer by
+   * default (still overridable via `enableTilt` / `behindGlowEnabled`),
+   * keeping only the CSS-only hover shine.
+   */
+  variant?: "hero" | "grid";
   behindGlowEnabled?: boolean;
   behindGlowColor?: string;
   behindGlowSize?: string;
@@ -46,7 +54,6 @@ type TiltEngine = {
   setImmediate: (x: number, y: number) => void;
   setTarget: (x: number, y: number) => void;
   toCenter: () => void;
-  beginInitial: (durationMs: number) => void;
   getCurrent: () => { x: number; y: number; tx: number; ty: number };
   cancel: () => void;
 };
@@ -56,11 +63,12 @@ function ProfileCardComponent({
   iconUrl,
   grainUrl,
   innerGradient,
-  behindGlowEnabled = true,
+  variant = "hero",
+  behindGlowEnabled = variant === "hero",
   behindGlowColor,
   behindGlowSize,
   className = "",
-  enableTilt = true,
+  enableTilt = variant === "hero",
   enableMobileTilt = false,
   mobileTiltSensitivity = 5,
   miniAvatarUrl,
@@ -97,8 +105,6 @@ function ProfileCardComponent({
     let targetY = 0;
 
     const DEFAULT_TAU = 0.26;
-    const INITIAL_TAU = 0.7;
-    let initialUntil = 0;
 
     const setVarsFromXY = (x: number, y: number) => {
       const shell = shellRef.current;
@@ -135,8 +141,7 @@ function ProfileCardComponent({
       const dt = (ts - lastTs) / 1000;
       lastTs = ts;
 
-      const tau = ts < initialUntil ? INITIAL_TAU : DEFAULT_TAU;
-      const k = 1 - Math.exp(-dt / tau);
+      const k = 1 - Math.exp(-dt / DEFAULT_TAU);
 
       currentX += (targetX - currentX) * k;
       currentY += (targetY - currentY) * k;
@@ -181,10 +186,6 @@ function ProfileCardComponent({
         const shell = shellRef.current;
         if (!shell) return;
         this.setTarget(shell.clientWidth / 2, shell.clientHeight / 2);
-      },
-      beginInitial(durationMs) {
-        initialUntil = performance.now() + durationMs;
-        start();
       },
       getCurrent() {
         return { x: currentX, y: currentY, tx: targetX, ty: targetY };
@@ -313,11 +314,11 @@ function ProfileCardComponent({
     };
     shell.addEventListener("click", handleClick);
 
-    const initialX = (shell.clientWidth || 0) - ANIMATION_CONFIG.INITIAL_X_OFFSET;
-    const initialY = ANIMATION_CONFIG.INITIAL_Y_OFFSET;
-    tiltEngine.setImmediate(initialX, initialY);
-    tiltEngine.toCenter();
-    tiltEngine.beginInitial(ANIMATION_CONFIG.INITIAL_DURATION);
+    // Set a static centered pose immediately instead of animating the
+    // entrance: with many cards mounting at once (grids), running a
+    // requestAnimationFrame settle loop per card was the biggest source of
+    // jank on page load.
+    tiltEngine.setImmediate(shell.clientWidth / 2, shell.clientHeight / 2);
 
     return () => {
       shell.removeEventListener("pointerenter", pointerEnterHandler);
@@ -369,37 +370,52 @@ function ProfileCardComponent({
             <div className="pc-shine" />
             <div className="pc-glare" />
             <div className="pc-content pc-avatar-content">
-              <img
-                className="avatar"
-                src={avatarUrl}
-                alt={`${name || "Project"} cover`}
-                loading="lazy"
-                decoding="async"
-                onError={(e) => {
-                  const t = e.currentTarget;
-                  if (t.dataset.failed === "1") return;
-                  t.dataset.failed = "1";
-                  t.style.visibility = "hidden";
-                }}
-              />
+              <div className="pc-avatar-frame">
+                <Image
+                  className="avatar"
+                  src={avatarUrl}
+                  alt={`${name || "Project"} cover`}
+                  fill
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
+                  unoptimized={!shouldOptimizeImage(avatarUrl)}
+                  onError={(e) => {
+                    const t = e.currentTarget;
+                    if (t.dataset.failed === "1") return;
+                    t.dataset.failed = "1";
+                    t.style.visibility = "hidden";
+                  }}
+                />
+              </div>
               <div className="pc-cover-fade" aria-hidden />
               {showUserInfo && (
                 <div className="pc-user-info">
                   <div className="pc-user-details">
-                    <div className="pc-mini-avatar">
-                      <img
-                        src={miniAvatarUrl || avatarUrl}
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                        onError={(e) => {
-                          const t = e.currentTarget;
-                          if (t.dataset.failed === "1") return;
-                          t.dataset.failed = "1";
-                          t.style.visibility = "hidden";
-                        }}
+                    {!miniAvatarUrl || miniAvatarUrl === avatarUrl ? (
+                      // Same image as the cover above: reuse it as a CSS
+                      // background instead of mounting a second <img>/Image,
+                      // so the cover is only decoded/painted once per card.
+                      <div
+                        className="pc-mini-avatar pc-mini-avatar--bg"
+                        style={{ backgroundImage: `url(${avatarUrl})` }}
+                        aria-hidden
                       />
-                    </div>
+                    ) : (
+                      <div className="pc-mini-avatar">
+                        <Image
+                          src={miniAvatarUrl}
+                          alt=""
+                          width={36}
+                          height={36}
+                          unoptimized={!shouldOptimizeImage(miniAvatarUrl)}
+                          onError={(e) => {
+                            const t = e.currentTarget;
+                            if (t.dataset.failed === "1") return;
+                            t.dataset.failed = "1";
+                            t.style.visibility = "hidden";
+                          }}
+                        />
+                      </div>
+                    )}
                     <div className="pc-user-text">
                       {handle ? <div className="pc-handle">@{handle}</div> : null}
                       {status ? <div className="pc-status">{status}</div> : null}

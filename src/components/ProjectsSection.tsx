@@ -18,7 +18,7 @@ export function ProjectsSection({
   const featured = projects.filter((project) => project.featured);
 
   return (
-    <section className="bg-bg-primary py-24 sm:py-32">
+    <section id="portfolio" className="border-t border-border-default bg-bg-primary py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-20">
           <SectionHeading title={dict.projects.title} />

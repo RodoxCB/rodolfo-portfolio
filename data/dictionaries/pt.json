@@ -7,7 +7,12 @@
     "home": "Início",
     "about": "Sobre",
     "projects": "Projetos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "certifications": "Certificações",
+    "experience": "Experiência",
+    "clients": "Clientes",
+    "portfolio": "Portfolio",
+    "testimonials": "Depoimentos"
   },
   "hero": {
     "greeting": "[Olá, sou]",
@@ -56,6 +61,46 @@
       "TypeScript",
       "Cursor & MCP"
     ]
+  },
+  "certifications": {
+    "title": "Certificações",
+    "subtitle": "// Aprendizado contínuo"
+  },
+  "experience": {
+    "title": "Minha Experiência",
+    "subtitle": "// Trajetória de carreira",
+    "current": "Atual"
+  },
+  "clients": {
+    "title": "Clientes",
+    "subtitle": "// Com quem já trabalhei"
+  },
+  "testimonials": {
+    "title": "Depoimentos",
+    "subtitle": "// O que dizem sobre mim"
+  },
+  "case": {
+    "role": "Papel",
+    "company": "Empresa",
+    "tools": "Ferramentas",
+    "location": "Localização",
+    "duration": "Duração",
+    "introduction": "Introdução",
+    "responsibilities": "Papel & Responsabilidades",
+    "challenge": "O Desafio",
+    "process": "O Processo",
+    "personas": "Personas",
+    "personaBackground": "Contexto",
+    "personaNeeds": "Necessidades & Objetivos",
+    "personaChallenges": "Desafios",
+    "results": "Resultados",
+    "deliverables": "Principais Entregas",
+    "contribution": "Minha Contribuição",
+    "testimonial": "Depoimento do Cliente",
+    "otherComments": "Outros Comentários",
+    "takeaways": "Aprendizados",
+    "nextProject": "Próximo Projeto",
+    "backToPortfolio": "Voltar ao Portfolio"
   },
   "footer": {
     "tagline": "Senior UX/UI Designer\nHMI Automotivo & Product Design",

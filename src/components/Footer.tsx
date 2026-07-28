@@ -31,9 +31,10 @@ export function Footer({
           </h3>
           <ul className="space-y-2 text-sm text-text-secondary">
             <li><Link href={localePath(locale)} className="hover:text-accent-primary">{dict.nav.home}</Link></li>
-            <li><Link href={localePath(locale, "/about")} className="hover:text-accent-primary">{dict.nav.about}</Link></li>
+            <li><Link href={`${localePath(locale)}#about-me`} className="hover:text-accent-primary">{dict.nav.about}</Link></li>
+            <li><Link href={`${localePath(locale)}#portfolio`} className="hover:text-accent-primary">{dict.nav.portfolio}</Link></li>
             <li><Link href={localePath(locale, "/projects")} className="hover:text-accent-primary">{dict.nav.projects}</Link></li>
-            <li><Link href={localePath(locale, "/contact")} className="hover:text-accent-primary">{dict.nav.contact}</Link></li>
+            <li><Link href={`${localePath(locale)}#contact-me`} className="hover:text-accent-primary">{dict.nav.contact}</Link></li>
           </ul>
         </div>
 
