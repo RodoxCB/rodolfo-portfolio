@@ -24,8 +24,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Rodolfo Behr — Senior UX/UI Designer",
-  description: "Portfolio of Rodolfo Behr — Automotive HMI, product design, and design-to-code.",
+  title: "Rodolfo Behr, Senior UX/UI Designer",
+  description: "Portfolio of Rodolfo Behr: Automotive HMI, product design, and design-to-code.",
   icons: {
     icon: "/icon.svg",
   },

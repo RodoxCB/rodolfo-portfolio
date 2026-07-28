@@ -15,7 +15,7 @@ export function PreviewBanner({ locale }: { locale: string }) {
     <div className="fixed inset-x-0 top-0 z-[100] border-b border-amber-500/40 bg-amber-500 text-black">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-2 text-sm sm:px-6 lg:px-8">
         <p className="font-medium">
-          Modo preview — você está vendo o rascunho. O site público ainda não foi alterado.
+          Modo preview: você está vendo o rascunho. O site público ainda não foi alterado.
         </p>
         <div className="flex items-center gap-3">
           <Link

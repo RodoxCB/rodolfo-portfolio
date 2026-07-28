@@ -8,7 +8,7 @@ export function CasePullQuote({ pullQuote }: { pullQuote?: ProjectPullQuote }) {
       <p className="font-display text-xl italic leading-relaxed text-text-primary sm:text-2xl">
         &ldquo;{pullQuote.text}&rdquo;
       </p>
-      {pullQuote.author && <p className="mt-3 font-mono text-sm text-text-tertiary">— {pullQuote.author}</p>}
+      {pullQuote.author && <p className="mt-3 font-mono text-sm text-text-tertiary">{pullQuote.author}</p>}
     </blockquote>
   );
 }
